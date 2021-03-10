@@ -15,3 +15,30 @@ const getProducts = (item) => {
 
 getProducts(products);
 console.log(products);
+
+// slider
+let slider = tns({
+    container: '.my-slider',
+    items: 1,
+    gutter: 15,
+    slideBy: 2,
+    autoplay: true,
+    controlsContainer: '#controls',
+    prevButton: '.previous',
+    nextButton: '.next',
+    autoplayButton: '.auto',
+    nav: false,
+    responsive: {
+        640: {
+            items: 3
+        },
+        1200: {
+            items: 4
+        },
+        1400: {
+            items: 5
+        }
+    },
+});
+//end slider
+
