@@ -27,11 +27,9 @@ const loadProductSection = (item, section) => {
         let newData = `<div class="col-lg-3 col-md-6 col-xs-12">
         <div class="product mt-3 mb-5">
             <div class="card">
-                <img class="card-img-top"
-                    src="${product.avatarURL}"
-                    alt="Card image cap">
+                <img class="card-img-top" src="${product.avatarURL}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
+                    <h5 class="card-title" style="height: 45px;">${product.name}</h5>
                     <div class="rating">
                     <span class="fa fa-star text-warning"></span>
                     <span class="fa fa-star text-warning"></span>
@@ -39,13 +37,13 @@ const loadProductSection = (item, section) => {
                     <span class="fa fa-star text-warning"></span>
                     <span class="fa fa-star"></span>
                     <span>(${product.sold})</span>
-                    </div>
+                  </div>
                     <p href="#" class="text-danger mb-0">${product.price} đ</p>
                 </div>
-                </div>
+            </div>
         </div>`
 
-        let section_row = '.'+section + '-row'; 
+        let section_row = '.'+section + '-row';
         $(section_row).append(newData);
     }
 }
