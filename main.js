@@ -33,43 +33,44 @@ const getProducts = (item) => {
 
 // slider
 let slider = tns({
-    container: '.my-slider',
-    items: 1,
-    gutter: 15,
-    slideBy: 2,
-    autoplay: true,
-    controlsContainer: '#controls',
-    prevButton: '.previous',
-    nextButton: '.next',
-    autoplayButton: '.auto',
-    nav: false,
-    responsive: {
-        640: {
-            items: 3
-        },
-        1200: {
-            items: 4
-        },
-        1400: {
-            items: 5
-        }
+  container: '.my-slider',
+  items: 1,
+  gutter: 15,
+  slideBy: 2,
+  autoplay: true,
+  controlsContainer: '#controls',
+  prevButton: '.previous',
+  nextButton: '.next',
+  autoplayButton: '.auto',
+  nav: false,
+  responsive: {
+    640: {
+      items: 3
     },
+    1200: {
+      items: 4
+    },
+    1400: {
+      items: 5
+    }
+  },
 });
 //end slider
 
 const loadProductSection = (item, section) => {
   let sectionObj = item[section];
-  if(section == 'Laptop') section = 'Lap';
-  if(section == 'Monitor') section = 'Mon';
+  if (section == 'Laptop') section = 'Lap';
+  if (section == 'Monitor') section = 'Mon';
   console.log(sectionObj);
   for (let i = 1; i <= 4; i++) {
     let product = sectionObj[section + '0' + i];
-    let newData = `<div class="col-lg-3 col-md-6 col-xs-12 rounded">
-      <div class="product mt-3 mb-5">
-        <div class="card">
+    let newData =
+      `<div class="col-lg-3 col-md-6 col-xs-12 my-3 rounded">
+        <div class="card product  h-100">
         <img class="card-img-top" src="${product.avatarURL}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title rounded">${product.name}</h5>
+          <div class="bottom-price-star">
           <div class="rating">
             <span class="fa fa-star text-warning"></span>
             <span class="fa fa-star text-warning"></span>
@@ -79,10 +80,10 @@ const loadProductSection = (item, section) => {
             <span>(${product.sold})</span>
           </div>
           <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
+          </div>
         </div>
-      </div>
     </div>`
-    let section_row = '.'+section + '-row';
+    let section_row = '.' + section + '-row';
     $(section_row).append(newData);
   }
 }
