@@ -1,13 +1,13 @@
 var products;
 
-const getProducts = () => {
-    let url = 'https://technow-4b3ab.firebaseio.com/.json'
+const getProducts = (item) => {
+    let url = 'https://api.jsonbin.io/b/604786ab7ea6546cf3d83dc4'
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onload = function () {
         if (this.status == 200) {
-            products = JSON.parse(this.responseText);
-            console.log(products.Products.CPU.CPU02);
+            item = JSON.parse(this.responseText);
+            console.log(item.Products.CPU.CPU01);
         }
     }
     xhr.send();
