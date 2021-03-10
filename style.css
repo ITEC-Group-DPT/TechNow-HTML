@@ -65,4 +65,22 @@
   transform: scale(1.005);
   border: 1px solid #cccccc;
   background-color: white;
+.see-all{
+  color: white;
+}
+.see-all:hover{
+  color: white;
+  text-decoration: none;
+}
+h5{
+  font-size: 0.875rem;
+  height: 40px;
+}
+.card-img-top{
+  width: 100%;
+}
+.price{
+  color: #ed0000;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
