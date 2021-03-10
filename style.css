@@ -28,6 +28,8 @@
     .item_name {
         display: none;
     }
+}
+
 
 .top-rating{
     position: relative;
@@ -61,5 +63,4 @@
   transform: scale(1.005);
   border: 1px solid #cccccc;
   background-color: white;
-}
 }
