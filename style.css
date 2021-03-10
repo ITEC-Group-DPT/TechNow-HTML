@@ -1,0 +1,32 @@
+.fas.fa-shopping-cart {
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.padding-container-fluid {
+    padding-left: 10rem !important;
+    padding-right: 10rem !important;
+}
+
+
+.carousel-item {
+    width: 100%;
+    height: 500px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .item_name {
+        display: none;
+    }
+
+}
