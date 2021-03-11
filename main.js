@@ -15,3 +15,34 @@ const getProducts = (item) => {
 
 getProducts(products);
 console.log(products);
+
+// UI
+let test = document.querySelector(".test")
+let fade = false;
+
+$(document).scroll(function () {
+    let y = $(this).scrollTop();
+    if (y > 100 && fade == false) {
+        fadeIn(test);
+        fade = true;
+    } else if (y <= 100 && fade == true) {
+        fadeOut(test);
+        fade = false;
+    }
+});
+
+function fadeIn(el) {
+    console.log("fade IN");
+    el.style = "display: flex";
+    setTimeout(function () {
+        el.style = "opacity: 1";
+    }, 300);
+}
+
+function fadeOut(el) {
+    console.log("fade OUT");
+    el.style = "opacity: 0";
+    setTimeout(function () {
+        el.style = "display: none";
+    }, 300);
+}

@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 .border.border-primary.custom-border-width {
     border-width: 2px !important;
 }
@@ -12,12 +16,24 @@
     top: -3px;
 }
 
-.name  {
-    font-family: 'Roboto', sans-serif;
+input::-webkit-input-placeholder {
+    font-size: 18px;
 }
+
+.icon:hover {
+    background-color: rgb(211, 210, 210) !important;
+}
+
 .nav-item>* {
     color: white !important;
     font-family: 'Roboto', sans-serif;
+    transition: 400ms;
+    border-radius: 20px;
+}
+
+.nav-item>*:hover {
+    background: white;
+    color: black !important;
 }
 
 .dropdown:hover>.dropdown-menu {
@@ -32,7 +48,6 @@
     padding-left: 10rem !important;
     padding-right: 10rem !important;
 }
-
 
 .carousel-item {
     width: 100%;
@@ -61,54 +76,39 @@
 
 .custom-toggler.navbar-toggler {
     background-color: rgb(255, 255, 255) !important;
-  } 
+}
 
 .logo-wrapper img {
     overflow: hidden;
     background-color: white;
     transform: translatey(0px);
-    animation: float 5s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 .navbar-nav .nav-item:not(:last-child) {
     border-right: 1px solid white;
-    
 }
 
 .navbar-nav .nav-item {
-    padding-right: 1em;	
+    padding-right: 1em;
     margin-right: 1em;
 }
 
-@media all and (min-width:991px) {  
-    .dropdown:after{
-        content: ''; 
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition: opacity .15s ease-in-out;
-        opacity: 0;
-        visibility:hidden;
-        background-color: rgba(0,0,0,.7);
-        pointer-events: none;
-    }
-    .dropdown.show .nav-link{
-      position:relative;
-      z-index:12;
-    }
-    .dropdown.show:after{
-      z-index:10; opacity:1; 
-      visibility:visible;
-      position: fixed;
-    }
-  }
+.test {
+    transition: opacity 500ms;
+    opacity: 0;
+}
 
 @media only screen and (max-width: 768px) {
     .name {
         display: none;
     }
+
     .navbar-nav .nav-item:not(:last-child) {
         border-right: none;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 15px;
     }
 }
