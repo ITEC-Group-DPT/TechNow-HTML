@@ -1,5 +1,15 @@
-.fas.fa-shopping-cart {
-    color: white;
+.border.border-primary.custom-border-width {
+    border-width: 2px !important;
+}
+
+.cart-btn-wrapper {
+    position: relative;
+}
+
+.number-item-cart {
+    position: absolute;
+    right:-14px;
+    top:-3px;
 }
 
 .navbar-brand {
@@ -24,7 +34,27 @@
     width: 100%;
 }
 
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.logo-wrapper img {
+    overflow: hidden;
+	background-color: white;
+	transform: translatey(0px);
+	animation: float 5s ease-in-out infinite;
+}
+
 @media only screen and (max-width: 768px) {
+
     .item_name {
         display: none;
     }
