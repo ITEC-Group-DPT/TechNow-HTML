@@ -45,12 +45,12 @@
 }
 
 .rightcenter{
-    right:-2.2rem;
+    right:0rem;
     top: 50%;
     bottom: auto;
 }
 .leftcenter{
-    left:-2.2rem;
+    left:0rem;
     top: 50%;
     bottom: auto;
 }

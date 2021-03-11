@@ -45,13 +45,13 @@ let slider = tns({
   nav: false,
   responsive: {
     640: {
-      items: 3
+      items: 2
     },
     1200: {
-      items: 4
+      items: 3
     },
     1400: {
-      items: 5
+      items: 4
     }
   },
 });
@@ -63,10 +63,14 @@ const loadProductSection = (item, section) => {
   if (section == 'Monitor') section = 'Mon';
   console.log(sectionObj);
   for (let i = 1; i <= 4; i++) {
+    let padding = '';
+    if (i == 1) padding = 'pl-0'
+    if (i == 4) padding = 'pr-0'
+
     let product = sectionObj[section + '0' + i];
     let newData =
-      `<div class="col-lg-3 col-md-6 col-xs-12 my-3 rounded">
-        <div class="card product  h-100">
+      `<div class="col-lg-3 col-md-6 col-xs-12 my-3 mx-0 ${padding} rounded">
+        <div class="card product w-100 h-100">
         <img class="card-img-top" src="${product.avatarURL}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title rounded">${product.name}</h5>
