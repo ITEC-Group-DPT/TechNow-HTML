@@ -1,21 +1,20 @@
 .fas.fa-shopping-cart {
-    color: white;
+  color: white;
 }
 
 .navbar-brand {
-    font-size: 1.5rem !important;
-    font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem !important;
+  font-family: "Roboto", sans-serif;
 }
 
 .padding-container-fluid {
-    padding-left: 10rem !important;
-    padding-right: 10rem !important;
+  padding-left: 10rem !important;
+  padding-right: 10rem !important;
 }
 
-
 .carousel-item {
-    width: 100%;
-    height: 500px;
+  width: 100%;
+  height: 500px;
 }
 
 .carousel-item img {
@@ -27,38 +26,37 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .item_name {
-        display: none;
-    }
-}
-
-
-.top-rating{
-    position: relative;
-}
-.slider-arrow{
-    background: none;
-    opacity: 0.5;
-    position: absolute;
-    overflow: visible;
-    z-index: 1;
-}
-
-.rightcenter{
-    right:0rem;
-    top: 50%;
-    bottom: auto;
-}
-.leftcenter{
-    left:0rem;
-    top: 50%;
-    bottom: auto;
-}
-.auto{
+  .item_name {
     display: none;
+  }
 }
-.card{
-    transition: all 0.3s ease 0s; 
+
+.top-rating {
+  position: relative;
+}
+.slider-arrow {
+  background: none;
+  opacity: 0.5;
+  position: absolute;
+  overflow: visible;
+  z-index: 1;
+}
+
+.rightcenter {
+  right: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.leftcenter {
+  left: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.auto {
+  display: none;
+}
+.card {
+  transition: all 0.3s ease 0s;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
@@ -67,25 +65,43 @@
   background-color: white;
 }
 
-
-.see-all{
+.see-all {
   color: white;
 }
-.see-all:hover{
+.see-all:hover {
   color: white;
   text-decoration: none;
 }
 
-.card-img-top{
+.card-img-top {
   width: 100%;
 }
-.price{
+.price {
   color: #ed0000;
   font-size: 1.25rem;
   font-weight: 700;
 }
-.card-body{
+.card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.sticky {
+  position: unset;
+  display: none;
+  top:100px;
+  margin-top: 400px;
+}
+.sticky-banner{
+  width: 8rem;
+
+}
+
+@media (min-width: 1300px)  {
+  /* .sticky {
+    position: sticky;
+    top: 100px;
+    display: block;
+  } */
+}
+
