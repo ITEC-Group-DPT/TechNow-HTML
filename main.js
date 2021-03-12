@@ -12,6 +12,7 @@ const getProducts = (item) => {
   xhr.onload = function () {
     if (this.status == 200) {
       item = JSON.parse(this.responseText).Products;
+      sortingSold(item);
       loadProductSection(item, 'CPU');
       loadProductSection(item, 'Case');
       loadProductSection(item, 'GamingChair');
@@ -32,29 +33,7 @@ const getProducts = (item) => {
 }
 
 // slider
-let slider = tns({
-  container: '.my-slider',
-  items: 1,
-  gutter: 15,
-  slideBy: 2,
-  autoplay: true,
-  controlsContainer: '#controls',
-  prevButton: '.previous',
-  nextButton: '.next',
-  autoplayButton: '.auto',
-  nav: false,
-  responsive: {
-    640: {
-      items: 2
-    },
-    1200: {
-      items: 3
-    },
-    1400: {
-      items: 4
-    }
-  },
-});
+
 //end slider
 
 const loadProductSection = (item, section) => {
@@ -90,4 +69,82 @@ const loadProductSection = (item, section) => {
     let section_row = '.' + section + '-row';
     $(section_row).append(newData);
   }
+}
+
+function sortingSold(itemset) {
+  let list = [];
+  console.log("hello");
+  for (const catalog in itemset) {
+    for (const item in itemset[catalog]) {
+      if (Number.isInteger(itemset[catalog][item].sold)) {
+        list.push(itemset[catalog][item])
+      }
+      // sort theo từng catalog top rating 2 cái / catalog
+      // if (productlist.length == 0 || productlist.length == 1){
+      //   productlist.push(item[key][keyinkey]);
+      //   continue;
+      // }
+      // if(item[key][keyinkey].sold >= productlist[0].sold){
+      //   productlist.pop();
+      //   let prevsold = productlist.pop();
+      //   productlist.push(item[key][keyinkey])
+      //   productlist.push(prevsold);
+      // }
+    }
+  }
+  console.log(list);
+  list.sort(function (a, b) {
+    return b.sold - a.sold;
+  })
+  console.log(list);
+  let slider = document.querySelector(".my-slider")
+  for (let index = 0; index < 20; index++) {
+    let newData = `
+      <div class="product">
+        <div class="card product w-100 h-100">
+        <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title rounded">${list[index].name}</h5>
+          <div class="bottom-price-star">
+          <div class="rating">
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star"></span>
+            <span>(${list[index].sold})</span>
+          </div>
+          <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+          </div>
+        </div>
+        </div>`
+    $('.my-slider').append(newData);
+  }
+  loadSlider();
+}
+function loadSlider() {
+  let slider = tns({
+    container: '.my-slider',
+    items: 1,
+    gutter: 15,
+    slideBy: 2,
+    autoplay: true,
+    controlsContainer: '#controls',
+    edgePadding: 10,
+    prevButton: '.previous',
+    nextButton: '.next',
+    autoplayButton: '.auto',
+    nav: false,
+    responsive: {
+      640: {
+        items: 2
+      },
+      1200: {
+        items: 3
+      },
+      1400: {
+        items: 4
+      }
+    },
+  });
 }
