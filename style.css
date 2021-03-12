@@ -5,15 +5,64 @@
   color: white;
   text-decoration: none;
 }
+<<<<<<< Updated upstream
 h5{
   font-size: 0.875rem;
   height: 40px;
 }
 .card-img-top{
-  width: 100%;
+=======
+.card-title{
+  font-size: 0.875rem;
+
 }
+.btn.btn-danger{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.card-img-top {
+  margin: auto;
+>>>>>>> Stashed changes
+  width: 100%;
+  height: 280px;
+}
+.GamingChair-row .card-img-top {
+  width: 65% !important;
+  height: 200px !important;
+}
+<<<<<<< Updated upstream
 .price{
+=======
+
+.price {
+>>>>>>> Stashed changes
   color: #ed0000;
   font-size: 1.25rem;
   font-weight: 700;
 }
+<<<<<<< Updated upstream
+=======
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sticky {
+  position: unset;
+  display: none;
+  top:100px;
+  margin-top: 400px;
+}
+.sticky-banner{
+  width: 8rem;
+
+}
+
+@media (min-width: 1300px)  {
+  /* .sticky {
+    position: sticky;
+    top: 100px;
+    display: block;
+  } */
+}
+>>>>>>> Stashed changes
