@@ -17,21 +17,22 @@
 }
 
 input::-webkit-input-placeholder {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .icon:hover {
     background-color: rgb(211, 210, 210) !important;
 }
 
-.nav-item>* {
+.navbar-nav .nav-item > * {
     color: white !important;
     font-family: 'Roboto', sans-serif;
     transition: 400ms;
     border-radius: 20px;
+    font-size: 16px;
 }
 
-.nav-item>*:hover {
+.navbar-nav .nav-item > * :hover {
     background: white;
     color: black !important;
 }
@@ -42,6 +43,18 @@ input::-webkit-input-placeholder {
 
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
+}
+
+.nav-item.menu > * {
+    font-size: 15px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+}
+
+.menu-icon img {
+    width: 20px;
+    height: 20px;
 }
 
 .padding-container-fluid {
@@ -94,7 +107,7 @@ input::-webkit-input-placeholder {
     margin-right: 1em;
 }
 
-.test {
+.pop-up-items {
     transition: opacity 500ms;
     opacity: 0;
 }

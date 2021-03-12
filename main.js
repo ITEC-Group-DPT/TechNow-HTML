@@ -17,7 +17,7 @@ getProducts(products);
 console.log(products);
 
 // UI
-let test = document.querySelector(".test")
+let test = document.querySelector(".pop-up-items")
 let fade = false;
 
 $(document).scroll(function () {
