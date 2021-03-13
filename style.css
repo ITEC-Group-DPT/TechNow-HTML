@@ -1,0 +1,285 @@
+.fas.fa-shopping-cart {
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 1.5rem !important;
+  font-family: "Roboto", sans-serif;
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.border.border-primary.custom-border-width {
+    border-width: 2px !important;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.number-item-cart {
+    position: absolute;
+    right: -10px;
+    top: -3px;
+    font-size: 0.6rem !important;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+.icon-upper:hover {
+    background-color: rgb(211, 210, 210) !important;
+}
+
+.navbar-nav .nav-item>* {
+    color: white !important;
+    font-family: 'Roboto', sans-serif;
+    transition: 400ms;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item :hover {
+    background: white;
+    color: black !important;
+}
+
+.dropdown.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.dropright.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropright.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.menu-banners {
+    background: rgb(248, 248, 248);
+}
+
+.menu-list {
+    background: white;
+}
+
+.menu-item>* {
+    font-size: 0.7rem;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+}
+
+.menu-item:hover {
+    background: rgb(231, 231, 231) !important;
+}
+
+.menu-icon img {
+    width: 19px;
+    height: 19px;
+}
+
+.padding-container-fluid {
+  padding-left: 10rem !important;
+  padding-right: 10rem !important;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-item img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  height: 60vh;
+  object-fit: fill;
+}
+
+@media only screen and (max-width: 768px) {
+  .item_name {
+    display: none;
+  }
+}
+
+.top-rating {
+  position: relative;
+}
+.slider-arrow {
+  background: none;
+  opacity: 0.5;
+  position: absolute;
+  overflow: visible;
+}
+
+.rightcenter {
+  right: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.leftcenter {
+  left: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.auto {
+  display: none;
+}
+.card {
+  transition: all 0.3s ease 0s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+  transform: scale(1.005);
+  border: 1px solid #cccccc;
+  background-color: white;
+}
+
+.see-all {
+  color: white;
+}
+.see-all:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.card-img-top {
+  width: 100%;
+}
+.price {
+  color: #ed0000;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sticky {
+  position: unset;
+  display: none;
+  top:100px;
+  margin-top: 400px;
+}
+.sticky-banner{
+  width: 8rem;
+
+}
+
+@media (min-width: 1300px)  {
+  /* .sticky {
+    position: sticky;
+    top: 100px;
+    display: block;
+  } */
+}
+
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-10px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.custom-toggler.navbar-toggler {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.logo-wrapper img {
+    overflow: hidden;
+    background-color: white;
+    transform: translatey(0px);
+    animation: float 4s ease-in-out infinite;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+.navbar-nav .nav-item {
+    padding-right: 1em;
+    margin-right: 1em;
+}
+
+.pop-up-items {
+    transition: opacity 500ms;
+    opacity: 0;
+}
+
+.sm-banner-wrapper {
+    width: 100%;
+}
+
+.sm-banner-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 1rem;
+    text-align: start !important;
+}
+
+footer > * {
+    color: white;
+}
+
+.footer-title {
+ margin-bottom: 20px;
+}
+
+.footer-content {
+    font-size: 0.7rem;
+}
+
+.footer-social-icons img {
+    width: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .name {
+        display: none;
+    }
+
+    .navbar-nav .nav-item:not(:last-child) {
+        border-right: none;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+
+    .search-bar {
+        margin-bottom: 15px;
+    }
+
+    .navbar-nav .nav-item .nav-link.category-btn {
+        padding-left: 0;
+    }
+}
