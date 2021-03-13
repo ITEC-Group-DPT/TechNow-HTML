@@ -20,7 +20,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-.icon:hover {
+.icon-upper:hover {
     background-color: rgb(211, 210, 210) !important;
 }
 
@@ -123,5 +123,9 @@ input::-webkit-input-placeholder {
 
     input::-webkit-input-placeholder {
         font-size: 15px;
+    }
+
+    .search-bar {
+        margin-bottom: 15px;
     }
 }
