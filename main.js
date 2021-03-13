@@ -35,9 +35,9 @@ const loadProductSection = (item, section) => {
   for (let i = 10; i <= 17; i++) {
     let product = sectionObj[section + i];
     let newData =
-      `<div class="col-lg-3 col-md-6 col-xs-12 my-3 mx-0 rounded">
+      `<div class="col-xl-3 col-lg-6 col-md-12 my-3 mx-0 rounded">
         <div class="card product">
-        <img class="card-img-top" src="${product.avatarURL}" alt="Card image cap">
+        <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
         <div class="card-body h-75">
           <h5 class="card-title rounded">${product.name}</h5>
           <div class="rating">
