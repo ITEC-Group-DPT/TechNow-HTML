@@ -183,7 +183,13 @@ footer > * {
 }
 
 h5{
-  font-size: 0.875rem;
+  font-size: 0.875rem !important;
+}
+
+h5.card-title.rounded{
+  height: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 .card-img-top {
