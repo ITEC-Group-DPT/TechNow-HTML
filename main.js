@@ -32,7 +32,7 @@ $(document).scroll(function () {
         fade = false;
     }
 
-    if(y > 600) allowHover(true);
+    if (y > 600) allowHover(true);
     else allowHover(false);
 });
 
@@ -41,11 +41,11 @@ function allowHover(boolVal) {
     if (boolVal == true) {
         dropdownMenu.classList.add("hoverable");
         dropdownIcon.classList.add("dropdown-toggle");
-    }
-
-    else {
+        dropdownIcon.classList.remove("disabled");
+    } else {
         dropdownMenu.classList.remove("hoverable");
         dropdownIcon.classList.remove("dropdown-toggle");
+        dropdownIcon.classList.add("disabled");
     }
 }
 

@@ -25,7 +25,7 @@ input::-webkit-input-placeholder {
     background-color: rgb(211, 210, 210) !important;
 }
 
-.navbar-nav .nav-item > * {
+.navbar-nav .nav-item>* {
     color: white !important;
     font-family: 'Roboto', sans-serif;
     transition: 400ms;
@@ -33,17 +33,17 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-.navbar-nav .nav-item > * :hover {
+.navbar-nav .nav-item>* :hover {
     background: white;
     color: black !important;
 }
 
 .dropdown.hoverable:hover>.dropdown-menu {
-  display: block;
+    display: block;
 }
 
 .dropdown.hoverable>.dropdown-toggle:active {
-   pointer-events: none;
+    pointer-events: none;
 }
 
 .menu-banners {
@@ -54,11 +54,15 @@ input::-webkit-input-placeholder {
     background: white;
 }
 
-.menu-item > * {
+.menu-item>* {
     font-size: 0.7rem;
     color: black;
     font-family: 'Roboto', sans-serif;
     font-weight: light;
+}
+
+.menu-item:hover {
+    background: rgb(231, 231, 231) !important;
 }
 
 .menu-icon img {
