@@ -12,11 +12,12 @@ const getProducts = (item) => {
   xhr.onload = function () {
     if (this.status == 200) {
       item = JSON.parse(this.responseText).Products;
-      sortingSold(item);
+
       loadProductSection(item, 'CPU');
       loadProductSection(item, 'Case');
       loadProductSection(item, 'GamingChair');
       loadProductSection(item, 'Headphone');
+      sortingSold(item); // thằng chạy sau cùng
       // loadProductSection(item, 'Keyboard');
       // loadProductSection(item, 'Laptop');
       // loadProductSection(item, 'Mainboard');
@@ -100,7 +101,7 @@ function sortingSold(itemset) {
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
     let newData = `
-      <div class="product">
+      <div class="">
         <div class="card product w-100 h-100">
         <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
         <div class="card-body">
@@ -117,10 +118,22 @@ function sortingSold(itemset) {
           <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
           </div>
         </div>
-        </div>`
+        </div>
+      </div>`
     $('.my-slider').append(newData);
   }
+  $('.product').click(function (e) {
+    console.log('cl sl');
+    console.log(e);
+    console.log(e.currentTarget.childNodes[3].childNodes[1].innerText);
+    window.history.pushState("object or string", "Title", e.currentTarget.childNodes[3].childNodes[1].innerText);
+    window.onpopstate = function () { 
+      location.reload();
+     }
+    document.querySelector('body').innerHTML = e.currentTarget.innerHTML
+  })
   loadSlider();
+
 }
 function loadSlider() {
   let slider = tns({
@@ -134,6 +147,7 @@ function loadSlider() {
     prevButton: '.previous',
     nextButton: '.next',
     autoplayButton: '.auto',
+    autoplay: false,
     nav: false,
     responsive: {
       640: {
@@ -148,3 +162,25 @@ function loadSlider() {
     },
   });
 }
+// document.querySelector('.product').addEventListener('click', function (e) {
+//   console.log('product clicked');
+// })
+// document.querySelector('.my-slider').addEventListener('click', function (e) {
+
+//   try{
+//     e.path.forEach(element => {
+//       if (element.outerHTML.includes('card product')) {
+//         console.log(element);
+
+//         window.history.pushState("object or string", "Title", "/foo");
+
+//         throw exp;
+//       }
+//     });
+//   }
+//   catch(e){
+
+//   }
+
+// })
+
