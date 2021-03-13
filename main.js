@@ -19,6 +19,9 @@ console.log(products);
 // UI
 let test = document.querySelector(".pop-up-items")
 let fade = false;
+let dropdownMenu = document.querySelector(".dropdown");
+console.log(dropdownMenu);
+//dropdownMenu.classList.add("hoverable");
 
 $(document).scroll(function () {
     let y = $(this).scrollTop();
