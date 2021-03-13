@@ -12,8 +12,9 @@
 
 .number-item-cart {
     position: absolute;
-    right: -14px;
+    right: -10px;
     top: -3px;
+    font-size: 0.6rem !important;
 }
 
 input::-webkit-input-placeholder {
@@ -63,6 +64,10 @@ input::-webkit-input-placeholder {
 .menu-icon img {
     width: 19px;
     height: 19px;
+}
+
+.dropdown {
+    text-align: center;
 }
 
 .padding-container-fluid {
@@ -145,5 +150,9 @@ input::-webkit-input-placeholder {
 
     .search-bar {
         margin-bottom: 15px;
+    }
+
+    .dropdown {
+        text-align: start !important;
     }
 }

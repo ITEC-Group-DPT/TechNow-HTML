@@ -17,22 +17,37 @@ getProducts(products);
 console.log(products);
 
 // UI
-let test = document.querySelector(".pop-up-items")
+let popUpNavItems = document.querySelector(".pop-up-items")
 let fade = false;
 let dropdownMenu = document.querySelector(".dropdown");
-console.log(dropdownMenu);
-//dropdownMenu.classList.add("hoverable");
+let dropdownIcon = document.querySelector(".dropdown .nav-link")
 
 $(document).scroll(function () {
     let y = $(this).scrollTop();
     if (y > 100 && fade == false) {
-        fadeIn(test);
+        fadeIn(popUpNavItems);
         fade = true;
     } else if (y <= 100 && fade == true) {
-        fadeOut(test);
+        fadeOut(popUpNavItems);
         fade = false;
     }
+
+    if(y > 600) allowHover(true);
+    else allowHover(false);
 });
+
+
+function allowHover(boolVal) {
+    if (boolVal == true) {
+        dropdownMenu.classList.add("hoverable");
+        dropdownIcon.classList.add("dropdown-toggle");
+    }
+
+    else {
+        dropdownMenu.classList.remove("hoverable");
+        dropdownIcon.classList.remove("dropdown-toggle");
+    }
+}
 
 function fadeIn(el) {
     console.log("fade IN");
