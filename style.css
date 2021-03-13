@@ -46,8 +46,16 @@ input::-webkit-input-placeholder {
     pointer-events: none;
 }
 
+.dropright.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropright.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
 .menu-banners {
-    background: rgb(246, 246, 246);
+    background: rgb(248, 248, 248);
 }
 
 .menu-list {
@@ -68,10 +76,6 @@ input::-webkit-input-placeholder {
 .menu-icon img {
     width: 19px;
     height: 19px;
-}
-
-.dropdown {
-    text-align: center;
 }
 
 .padding-container-fluid {
@@ -139,6 +143,11 @@ input::-webkit-input-placeholder {
     object-fit: cover;
 }
 
+.navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 1rem;
+    text-align: start !important;
+}
+
 @media only screen and (max-width: 768px) {
     .name {
         display: none;
@@ -156,7 +165,7 @@ input::-webkit-input-placeholder {
         margin-bottom: 15px;
     }
 
-    .dropdown {
-        text-align: start !important;
+    .navbar-nav .nav-item .nav-link.category-btn {
+        padding-left: 0;
     }
 }
