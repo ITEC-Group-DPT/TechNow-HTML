@@ -12,10 +12,11 @@ const getProducts = (item) => {
   xhr.onload = function () {
     if (this.status == 200) {
       item = JSON.parse(this.responseText).Products;
-      loadProductSection(item, 'CPU');
-      loadProductSection(item, 'Case');
-      loadProductSection(item, 'GamingChair');
-      loadProductSection(item, 'Headphone');
+      sortingSold(item);
+      // loadProductSection(item, 'CPU');
+      // loadProductSection(item, 'Case');
+      // loadProductSection(item, 'GamingChair');
+      // loadProductSection(item, 'Headphone');
       // loadProductSection(item, 'Keyboard');
       // loadProductSection(item, 'Laptop');
       // loadProductSection(item, 'Mainboard');
@@ -90,4 +91,32 @@ const loadProductSection = (item, section) => {
     let section_row = '.' + section + '-row';
     $(section_row).append(newData);
   }
+}
+
+function sortingSold(itemset) {
+  let list = [];
+  console.log("hello");
+  for (const catalog in itemset) {
+    for (const item in itemset[catalog]) {
+      if (Number.isInteger(itemset[catalog][item].sold)) {
+        list.push(itemset[catalog][item])
+      }
+      // sort theo từng catalog top rating 2 cái / catalog
+      // if (productlist.length == 0 || productlist.length == 1){
+      //   productlist.push(item[key][keyinkey]);
+      //   continue;
+      // }
+      // if(item[key][keyinkey].sold >= productlist[0].sold){
+      //   productlist.pop();
+      //   let prevsold = productlist.pop();
+      //   productlist.push(item[key][keyinkey])
+      //   productlist.push(prevsold);
+      // }
+    }
+  }
+  console.log(list);
+  list.sort(function (a, b) {
+    return b.sold-a.sold;
+  })
+  console.log(list);
 }
