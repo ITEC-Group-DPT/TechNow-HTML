@@ -287,3 +287,29 @@ img.card-img-top {
     }
 }
 
+.top-rating {
+  position: relative;
+}
+.slider-arrow {
+  background: none;
+  opacity: 0.5;
+  position: absolute;
+  overflow: visible;
+}
+.my-slider{
+   padding-right: 15px;
+}
+.rightcenter {
+  right: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.leftcenter {
+  left: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.auto {
+  display: none;
+}
+

@@ -24,6 +24,8 @@ const getProducts = (item) => {
       // loadProductSection(item, 'SSD');
       // loadProductSection(item, 'Speaker');
       // loadProductSection(item, 'VGA');
+      sortingSold(item);
+      
     }
   }
   xhr.send();
@@ -106,3 +108,85 @@ function fadeOut(el) {
         el.style = "display: none";
     }, 300);
 }
+
+//top rating 
+function sortingSold(itemset) {
+  let list = [];
+  console.log("hello");
+  for (const catalog in itemset) {
+    for (const item in itemset[catalog]) {
+      if (Number.isInteger(itemset[catalog][item].sold)) {
+        list.push(itemset[catalog][item])
+      }
+      // sort theo từng catalog top rating 2 cái / catalog
+      // if (productlist.length == 0 || productlist.length == 1){
+      //   productlist.push(item[key][keyinkey]);
+      //   continue;
+      // }
+      // if(item[key][keyinkey].sold >= productlist[0].sold){
+      //   productlist.pop();
+      //   let prevsold = productlist.pop();
+      //   productlist.push(item[key][keyinkey])
+      //   productlist.push(prevsold);
+      // }
+    }
+  }
+  console.log(list);
+  list.sort(function (a, b) {
+    return b.sold - a.sold;
+  })
+  console.log(list);
+  let slider = document.querySelector(".my-slider")
+  for (let index = 0; index < 20; index++) {
+    let newData = `
+      <div class="product">
+        <div class="card product shadow-sm rounded w-100 h-100">
+        <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title rounded">${list[index].name}</h5>
+          <div class="bottom-price-star">
+          <div class="rating">
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star"></span>
+            <span>(${list[index].sold})</span>
+          </div>
+          <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+          </div>
+        </div>
+        </div>`
+    $('.my-slider').append(newData);
+  }
+  loadSlider();
+}
+
+function loadSlider() {
+  console.log('slider');
+  let slider = tns({
+    container: '.my-slider',
+    items: 1,
+    gutter: 20,
+    slideBy: 2,
+    autoplay: false,
+    controlsContainer: '#controls',
+    edgePadding: 20,
+    prevButton: '.previous',
+    nextButton: '.next',
+    autoplayButton: '.auto',
+    nav: false,
+    responsive: {
+      640: {
+        items: 2
+      },
+      1200: {
+        items: 3
+      },
+      1400: {
+        items: 4
+      }
+    },
+  });
+}
+//top rating
