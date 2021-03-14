@@ -11,10 +11,10 @@ const getProducts = (item) => {
     if (this.status == 200) {
       item = JSON.parse(this.responseText).Products;
       //loadProductSection(item, 'CPU');
-      loadProductSection(item, 'Case');
+      loadProductSection(item, 'CPU');
       //loadProductSection(item, 'GamingChair');
       //loadProductSection(item, 'Headphone');
-      loadProductSection(item, 'Keyboard');
+      loadProductSection(item, 'Laptop');
       // loadProductSection(item, 'Laptop');
       // loadProductSection(item, 'Mainboard');
       loadProductSection(item, 'Monitor');
@@ -33,11 +33,11 @@ const loadProductSection = (item, section) => {
   let sectionObj = item[section];
   console.log(sectionObj);
   for (let i = 10; i <= 17; i++) {
-    let product = sectionObj[section + i];
+    let product = sectionObj[section + i]; //hehe boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
     let newData =
-      `<div class="col-xl-3 col-lg-6 col-md-12 my-3 mx-0 rounded">
-        <div class="card product">
-        <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
+      `<div class="col-xl-3 col-lg-6 col-md-12 mb-0 mt-3 mx-0 rounded">
+        <div class="card product shadow-sm rounded">
+          <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
         <div class="card-body h-75">
           <h5 class="card-title rounded">${product.name}</h5>
           <div class="rating">
