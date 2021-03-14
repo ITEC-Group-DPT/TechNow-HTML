@@ -169,7 +169,7 @@ function loadSlider() {
     items: 1,
     gutter: 20,
     slideBy: 2,
-    autoplay: false,
+    autoplay: true,
     controlsContainer: '#controls',
     edgePadding: 20,
     prevButton: '.previous',
