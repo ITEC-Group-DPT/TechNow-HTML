@@ -33,7 +33,7 @@ const loadProductSection = (item, section) => {
   let sectionObj = item[section];
   console.log(sectionObj);
   for (let i = 10; i <= 17; i++) {
-    let product = sectionObj[section + i]; //hehe boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+    let product = sectionObj[section + (i <10 ? '0' : '' ) + i]; //hehe boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
     let newData =
       `<div class="col-xl-3 col-lg-6 col-md-12 mb-0 mt-3 mx-0 rounded">
         <div class="card product shadow-sm rounded">
