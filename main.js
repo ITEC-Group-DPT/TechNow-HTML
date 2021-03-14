@@ -1,20 +1,62 @@
 var products;
-
+$(document).ready(() => {
+  getProducts(products);
+})
 const getProducts = (item) => {
-    let url = 'https://technow-4b3ab.firebaseio.com/.json'
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.onload = function () {
-        if (this.status == 200) {
-            item = JSON.parse(this.responseText);
-            console.log(item.Products.Keyboard);
-        }
+  console.log('hehe');
+  let url = 'https://technow-4b3ab.firebaseio.com/.json';
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onload = function () {
+    if (this.status == 200) {
+      item = JSON.parse(this.responseText).Products;
+      //loadProductSection(item, 'CPU');
+      loadProductSection(item, 'Case');
+      //loadProductSection(item, 'GamingChair');
+      //loadProductSection(item, 'Headphone');
+      loadProductSection(item, 'Keyboard');
+      // loadProductSection(item, 'Laptop');
+      // loadProductSection(item, 'Mainboard');
+      loadProductSection(item, 'Monitor');
+      // loadProductSection(item, 'Mouse');
+      // loadProductSection(item, 'PSU');
+      // loadProductSection(item, 'RAM');
+      // loadProductSection(item, 'SSD');
+      // loadProductSection(item, 'Speaker');
+      // loadProductSection(item, 'VGA');
     }
-    xhr.send();
+  }
+  xhr.send();
 }
 
-getProducts(products);
-console.log(products);
+const loadProductSection = (item, section) => {
+  let sectionObj = item[section];
+  console.log(sectionObj);
+  for (let i = 10; i <= 17; i++) {
+    let product = sectionObj[section + i];
+    let newData =
+      `<div class="col-xl-3 col-lg-6 col-md-12 my-3 mx-0 rounded">
+        <div class="card product">
+        <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
+        <div class="card-body h-75">
+          <h5 class="card-title rounded">${product.name}</h5>
+          <div class="rating">
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star text-warning"></span>
+            <span class="fa fa-star"></span>
+            <span>(${product.sold})</span>
+          </div>
+          <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
+        </div>
+      </div>
+    </div>`
+    let section_row = '.'+section + '-row';
+    $(section_row).append(newData);
+  }
+}
+
 
 // UI
 let popUpNavItems = document.querySelector(".pop-up-items")
