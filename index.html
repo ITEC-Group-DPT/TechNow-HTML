@@ -55,8 +55,9 @@
 
         </div>
 
-        <div class="col-md-3 cart d-flex align-items-center justify-content-center">
-          <div class="cart-btn d-flex align-items-center">
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+
+          <div class="cart-btn menu-upper d-flex align-items-center">
             <div class="cart-icon-wrapper mr-2">
               <button type="button" class="btn btn-secondary rounded-circle icon-upper p-0" style="background-color:  rgb(238, 238, 238);
             border: transparent; height: 50px; width: 50px;">
@@ -67,8 +68,8 @@
             <p class="text-center m-0 name" style="font-size: 15px;">Cart</p>
           </div>
 
-          <div class="user-btn d-flex align-items-cente">
-            <div class="user-icon-wrapper ml-4 mr-2">
+          <div class="user-btn menu-upper ml-4 d-flex align-items-cente">
+            <div class="user-icon-wrapper mr-2">
               <button type="button" class="btn btn-secondary rounded-circle icon-upper p-0" style="background-color: rgb(238, 238, 238);
             border: transparent; height: 50px; width: 50px;">
                 <i class="bi bi-person fa-lg" style="color: black;"></i>
@@ -92,9 +93,9 @@
 
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <div class="container">
-
+        
         <ul class="navbar-nav mr-auto row">
-          <li class="nav-item dropdown col-md-2 p-0" style="border-left: 1px solid white;">
+          <li class="nav-item main dropdown category col-md-2 m-0">
             <a class="nav-link category-btn disabled" href="#" id="dropdownId" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <i class="bi bi-list-nested mr-2"></i>
@@ -203,25 +204,34 @@
             </div>
           </li>
 
-          <li class="nav-item col-md-2">
-            <a class="nav-link" href="#">
-              <i class="bi bi-telephone-inbound mr-2"></i>
-              Contact us</a>
-          </li>
+          <div class="seperator"></div>
 
-          <li class="nav-item col-md-2">
-            <a class="nav-link px-0" href="#">
+          <li class="nav-item main col-md-2 px-0">
+            <a class="nav-link text-center" href="#">
               <i class="bi bi-tools mr-2"></i>
-              Warranty policy</a>
+              <span>Warranty policy</span>
+              </a>
           </li>
+          
+          <div class="seperator"></div>
 
-          <li class="nav-item col-md-2">
-            <a class="nav-link px-0" href="#">
+          <li class="nav-item main col-md-2 px-0">
+            <a class="nav-link text-center" href="#">
               <i class="bi bi-truck mr-2"></i>
-              Shipping policy</a>
+              <span>Shipping policy</span>
+              </a>
           </li>
 
-          <li class="nav-item ml-auto pr-0 mr-0">
+          <div class="seperator"></div>
+
+          <li class="nav-item main col-md-2 px-0">
+            <a class="nav-link text-center" href="#">
+              <i class="bi bi-telephone-inbound mr-2"></i>
+              <span>Contact us</span>
+              </a>
+          </li>
+
+          <li class="nav-item popup ml-auto pr-0 mr-0">
 
             <ul class="navbar-nav pop-up-items" style="display: none;">
               <li class="nav-item">
@@ -237,6 +247,8 @@
                 </a>
               </li>
 
+              <div class="seperator"></div>
+              
               <li class="nav-item">
                 <a class="user-btn d-flex align-items-center" href="#">
                   <div class="user-icon-wrapper mr-2">
@@ -256,6 +268,32 @@
 
       </div>
     </div>
+
+    
+    <ul class="navbar-nav mobile-cart-user" style="display: none;">
+      <li class="nav-item">
+        <a class="cart-btn d-flex align-items-center" href="#">
+          <div class="cart-icon-wrapper mr-2">
+            <button type="button" class="btn btn-secondary rounded-circle p-0" style="background-color: white;
+              border: transparent; height: 40px; width: 40px;">
+              <i class="bi bi-cart4 fa-1x" style="color: black;"></i>
+            </button>
+            <span class="badge badge-pill badge-danger number-item-cart">0</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="user-btn d-flex align-items-center" href="#">
+          <div class="user-icon-wrapper mr-2">
+            <button type="button" class="btn btn-secondary rounded-circle p-0" style="background-color: white;
+              border: transparent; height: 40px; width: 40px;">
+              <i class="bi bi-person fa-1x" style="color: black;"></i>
+            </button>
+          </div>
+        </a>
+      </li>
+    </ul>
 
   </nav>
 
@@ -615,8 +653,8 @@
     </div>
 
     <div class=" mt-3">
-      <div class="d-flex flex-row btn btn-block btn-primary justify-content-between  align-items-center">
-        <h3 class="mb-0">Laptop</h3>
+      <div class="d-flex flex-row btn btn-block btn-primary justify-content-between align-items-center">
+        <h3 class="mb-0 catalog-name">Laptop</h3>
         <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
       </div>
       <div class="row Laptop-row">
@@ -626,7 +664,7 @@
 
     <div class="mt-3">
       <div class="d-flex flex-row btn btn-block btn-primary justify-content-between  align-items-center">
-        <h3 class="mb-0">CPU</h3>
+        <h3 class="mb-0 catalog-name">CPU</h3>
         <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
       </div>
       <div class="row CPU-row">
@@ -634,11 +672,9 @@
       </div>
     </div>
 
-    
-
     <div class=" mt-3">
       <div class="d-flex flex-row btn btn-block btn-primary justify-content-between  align-items-center">
-        <h3 class="mb-0">Monitor</h3>
+        <h3 class="mb-0 catalog-name">Monitor</h3>
         <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
       </div>
       <div class="row Monitor-row">
@@ -744,6 +780,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
   <script type="text/javascript" src="main.js"></script>
+  
 </body>
 
 </html>

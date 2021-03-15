@@ -33,9 +33,9 @@ const loadProductSection = (item, section) => {
   let sectionObj = item[section];
   console.log(sectionObj);
   for (let i = 10; i <= 17; i++) {
-    let product = sectionObj[section + i]; //hehe boiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+    let product = sectionObj[section + i];
     let newData =
-      `<div class="col-xl-3 col-lg-6 col-md-12 mb-0 mt-3 mx-0 rounded">
+      `<div class="col-lg-3 col-6 card-product-wrapper mb-0 mt-3 mx-0 rounded">
         <div class="card product shadow-sm rounded">
           <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
         <div class="card-body h-75">
@@ -52,11 +52,10 @@ const loadProductSection = (item, section) => {
         </div>
       </div>
     </div>`
-    let section_row = '.'+section + '-row';
+    let section_row = '.' + section + '-row';
     $(section_row).append(newData);
   }
 }
-
 
 // UI
 let popUpNavItems = document.querySelector(".pop-up-items")
@@ -65,44 +64,44 @@ let dropdownMenu = document.querySelector(".dropdown");
 let dropdownIcon = document.querySelector(".dropdown .nav-link")
 
 $(document).scroll(function () {
-    let y = $(this).scrollTop();
-    if (y > 100 && fade == false) {
-        fadeIn(popUpNavItems);
-        fade = true;
-    } else if (y <= 100 && fade == true) {
-        fadeOut(popUpNavItems);
-        fade = false;
-    }
+  let y = $(this).scrollTop();
+  if (y > 100 && fade == false) {
+    fadeIn(popUpNavItems);
+    fade = true;
+  } else if (y <= 100 && fade == true) {
+    fadeOut(popUpNavItems);
+    fade = false;
+  }
 
-    if (y > 600) allowHover(true);
-    else allowHover(false);
+  if (y > 600) allowHover(true);
+  else allowHover(false);
 });
 
 
 function allowHover(boolVal) {
-    if (boolVal == true) {
-        dropdownMenu.classList.add("hoverable");
-        dropdownIcon.classList.add("dropdown-toggle");
-        dropdownIcon.classList.remove("disabled");
-    } else {
-        dropdownMenu.classList.remove("hoverable");
-        dropdownIcon.classList.remove("dropdown-toggle");
-        dropdownIcon.classList.add("disabled");
-    }
+  if (boolVal == true) {
+    dropdownMenu.classList.add("hoverable");
+    dropdownIcon.classList.add("dropdown-toggle");
+    dropdownIcon.classList.remove("disabled");
+  } else {
+    dropdownMenu.classList.remove("hoverable");
+    dropdownIcon.classList.remove("dropdown-toggle");
+    dropdownIcon.classList.add("disabled");
+  }
 }
 
 function fadeIn(el) {
-    console.log("fade IN");
-    el.style = "display: flex";
-    setTimeout(function () {
-        el.style = "opacity: 1";
-    }, 300);
+  console.log("fade IN");
+  el.style = "display: flex";
+  setTimeout(function () {
+    el.style = "opacity: 1";
+  }, 300);
 }
 
 function fadeOut(el) {
-    console.log("fade OUT");
-    el.style = "opacity: 0";
-    setTimeout(function () {
-        el.style = "display: none";
-    }, 300);
+  console.log("fade OUT");
+  el.style = "opacity: 0";
+  setTimeout(function () {
+    el.style = "display: none";
+  }, 300);
 }
