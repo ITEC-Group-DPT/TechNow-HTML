@@ -28,7 +28,7 @@ input::-webkit-input-placeholder {
 .navbar-nav .nav-item>* {
     color: white !important;
     font-family: 'Roboto', sans-serif;
-    transition: background 400ms;
+    transition: 400ms;
     border-radius: 20px;
     font-size: 16px;
 }
@@ -118,7 +118,6 @@ input::-webkit-input-placeholder {
     transform: translatey(0px);
     animation: float 4s ease-in-out infinite;
 }
-
 
 .navbar-nav .nav-item {
     margin-right: 0.5em;
@@ -289,12 +288,12 @@ img.card-img-top {
         margin-bottom: 15px;
     }
 
-    .category {
-        padding-left: 15px !important;
+    li.nav-item.main.dropdown.category.col-md-2 {
+        padding-left: 0 !important;
     }
     
     .navbar-nav .nav-item .nav-link.category-btn {
-        padding-left: 0;
+        padding-left: 0 !important;
     }
     
     .main-container {
