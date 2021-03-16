@@ -28,12 +28,12 @@ input::-webkit-input-placeholder {
 .navbar-nav .nav-item>* {
     color: white !important;
     font-family: 'Roboto', sans-serif;
-    transition: 400ms;
+    transition: background 400ms;
     border-radius: 20px;
     font-size: 16px;
 }
 
-.navbar-nav .nav-item.main :hover {
+.nav-item.main>*:hover {
     background: white;
     color: black !important;
 }
@@ -270,11 +270,11 @@ img.card-img-top {
 }
 
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
     img.card-img-top {
         min-height: 180px;
     }
-}
+} */
 
 @media only screen and (max-width: 768px) {
     .name {
