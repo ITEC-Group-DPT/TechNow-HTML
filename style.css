@@ -313,3 +313,14 @@ img.card-img-top {
   display: none;
 }
 
+/* searchbar */
+#searchbar{
+    border-width: 2px !important;
+}
+#dropdownsearchbar{
+    z-index: 2000;
+}
+#dropdownsearchbar img{
+    width: 5rem;
+    height: 5rem;
+}

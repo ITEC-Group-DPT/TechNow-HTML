@@ -41,18 +41,36 @@
           <img src="img\logo.png" style="width: 130px;" alt="">
         </div>
 
-        <div class="col-md-6 search-bar d-flex justify-content-center align-items-center">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
 
-          <div class="input-group">
-            <input type="text" class="form-control border border-primary custom-border-width"
-              placeholder="What are you looking for today?">
-            <div class="input-group-append">
-              <button class="btn btn-primary d-flex justify-content-center align-items-center" type="button">
-                <span class="name" style="font-size: 16px;">Search</span>
-                <i class="bi bi-search ml-2 fa-sm"></i>
-              </button>
-            </div>
+          <div class="dropdown input-group w-100 ">
+            <input type="text" class="form-control border border-info rounded dropdown-toggle" id="searchbar"
+              placeholder="What are you looking for today?"  data-toggle="dropdown">
+
+            <ul class="dropdown-menu w-100" id="dropdownsearchbar">
+              <li><div class="product p-2">
+                <div class="card d-flex flex-row product shadow-sm rounded w-100 h-50">
+                  <img class="card-img-top" src="img/logo.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title rounded">asdasdasdasdasd</h5>
+                    <div class="bottom-price-star">
+                      <div class="rating">
+                        <span class="fa fa-star text-warning"></span>
+                        <span class="fa fa-star text-warning"></span>
+                        <span class="fa fa-star text-warning"></span>
+                        <span class="fa fa-star text-warning"></span>
+                        <span class="fa fa-star"></span>
+                        <span>12</span>
+                      </div>
+                      <p href="#" class="text-danger mb-0 price">12312312312312₫</p>
+                    </div>
+                  </div>
+                </div></li>
+              
+            </ul>
           </div>
+          
+        
 
         </div>
 
