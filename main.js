@@ -177,6 +177,7 @@ function loadSlider() {
     prevButton: '.previous',
     nextButton: '.next',
     autoplayButton: '.auto',
+    autoplayHoverPause: true,
     nav: false,
     responsive: {
       640: {
