@@ -33,7 +33,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-.navbar-nav .nav-item :hover {
+.nav-item.main>*:hover {
     background: white;
     color: black !important;
 }
@@ -119,18 +119,22 @@ input::-webkit-input-placeholder {
     animation: float 4s ease-in-out infinite;
 }
 
-.navbar-nav .nav-item:not(:last-child) {
-    border-right: 1px solid white;
+.navbar-nav .nav-item {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
 
-.navbar-nav .nav-item {
-    padding-right: 1em;
-    margin-right: 1em;
+.seperator {
+    border-left: 1px solid white;
 }
 
 .pop-up-items {
     transition: opacity 500ms;
     opacity: 0;
+}
+
+.category {
+    padding: 0 !important;
 }
 
 .sm-banner-wrapper {
@@ -166,6 +170,7 @@ footer > * {
 
 .see-all{
   color: white;
+  font-size: 0.8rem;
 }
 
 .see-all:hover{
@@ -198,7 +203,7 @@ h5.card-title.rounded{
 
 .price{
   color: #ed0000;
-  /* font-size: 0.9rem; */
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
@@ -246,32 +251,33 @@ h5.card-title.rounded{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 120px;
 }
 
 img.card-img-top {
-    max-height: 230px;
-    width: 70%;
-    height: 50%;
+    max-height: 200px;
+    width: 60%;
+    object-fit: cover;
+}
+
+.catalog-name {
+    font-size: 1.2rem;
 }
 
 .rating > * {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
     img.card-img-top {
         min-height: 180px;
     }
-}
+} */
 
 @media only screen and (max-width: 768px) {
     .name {
         display: none;
-    }
-
-    .navbar-nav .nav-item:not(:last-child) {
-        border-right: none;
     }
 
     input::-webkit-input-placeholder {
@@ -282,8 +288,37 @@ img.card-img-top {
         margin-bottom: 15px;
     }
 
+    li.nav-item.main.dropdown.category.col-md-2 {
+        padding-left: 0 !important;
+    }
+    
     .navbar-nav .nav-item .nav-link.category-btn {
-        padding-left: 0;
+        padding-left: 0 !important;
+    }
+    
+    .main-container {
+        margin: 0;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .pop-up-items {
+        display: none !important;
+    }
+
+    .mobile-cart-user {
+        display: block;
+    }
+
+    .nav-item.main .nav-link {
+        text-align: start !important;
+    }
+
+    .card-product-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
 
