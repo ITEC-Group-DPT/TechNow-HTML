@@ -94,6 +94,8 @@ function allowHover(boolVal) {
 }
 
 function fadeIn(el) {
+  document.querySelector('#dropdownsearchbar').style.opacity = 0
+
   console.log("fade IN");
   el.style = "display: flex";
   setTimeout(function () {
@@ -102,6 +104,8 @@ function fadeIn(el) {
 }
 
 function fadeOut(el) {
+  document.querySelector('#dropdownsearchbar').style.opacity = 1
+
   console.log("fade OUT");
   el.style = "opacity: 0";
   setTimeout(function () {
