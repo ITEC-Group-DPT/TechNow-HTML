@@ -352,3 +352,20 @@ img.card-img-top {
   display: none;
 }
 
+/* searchbar */
+#searchbarinp{
+    border-width: 2px !important;
+    background: url(assets/loupe.png) no-repeat scroll 5px 5px;
+    background-size: 22px 22px;
+    padding-left: 35px;
+}
+#dropdownsearchbar{
+    z-index: 2000;
+}
+#dropdownsearchbar img{
+    width: 5rem;
+    height: 5rem;
+}
+#dropdownsearchbar .card{
+    height: 5.5rem !important;
+}
