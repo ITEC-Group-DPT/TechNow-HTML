@@ -369,3 +369,7 @@ img.card-img-top {
 #dropdownsearchbar .card{
     height: 5.5rem !important;
 }
+
+#dropdownsearchbar .product:hover {
+    transform: none
+}
