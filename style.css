@@ -273,6 +273,16 @@ img.card-img-top {
     transition: all 350ms;
 }
 
+.cart-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
 /* @media only screen and (max-width: 992px) {
     img.card-img-top {
         min-height: 180px;

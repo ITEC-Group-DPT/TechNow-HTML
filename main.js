@@ -1,6 +1,8 @@
 var products;
+
 $(document).ready(() => {
   getProducts(products);
+  //Add event listener
 })
 const getProducts = (item) => {
   console.log('hehe');
