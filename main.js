@@ -224,14 +224,6 @@ function searchbarfunc() {
               <div class="card-body">
                 <h5 class="card-title rounded">${list[index].name}</h5>
                 <div class="bottom-price-star">
-                <div class="rating">
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star"></span>
-                  <span>(${list[index].sold})</span>
-                </div>
               </div>
               <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
             </div>

@@ -85,13 +85,13 @@ input::-webkit-input-placeholder {
 
 .carousel-item {
     width: 100%;
-    height: 52vh;
+    height: 40vh;
 }
 
 .carousel-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 @keyframes float {
@@ -268,7 +268,10 @@ img.card-img-top {
     font-size: 0.7rem;
 }
 
-.product:hover {
+.product {
+    cursor: pointer;
+}
+.card-product-wrapper .product:hover {
     transform: scale(1.02);
     transition: all 350ms;
 }
