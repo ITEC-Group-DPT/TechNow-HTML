@@ -85,7 +85,7 @@ input::-webkit-input-placeholder {
 
 .carousel-item {
     width: 100%;
-    height: 40vh;
+    height: 43vh;
 }
 
 .carousel-item img {
@@ -284,6 +284,12 @@ img.card-img-top {
 .cart-btn:hover {
     text-decoration: none;
     color: black;
+}
+
+.menu-banners {
+    padding-top: 10px;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 /* @media only screen and (max-width: 992px) {
