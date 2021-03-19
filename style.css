@@ -268,10 +268,6 @@ img.card-img-top {
     font-size: 0.7rem;
 }
 
-.product:hover {
-    transform: scale(1.02);
-    transition: all 350ms;
-}
 
 .cart-btn {
     text-decoration: none;
@@ -288,6 +284,32 @@ img.card-img-top {
         min-height: 180px;
     }
 } */
+
+.product:hover {
+    transform: scale(1.02);
+    transition: all 350ms;
+}
+
+.product:hover .addtocart-btn {
+    opacity: 1;
+    margin-bottom: 110px;
+}
+.addtocart-btn {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+  }
 
 @media only screen and (max-width: 768px) {
     .name {

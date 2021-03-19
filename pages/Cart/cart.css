@@ -1,0 +1,407 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.border.border-primary.custom-border-width {
+    border-width: 2px !important;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.number-item-cart {
+    position: absolute;
+    right: -10px;
+    top: -3px;
+    font-size: 0.6rem !important;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+.icon-upper:hover {
+    background-color: rgb(211, 210, 210) !important;
+}
+
+.navbar-nav .nav-item>* {
+    color: white !important;
+    font-family: 'Roboto', sans-serif;
+    transition: 400ms;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.nav-item.main>*:hover {
+    background: white;
+    color: black !important;
+}
+
+.dropdown.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.dropright.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropright.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.menu-banners {
+    background: rgb(248, 248, 248);
+}
+
+.menu-list {
+    background: white;
+}
+
+.menu-item>* {
+    font-size: 0.7rem;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+}
+
+.menu-item:hover {
+    background: rgb(231, 231, 231) !important;
+}
+
+.menu-icon img {
+    width: 19px;
+    height: 19px;
+}
+
+.padding-container-fluid {
+    padding-left: 10rem !important;
+    padding-right: 10rem !important;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 52vh;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-10px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.custom-toggler.navbar-toggler {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.logo-wrapper img {
+    overflow: hidden;
+    background-color: white;
+    transform: translatey(0px);
+    animation: float 4s ease-in-out infinite;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.seperator {
+    border-left: 1px solid white;
+}
+
+.pop-up-items {
+    transition: opacity 500ms;
+    opacity: 0;
+}
+
+.category {
+    padding: 0 !important;
+}
+
+.sm-banner-wrapper {
+    width: 100%;
+}
+
+.sm-banner-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 1rem;
+    text-align: start !important;
+}
+
+footer > * {
+    color: white;
+}
+
+.footer-title {
+ margin-bottom: 20px;
+}
+
+.footer-content {
+    font-size: 0.7rem;
+}
+
+.footer-social-icons img {
+    width: 30px;
+}
+
+.see-all{
+  color: white;
+  font-size: 0.8rem;
+}
+
+.see-all:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.catalog{
+  color: black;
+}
+
+.catalog:hover{
+  color: black;
+  text-decoration: none;
+}
+
+h5{
+  font-size: 0.875rem !important;
+}
+
+h5.card-title.rounded{
+  height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.card-img-top {
+  margin: auto;
+}
+
+.price{
+  color: #ed0000;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.categories {
+  padding: 50px 0;
+}
+
+.cata-data.row {
+  background: aliceblue;
+  width: 100%;
+  margin-left: 2px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.item.col-md-2 {
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+}
+
+.item h5{
+  margin-bottom: 0;
+}
+
+.main-container {
+  margin: 0 18% 10px;
+}
+
+.img-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+img.card-img-top {
+    max-height: 200px;
+    width: 60%;
+    object-fit: cover;
+}
+
+.catalog-name {
+    font-size: 1.2rem;
+}
+
+.rating > * {
+    font-size: 0.7rem;
+}
+
+
+.cart-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
+/* @media only screen and (max-width: 992px) {
+    img.card-img-top {
+        min-height: 180px;
+    }
+} */
+
+.product:hover {
+    transform: scale(1.02);
+    transition: all 350ms;
+}
+
+.product:hover .addtocart-btn {
+    opacity: 1;
+    margin-bottom: 110px;
+}
+.addtocart-btn {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+  }
+
+@media only screen and (max-width: 768px) {
+    .name {
+        display: none;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+
+    .search-bar {
+        margin-bottom: 15px;
+    }
+
+    li.nav-item.main.dropdown.category.col-md-2 {
+        padding-left: 0 !important;
+    }
+    
+    .navbar-nav .nav-item .nav-link.category-btn {
+        padding-left: 0 !important;
+    }
+    
+    .main-container {
+        margin: 0;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .pop-up-items {
+        display: none !important;
+    }
+
+    .mobile-cart-user {
+        display: block;
+    }
+
+    .nav-item.main .nav-link {
+        text-align: start !important;
+    }
+
+    .card-product-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+.top-rating {
+  position: relative;
+}
+.slider-arrow {
+  background: none;
+  opacity: 0.5;
+  position: absolute;
+  overflow: visible;
+}
+.my-slider{
+   padding-right: 15px;
+}
+.rightcenter {
+  right: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.leftcenter {
+  left: 0rem;
+  top: 50%;
+  bottom: auto;
+}
+.auto {
+  display: none;
+}
+
+/* searchbar */
+#searchbarinp{
+    border-width: 2px !important;
+    background: url(assets/loupe.png) no-repeat scroll 5px 5px;
+    background-size: 22px 22px;
+    padding-left: 35px;
+}
+#dropdownsearchbar{
+    z-index: 2000;
+}
+#dropdownsearchbar img{
+    width: 5rem;
+    height: 5rem;
+}
+#dropdownsearchbar .card{
+    height: 5.5rem !important;
+}
+
+#dropdownsearchbar .product:hover {
+    transform: none
+}
