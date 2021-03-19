@@ -7,7 +7,7 @@ $(document).ready(() => {
   getProducts(products);
   cartList = JSON.parse(localStorage.getItem("cartList"));
 
-  console.log("LOAD PAGE");
+  console.log("CART ON PAGE LOAD");
   console.log(cartList);
 
   numberItemCart = document.querySelectorAll(".number-item-cart");
@@ -99,7 +99,7 @@ function addProductToCart(id) {
   }
   cartList.push(product);
 
-  console.log("AFTER ADD");
+  console.log("CART AFTER ADD");
   console.log(cartList);
   storeLocalStorage(cartList);
   updateNoItemInCart();

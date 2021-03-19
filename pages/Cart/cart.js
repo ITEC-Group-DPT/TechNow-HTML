@@ -12,7 +12,7 @@ let removeBtns;
 $(document).ready(() => {
   cartList = JSON.parse(localStorage.getItem("cartList"));
 
-  console.log("LOAD PAGE");
+  console.log("CART ON PAGE LOAD");
   console.log(cartList);
   updateNoItemInCart();
   outputCartList(cartList);
@@ -66,9 +66,8 @@ function removeProduct(id) {
     return product.id == id;
   });
 
-  
   cartList.splice(index, 1);
-  console.log("AFTER REMOVE");
+  console.log("CART AFTER REMOVE");
   console.log(cartList);
   updateNoItemInCart();
   storeLocalStorage(cartList);
