@@ -10,11 +10,9 @@ let cart = document.querySelector(".cart-list");
 let removeBtns;
 
 $(document).ready(() => {
-  let cartListTemp = JSON.parse(localStorage.getItem("cartList"));
-  if (cartListTemp.length > 0) {
-    cartList = cartListTemp;
-  }
+  cartList = JSON.parse(localStorage.getItem("cartList"));
 
+  console.log("LOAD PAGE");
   console.log(cartList);
   updateNoItemInCart();
   outputCartList(cartList);
@@ -22,7 +20,6 @@ $(document).ready(() => {
 
   removeBtns.forEach(removeBtn => {
     removeBtn.addEventListener("click", () => {
-      console.log("click remove");
       removeProductUI(removeBtn);
       removeProduct(removeBtn.id);
     });
@@ -62,13 +59,16 @@ function outputCartList(cartList) {
 
 }
 
-
 function removeProduct(id) {
+
   console.log('id ' + id);
   let index = cartList.findIndex(product => {
-    product.id = id;
+    return product.id == id;
   });
+
+  
   cartList.splice(index, 1);
+  console.log("AFTER REMOVE");
   console.log(cartList);
   updateNoItemInCart();
   storeLocalStorage(cartList);
@@ -76,7 +76,7 @@ function removeProduct(id) {
 
 function storeLocalStorage(cartList) {
   localStorage.setItem("cartList", JSON.stringify(cartList));
-  console.log(JSON.stringify(cartList));
+  //console.log(JSON.stringify(cartList));
 }
 
 // UI functions

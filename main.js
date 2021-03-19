@@ -5,8 +5,11 @@ let cartList = [];
 
 $(document).ready(() => {
   getProducts(products);
-  let cartListTemp = JSON.parse(localStorage.getItem("cartList"));
-  cartList = cartListTemp;
+  cartList = JSON.parse(localStorage.getItem("cartList"));
+
+  console.log("LOAD PAGE");
+  console.log(cartList);
+
   numberItemCart = document.querySelectorAll(".number-item-cart");
   updateNoItemInCart();
 });
@@ -94,8 +97,9 @@ function addProductToCart(id) {
     id: res[1],
     data: products[res[0]][res[1]]
   }
-  console.log(product);
   cartList.push(product);
+
+  console.log("AFTER ADD");
   console.log(cartList);
   storeLocalStorage(cartList);
   updateNoItemInCart();
@@ -103,7 +107,7 @@ function addProductToCart(id) {
 
 function storeLocalStorage(cartList) {
   localStorage.setItem("cartList", JSON.stringify(cartList));
-  console.log(JSON.stringify(cartList));
+  //console.log(JSON.stringify(cartList));
 }
 
 function updateNoItemInCart() {
@@ -154,8 +158,7 @@ function allowHover(boolVal) {
 }
 
 function fadeIn(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 0
-  console.log("fade IN");
+  document.querySelector('#dropdownsearchbar').style.opacity = 0;
   el.style = "display: flex";
   setTimeout(function () {
     el.style = "opacity: 1";
@@ -163,8 +166,7 @@ function fadeIn(el) {
 }
 
 function fadeOut(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 1
-  console.log("fade OUT");
+  document.querySelector('#dropdownsearchbar').style.opacity = 1;
   el.style = "opacity: 0";
   setTimeout(function () {
     el.style = "display: none";
