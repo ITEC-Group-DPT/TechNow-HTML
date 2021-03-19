@@ -71,6 +71,12 @@ function removeProduct(id) {
   cartList.splice(index, 1);
   console.log(cartList);
   updateNoItemInCart();
+  storeLocalStorage(cartList);
+}
+
+function storeLocalStorage(cartList) {
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+  console.log(JSON.stringify(cartList));
 }
 
 // UI functions
