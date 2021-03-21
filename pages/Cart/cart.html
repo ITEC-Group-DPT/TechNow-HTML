@@ -74,14 +74,11 @@
 
             </ul>
           </div>
-
-
-
         </div>
 
         <div class="col-md-3 d-flex align-items-center justify-content-center pt-2 pt-md-0">
 
-          <a class="cart-btn menu-upper d-flex align-items-center" href="./pages/Cart/cart.html">
+          <a class="cart-btn menu-upper d-flex align-items-center" href="#">
             <div class="cart-icon-wrapper mr-2">
               <button type="button" class="btn btn-secondary rounded-circle icon-upper p-0" style="background-color:  rgb(238, 238, 238);
             border: transparent; height: 50px; width: 50px;">
@@ -259,7 +256,7 @@
 
             <ul class="navbar-nav pop-up-items d-flex" style="display: none;">
               <li class="nav-item">
-                <a class="cart-btn d-flex align-items-center" href="./pages/Cart/cart.html">
+                <a class="cart-btn d-flex align-items-center" href="#">
                   <div class="cart-icon-wrapper mr-2">
                     <button type="button" class="btn btn-secondary rounded-circle p-0" style="background-color: white;
                       border: transparent; height: 40px; width: 40px;">
@@ -296,12 +293,29 @@
   </nav>
 
   <div class="cart container">
-    <ul class="cart-list">
-      
-    </ul>
+    <div class="cart-empty">
+      <div class="empty-img-wrapper text-center">
+        <img src="/img\emptycart.webp" alt="">
+      </div>
+      <h5 class="text-center">Your cart is empty</h5>
+    </div>
+
+    <div class="row cart-available">
+      <ul class="cart-list col-md-9">
+
+      </ul>
+      <div class="summary col-md-3 card shadow-sm mt-2 sticky-top" style="height: 200px ;">
+        <h5>Order Summary</h5>
+        <div class="total d-flex">
+          <h5>Total:</h5>
+          <p class="text-danger mb-0 total-price"></p>
+        </div>
+        
+      </div>
+    </div>
   </div>
 
-  <footer class="bg-primary mt-5 ">
+  <footer class="bg-primary mt-5">
     <div class="container py-3">
       <div class="row">
 

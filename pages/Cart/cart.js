@@ -4,42 +4,93 @@ let fade = false;
 let dropdownMenu = document.querySelector(".dropdown");
 let dropdownIcon = document.querySelector(".dropdown .nav-link")
 let numberItemCart = document.querySelectorAll(".number-item-cart");
-
 let cartList = [];
 let cart = document.querySelector(".cart-list");
+let cartEmpty = document.querySelector(".cart-empty");
+let cartAvailable = document.querySelector(".cart-available");
+let totalPrice = document.querySelector(".total-price");
+let decreaseBtns;
+let increaseBtns;
+let inputQties;
 let removeBtns;
 
+//document ready
 $(document).ready(() => {
   cartList = JSON.parse(localStorage.getItem("cartList"));
 
   console.log("CART ON PAGE LOAD");
   console.log(cartList);
+  checkCartList();
   updateNoItemInCart();
   outputCartList(cartList);
-  removeBtns = document.querySelectorAll(".remove-btn");
+  updateTotalPrice();
+  addListeners(); 
+});
 
+
+//ultility functions
+function addListeners() {
+  removeBtns = document.querySelectorAll(".remove-btn");
   removeBtns.forEach(removeBtn => {
     removeBtn.addEventListener("click", () => {
-      removeProductUI(removeBtn);
-      removeProduct(removeBtn.id);
+      removeProduct(removeBtn);
     });
   });
 
-});
+  increaseBtns = document.querySelectorAll(".quantity-btn-plus");
+  increaseBtns.forEach(increaseBtn => {
+    increaseBtn.addEventListener("click", () => {
+      increaseQuantity(increaseBtn);
+    });
+  });
+
+  decreaseBtns = document.querySelectorAll(".quantity-btn-minus");
+  decreaseBtns.forEach(decreaseBtn => {
+    decreaseBtn.addEventListener("click", () => {
+      decreaseQuantity(decreaseBtn);
+    });
+  });
+
+  inputQties = document.querySelectorAll(".quantity-input");
+  inputQties.forEach(inputQty => {
+    inputQty.addEventListener("focusout", () => {
+      inputQuantity(inputQty);
+    });
+  });
+}
+
+function getProductIndexByID(id) {
+  return cartList.findIndex(product => {
+    return product.id == id;
+  });
+}
+
+function storeLocalStorage(cartList) {
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+}
+
 
 //cart functions
 function outputCartList(cartList) {
   $(".cart-list").empty();
-  cartList.forEach((product, index) => {
+  cartList.forEach(product => {
+    if(product.quantity == null) product.quantity = 1;
     let data = `
-      <li>
-        <div class="product p-1">
-          <div class="card d-flex flex-row product shadow-sm rounded w-100 h-50">
-            <img class="card-img-top" src="${product.data.avatarURL}" alt="Card image cap" style="width: 200px">
-            <div class="card-body">
-              <h5 class="card-title rounded">${product.data.name}</h5>
-              <div class="bottom-price-star">
-              <div class="rating">
+      <li class="product-wrapper container card shadow-sm p-1 m-2">
+        <div class="product d-flex">
+
+          <div class="product-img-wrapper">
+            <img class="product-img" src="${product.data.avatarURL}" alt="product-img">
+          </div>
+
+          <div class="product-info">
+            <div class="product-name-wrapper">           
+              <h5 class="product-name">${product.data.name}</h5>
+            </div>
+
+            <div class="product-rating-price-wrapper">
+
+              <div class="product-rating">
                 <span class="fa fa-star text-warning"></span>
                 <span class="fa fa-star text-warning"></span>
                 <span class="fa fa-star text-warning"></span>
@@ -47,10 +98,33 @@ function outputCartList(cartList) {
                 <span class="fa fa-star"></span>
                 <span>(${product.data.sold})</span>
               </div>
+
+              <div class="product-price-wrapper">          
+                <p href="#" class="text-danger mb-0 product-price">${product.data.price.toLocaleString()}₫</p>
+              </div>
+
             </div>
-            <p href="#" class="text-danger mb-0 price">${product.data.price.toLocaleString()}₫</p>
+
           </div>
-          <button type="button" class="btn btn-danger remove-btn" id="${product.id}">Remove</button>
+
+          <div class="quantity-control rounded">
+
+            <button class="quantity-btn quantity-btn-minus" id="${product.id}">
+              <i class="bi bi-dash"></i>
+            </button>
+
+            <input type="number" class="quantity-input" id="${product.id}" value="${product.quantity}" step="1" min="1"  name="quantity">
+
+            <button class="quantity-btn quantity-btn-plus" id="${product.id}">
+              <i class="bi bi-plus"></i>
+            </button>
+
+        </div>
+
+          <button type="button" class="btn btn-light remove-btn" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Remove Item">
+            <i class="bi bi-x fa-lg"></i>
+          </button>
+
         </div>
       </li>`
 
@@ -59,29 +133,76 @@ function outputCartList(cartList) {
 
 }
 
-function removeProduct(id) {
-
-  console.log('id ' + id);
-  let index = cartList.findIndex(product => {
-    return product.id == id;
+function updateTotalPrice() {
+  let sumPrice = 0;
+  cartList.forEach(product => {
+    sumPrice += product.data.price * product.quantity;
   });
+  console.log(totalPrice);
+  totalPrice.innerText = sumPrice.toLocaleString();
+}
 
+function decreaseQuantity(decreaseBtn) {
+  let index = getProductIndexByID(decreaseBtn.id);
+  if(cartList[index].quantity > 1) {
+    decreaseBtn.nextElementSibling.value = --cartList[index].quantity;
+  }
+  console.log("AFTER DECREASE");
+  console.log(cartList);
+  storeLocalStorage(cartList);
+  updateTotalPrice();
+}
+
+function increaseQuantity(increaseBtn) {
+  let index = getProductIndexByID(increaseBtn.id);
+  increaseBtn.previousElementSibling.value = ++cartList[index].quantity;
+  console.log("AFTER INCREASE");
+  console.log(cartList);
+  storeLocalStorage(cartList);
+  updateTotalPrice();
+}
+
+function inputQuantity (inputQty) {
+  let index = getProductIndexByID(inputQty.id);
+  if(inputQty.value < 1 || inputQty.value == null) {
+    cartList[index].quantity = 1;
+    inputQty.value = 1;
+  }
+  else cartList[index].quantity = inputQty.value;
+  console.log("AFTER INPUT");
+  console.log(cartList);
+  storeLocalStorage(cartList);
+  updateTotalPrice();
+}
+
+function removeProduct(removeBtn) {
+  let index = getProductIndexByID(removeBtn.id);
   cartList.splice(index, 1);
   console.log("CART AFTER REMOVE");
   console.log(cartList);
-  updateNoItemInCart();
   storeLocalStorage(cartList);
+  removeProductUI(removeBtn);
+  updateNoItemInCart();
+  updateTotalPrice()
+  checkCartList();
 }
 
-function storeLocalStorage(cartList) {
-  localStorage.setItem("cartList", JSON.stringify(cartList));
-  //console.log(JSON.stringify(cartList));
-}
 
 // UI functions
+function checkCartList() {
+  if(cartList.length == 0) {
+    cartAvailable.style = "display: none";
+    cartEmpty.style = "display: block";
+    
+  }
+  else {
+    cartEmpty.style = "display: none";
+    cartAvailable.style = "display: flex";
+  }
+}
 
 function removeProductUI(removeBtn) {
-  removeBtn.parentElement.parentElement.parentElement.remove();
+  removeBtn.parentElement.parentElement.remove();
 }
 
 function updateNoItemInCart() {
