@@ -188,9 +188,19 @@ h5.card-title.rounded {
     padding: 50px 0;
 }
 
-.product {
+.product-wrapper {
     position: relative;
+    transition: all 1000ms;
 }
+
+.closeSlide {
+    margin-bottom:0;
+    height:0px;
+    padding-top:0;
+    padding-bottom:0;
+    transition: 0.2s all ease-out;
+    /*Just reverse any spacing styling you've applied to make it **magically** disappear*/
+  }
 
 .remove-btn {
     position: absolute;
@@ -206,7 +216,7 @@ h5.card-title.rounded {
 }
 
 .product-img-wrapper {
-    width: 20%;
+    width: 15%;
 }
 
 img.product-img {
@@ -241,42 +251,67 @@ img.card-img-top {
     color: black;
 }
 
+.product-rating {
+    font-size: 12px;
+}
+
+.product-info {
+    width: 40%;
+}
+
+.product-price-wrapper {
+    width: 20%;
+}
+.product-price {
+    font-size: 0.8rem;
+}
+
 ul.cart-list {
     list-style: none;
 }
 
-.summary.sticky-top { 
-    top: 70px; 
+.summary-title {
+    font-size: 1rem !important;
+}
+
+.summary-wrapper.sticky-top.col-md-3 {
+    top: 80px;
+    height: 0px; 
+}
+
+.btn.check-out-btn {
+    font-size: 0.9rem;
 }
 
 .quantity-control {
-    display: flex;  
+    display: flex;
     margin: auto;
     border: 1px solid rgb(230, 230, 230);
-    padding: 0.2rem 0.2rem;
-  }
-  
-  .quantity-btn {
+    padding: 0.1rem;
+}
+
+.quantity-btn {
     background: transparent;
     border: none;
-    outline: none;
+    outline: none !important;
     margin: 0;
     padding: 0px 5px;
     cursor: pointer;
-  }
-  
-  .quantity-input {
+}
+
+.quantity-input {
     outline: none;
     text-align: center;
-    width: 40px;
+    width: 30px;
     border: none;
-    font-size: 15px;
-  }
+    font-size: 0.7rem;
+}
 
-  .quantity-input::-webkit-inner-spin-button,
-  .quantity-input::-webkit-outer-spin-button {
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
-  }
+}
+
 /* searchbar */
 #searchbarinp {
     border-width: 2px !important;
@@ -346,5 +381,7 @@ ul.cart-list {
     .card-product-wrapper {
         padding: 0 !important;
         margin: 0 !important;
+
+
     }
 }

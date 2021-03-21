@@ -76,50 +76,52 @@ function outputCartList(cartList) {
   cartList.forEach(product => {
     if(product.quantity == null) product.quantity = 1;
     let data = `
-      <li class="product-wrapper container card shadow-sm p-1 m-2">
-        <div class="product d-flex">
+      <li class="product-wrapper container card shadow-sm p-1 m-3">
+        <div class="product d-flex m-2">
 
           <div class="product-img-wrapper">
             <img class="product-img" src="${product.data.avatarURL}" alt="product-img">
           </div>
 
-          <div class="product-info">
-            <div class="product-name-wrapper">           
-              <h5 class="product-name">${product.data.name}</h5>
-            </div>
-
-            <div class="product-rating-price-wrapper">
-
-              <div class="product-rating">
-                <span class="fa fa-star text-warning"></span>
-                <span class="fa fa-star text-warning"></span>
-                <span class="fa fa-star text-warning"></span>
-                <span class="fa fa-star text-warning"></span>
-                <span class="fa fa-star"></span>
-                <span>(${product.data.sold})</span>
+          <div class="product-info ml-2 d-flex align-items-center">
+            <div class="product-info-wrapper">
+          
+              <div class="product-name-wrapper">           
+                <h5 class="product-name">${product.data.name}</h5>
               </div>
 
-              <div class="product-price-wrapper">          
-                <p href="#" class="text-danger mb-0 product-price">${product.data.price.toLocaleString()}₫</p>
+              <div class="product-rating-wrapper">
+
+                <div class="product-rating">
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(${product.data.sold})</span>
+                </div>
+
               </div>
-
             </div>
-
           </div>
 
           <div class="quantity-control rounded">
 
-            <button class="quantity-btn quantity-btn-minus" id="${product.id}">
+            <button class="quantity-btn quantity-btn-minus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Decrease Quantity">
               <i class="bi bi-dash"></i>
             </button>
 
             <input type="number" class="quantity-input" id="${product.id}" value="${product.quantity}" step="1" min="1"  name="quantity">
 
-            <button class="quantity-btn quantity-btn-plus" id="${product.id}">
+            <button class="quantity-btn quantity-btn-plus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Increase Quantity">
               <i class="bi bi-plus"></i>
             </button>
 
-        </div>
+          </div>
+
+          <div class="product-price-wrapper d-flex align-items-center">          
+            <p href="#" class="product-price m-0">${product.data.price.toLocaleString()}₫</p>
+          </div>
 
           <button type="button" class="btn btn-light remove-btn" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Remove Item">
             <i class="bi bi-x fa-lg"></i>
@@ -138,8 +140,7 @@ function updateTotalPrice() {
   cartList.forEach(product => {
     sumPrice += product.data.price * product.quantity;
   });
-  console.log(totalPrice);
-  totalPrice.innerText = sumPrice.toLocaleString();
+  totalPrice.innerText = sumPrice.toLocaleString() + "₫";
 }
 
 function decreaseQuantity(decreaseBtn) {
@@ -151,6 +152,7 @@ function decreaseQuantity(decreaseBtn) {
   console.log(cartList);
   storeLocalStorage(cartList);
   updateTotalPrice();
+  updateNoItemInCart();
 }
 
 function increaseQuantity(increaseBtn) {
@@ -160,6 +162,7 @@ function increaseQuantity(increaseBtn) {
   console.log(cartList);
   storeLocalStorage(cartList);
   updateTotalPrice();
+  updateNoItemInCart();
 }
 
 function inputQuantity (inputQty) {
@@ -173,9 +176,11 @@ function inputQuantity (inputQty) {
   console.log(cartList);
   storeLocalStorage(cartList);
   updateTotalPrice();
+  updateNoItemInCart();
 }
 
 function removeProduct(removeBtn) {
+  removeBtn.disabled = true;
   let index = getProductIndexByID(removeBtn.id);
   cartList.splice(index, 1);
   console.log("CART AFTER REMOVE");
@@ -185,6 +190,14 @@ function removeProduct(removeBtn) {
   updateNoItemInCart();
   updateTotalPrice()
   checkCartList();
+}
+
+function getTotalItemsInCart() {
+  let total = 0;
+  cartList.forEach(product => {
+    total += product.quantity;
+  });
+  return total;
 }
 
 
@@ -202,12 +215,12 @@ function checkCartList() {
 }
 
 function removeProductUI(removeBtn) {
-  removeBtn.parentElement.parentElement.remove();
+  fadeOutRemoveItem(removeBtn.parentElement.parentElement);
 }
 
 function updateNoItemInCart() {
   numberItemCart.forEach(number => {
-    number.innerText = cartList.length;
+    number.innerText = getTotalItemsInCart();
   });
 }
 
@@ -251,5 +264,12 @@ function fadeOut(el) {
   el.style = "opacity: 0";
   setTimeout(function () {
     el.style = "display: none";
+  }, 300);
+}
+
+function fadeOutRemoveItem(el) {
+  el.style = "opacity: 0;";
+  setTimeout(function () {
+    el.remove();
   }, 300);
 }

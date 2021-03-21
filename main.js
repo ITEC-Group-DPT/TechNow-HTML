@@ -38,7 +38,7 @@ const getProducts = (item) => {
       sortingSold(item);
 
       products = item;
-      addToCart();   
+      addToCart();
     }
   }
   xhr.send();
@@ -81,6 +81,12 @@ const loadProductSection = (item, section) => {
 
 
 // add to cart 
+function getProductIndexByID(id) {
+  return cartList.findIndex(product => {
+    return product.id == id;
+  });
+}
+
 function addToCart() {
   addToCartBtns = document.querySelectorAll(".add-to-cart");
   addToCartBtns.forEach(addBtn => {
@@ -93,12 +99,21 @@ function addToCart() {
 function addProductToCart(id) {
   cartList = cartList || [];
   let res = id.split(".");
-  let product = {
-    id: res[1],
-    data: products[res[0]][res[1]]
+  console.log(getProductIndexByID(res[1]));
+  if (getProductIndexByID(res[1]) != -1) {
+    console.log("DUPLICATE ITEM");
+    let index = getProductIndexByID(res[1]);
+    cartList[index].quantity++;
   }
-  cartList.push(product);
-
+  else {
+    console.log("NEW ITEM");
+    let product = {
+      id: res[1],
+      data: products[res[0]][res[1]],
+      quantity: 1
+    }
+    cartList.push(product);
+  }
   console.log("CART AFTER ADD");
   console.log(cartList);
   storeLocalStorage(cartList);
@@ -107,12 +122,19 @@ function addProductToCart(id) {
 
 function storeLocalStorage(cartList) {
   localStorage.setItem("cartList", JSON.stringify(cartList));
-  //console.log(JSON.stringify(cartList));
+}
+
+function getTotalItemsInCart() {
+  let total = 0;
+  cartList.forEach(product => {
+    total += product.quantity;
+  });
+  return total;
 }
 
 function updateNoItemInCart() {
   numberItemCart.forEach(number => {
-    number.innerText = cartList.length;
+    number.innerText = getTotalItemsInCart();
   });
 }
 
