@@ -171,7 +171,7 @@ function inputQuantity (inputQty) {
     cartList[index].quantity = 1;
     inputQty.value = 1;
   }
-  else cartList[index].quantity = inputQty.value;
+  else cartList[index].quantity = parseInt(inputQty.value);
   console.log("AFTER INPUT");
   console.log(cartList);
   storeLocalStorage(cartList);
@@ -196,6 +196,7 @@ function getTotalItemsInCart() {
   let total = 0;
   cartList.forEach(product => {
     total += product.quantity;
+    console.log(total);
   });
   return total;
 }
