@@ -58,10 +58,7 @@ input::-webkit-input-placeholder {
     background: rgb(248, 248, 248);
 }
 
-.menu-list {
-    background: white;
-    height: fit-content;
-}
+
 
 .menu-item>* {
     font-size: 0.7rem;
@@ -292,9 +289,9 @@ img.card-img-top {
 }
 
 div#carouselId {
-    padding-top: 5%;
-    height: 100%;
-    padding-bottom: 5%;
+    /* padding-top: 5%; */
+    height: 50vh;
+    /* padding-bottom: 5%; */
     border: 5px solid rgb(216, 216, 216);
     border-radius: 10px;
     background-color: #000;
@@ -305,7 +302,7 @@ div#carouselId {
 }
 
 .menu-banners {
-    padding: 10px 3%;
+    padding: 10px 4% 10px 8%;
     height: 100%;
 }
 
@@ -313,16 +310,20 @@ div#carouselId {
     height: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
 
 .menu-list img {
+    height: 100%;
     width: 100%;
     border-radius: 5px;
 }
 
+.menu-list {
+    height: 50vh;
+}
 .btn-theme {
     background-color: #2BA0FD !important;
 }
