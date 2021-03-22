@@ -138,13 +138,13 @@ function sortingSold(itemset) {
     }
   }
   console.log(list);
-  searchbarfunc();
+
   list.sort(function (a, b) {
     return b.sold - a.sold;
   })
   console.log(list);
   let slider = document.querySelector(".my-slider")
-  for (let index = 0; index < 20; index++) {
+  for (let index = 0; index < 2; index++) {
     let newData = `
       <div class="product">
         <div class="card product shadow-sm rounded w-100 h-100">
@@ -186,13 +186,13 @@ function loadSlider() {
     nav: false,
     responsive: {
       640: {
-        items: 2
+        items: 1
       },
       1200: {
-        items: 3
+        items: 1
       },
       1400: {
-        items: 4
+        items: 1
       }
     },
   });
@@ -200,61 +200,6 @@ function loadSlider() {
 //top rating
 
 //searchbar
-function searchbarfunc() {
-  let searchval = document.querySelector("#searchbarinp")
-  let searchdropdown = document.querySelector('#dropdownsearchbar')
-  searchval.addEventListener('click', function (e) {
-    if (searchval.value.trim() == '') {
-      searchdropdown.style.opacity = 0;
-    }
-    else {
-      searchdropdown.style.opacity = 1;
-    }
-  })
-
-  searchval.addEventListener('keyup', function (e) {
-    let limit = 3
-    let dropdown = document.querySelector("#dropdownsearchbar")
-    dropdown.innerHTML = '';
-    let searchstr = removeVietnameseTones(searchval.value).toLowerCase()
-    for (let index = 0; index < list.length; index++) {
-      if (removeVietnameseTones(list[index].name).toLowerCase().includes(searchstr)) {
-        let data = `
-        <li>
-          <div class="product p-1">
-            <div class="card d-flex flex-row product shadow-sm rounded w-100 h-50">
-              <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title rounded">${list[index].name}</h5>
-                <div class="bottom-price-star">
-                <div class="rating">
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star"></span>
-                  <span>(${list[index].sold})</span>
-                </div>
-              </div>
-              <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
-            </div>
-          </div>
-        </li>`
-        $("#dropdownsearchbar").append(data)
-        limit--;
-      }
-      if (limit == 0) break;
-    }
-    if (limit == 10 || searchstr.trim() == '') {
-      //không tim duoc product match search
-      searchdropdown.style.opacity = 0;
-    }
-    else {
-      searchdropdown.style.opacity = 1;
-    }
-    console.log(limit);
-  })
-}
 
 function removeVietnameseTones(str) {
   str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
