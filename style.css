@@ -60,6 +60,7 @@ input::-webkit-input-placeholder {
 
 .menu-list {
     background: white;
+    height: fit-content;
 }
 
 .menu-item>* {
@@ -91,7 +92,7 @@ input::-webkit-input-placeholder {
 .carousel-item img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    /* object-fit: fill; */
 }
 
 @keyframes float {
@@ -180,6 +181,10 @@ footer > * {
 
 .catalog{
   color: black;
+}
+
+.btn-theme h3 {
+    color: white ;
 }
 
 .catalog:hover{
@@ -286,11 +291,43 @@ img.card-img-top {
     color: black;
 }
 
-.menu-banners {
-    padding-top: 10px;
-    padding-left: 8%;
-    padding-right: 8%;
+div#carouselId {
+    padding-top: 5%;
+    height: 100%;
+    padding-bottom: 5%;
+    border: 5px solid rgb(216, 216, 216);
+    border-radius: 10px;
+    background-color: #000;
 }
+
+.carousel-item {
+    height: 100%;
+}
+
+.menu-banners {
+    padding: 10px 3%;
+    height: 100%;
+}
+
+.banner-section {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.menu-list img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.btn-theme {
+    background-color: #2BA0FD !important;
+}
+
+
 
 /* @media only screen and (max-width: 992px) {
     img.card-img-top {
