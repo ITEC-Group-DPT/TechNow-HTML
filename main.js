@@ -55,7 +55,7 @@ const loadProductSection = (item, section) => {
           <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
         </div>
         <div class = "add-cart">
-          <img src = "./assets/add-to-cart.png"></img>
+          <i class="bi bi-cart2 fa-lg"></i>
         </div>
       </div>
     </div>`
