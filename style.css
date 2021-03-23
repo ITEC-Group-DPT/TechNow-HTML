@@ -83,11 +83,11 @@ input::-webkit-input-placeholder {
 
 .carousel-item {
     width: 100%;
-    height: 43vh;
+    height: 30vh;
 }
 
 .carousel-item img {
-    height: 100%;
+    height: 90%;
     width: 100%;
     /* object-fit: fill; */
 }
@@ -113,8 +113,8 @@ input::-webkit-input-placeholder {
 .logo-wrapper img {
     overflow: hidden;
     background-color: white;
-    transform: translatey(0px);
-    animation: float 4s ease-in-out infinite;
+    /* transform: translatey(0px); */
+    /* animation: float 4s ease-in-out infinite; */
 }
 
 .navbar-nav .nav-item {
@@ -412,8 +412,9 @@ div#carouselId {
 /* searchbar */
 #searchbarinp{
     border-width: 2px !important;
-    background: url(assets/loupe.png) no-repeat scroll 5px 5px;
-    background-size: 22px 22px;
+    background: url(assets/loupe.png) no-repeat scroll 10px 8px;
+    background-size: 18px 18px;
+    background-color: rgb(248, 248, 248);
     padding-left: 35px;
 }
 #dropdownsearchbar{
