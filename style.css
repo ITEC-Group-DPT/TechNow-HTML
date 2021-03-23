@@ -118,7 +118,9 @@ input::-webkit-input-placeholder {
 }
 
 .logo-wrapper {
-    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .logo-wrapper img {
     overflow: hidden;
