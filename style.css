@@ -92,6 +92,13 @@ input::-webkit-input-placeholder {
     /* object-fit: fill; */
 }
 
+.cart-icon-wrapper button,.user-icon-wrapper button {
+    background-color: white !important;
+    border: transparent; 
+    height: 40px; 
+    width: 40px;
+}
+
 @keyframes float {
     0% {
         transform: translatey(0px);
