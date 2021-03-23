@@ -1,15 +1,15 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
-#inputContext{
-  min-height: 10em;
+#floatingTextarea1{
+  min-height: 10em !important;
   resize: none !important;
 }
 .rounded-form{
-  border-radius: 1.5em !important;
+  border-radius: 1em !important;
 }
 .btn-submit{
-  border-radius: 1.5em !important;
+  border-radius: 1em !important;
   background-color: #00abc5 !important;
   border-color: #00abc5 !important;
 }
