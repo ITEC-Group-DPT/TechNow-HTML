@@ -117,6 +117,9 @@ input::-webkit-input-placeholder {
     background-color: rgb(255, 255, 255) !important;
 }
 
+.logo-wrapper {
+    padding-bottom: 15px;
+}
 .logo-wrapper img {
     overflow: hidden;
     background-color: white;
