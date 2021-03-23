@@ -38,6 +38,14 @@ const loadProductSection = (item, section) => {
   console.log(sectionObj);
   for (let i = 10; i <= 17; i++) {
     let product = sectionObj[section + i];
+    let productRating = parseInt(product.rating);
+    let starRating = "";
+    for(let j = 0; j < productRating; j++){
+      starRating += '<span class="fa fa-star text-warning"></span>';
+    }
+    for(let j = 0; j < 5 - productRating; j++){
+      starRating += '<span class="fa fa-star"></span>';
+    }
     let newData =
       `<div class="col-lg-3 col-6 card-product-wrapper mb-0 mt-3 mx-0 rounded">
         <div class="card product shadow-sm rounded">
@@ -45,11 +53,7 @@ const loadProductSection = (item, section) => {
         <div class="card-body h-75">
           <h5 class="card-title rounded">${product.name}</h5>
           <div class="rating">
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star"></span>
+            ${starRating}
             <span>(${product.sold})</span>
           </div>
           <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
@@ -81,7 +85,6 @@ $(document).scroll(function () {
   else allowHover(false);
 });
 
-
 function allowHover(boolVal) {
   if (boolVal == true) {
     dropdownMenu.classList.add("hoverable");
@@ -112,7 +115,7 @@ function fadeOut(el) {
   }, 300);
 }
 
-//top rating 
+//top rating
 let list = [];
 function sortingSold(itemset) {
   console.log("hello");
