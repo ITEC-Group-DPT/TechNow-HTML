@@ -76,8 +76,8 @@ function outputCartList(cartList) {
   cartList.forEach(product => {
     if(product.quantity == null) product.quantity = 1;
     let data = `
-      <li class="product-wrapper container card shadow-sm p-1 m-3">
-        <div class="product d-flex m-2">
+      <li class="product-wrapper container card shadow-sm p-2 m-3">
+        <div class="product d-flex h-100">
 
           <div class="product-img-wrapper">
             <img class="product-img" src="${product.data.avatarURL}" alt="product-img">
@@ -105,22 +105,22 @@ function outputCartList(cartList) {
             </div>
           </div>
 
-          <div class="quantity-control rounded">
+          <div class="quantity-price-wrapper d-flex align-items-center">
+            <div class="quantity-price w-100">
+              <div class="quantity-control rounded">
+                <button class="quantity-btn quantity-btn-minus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Decrease Quantity">
+                  <i class="bi bi-dash"></i>
+                </button>
+                <input type="number" class="quantity-input" id="${product.id}" value="${product.quantity}" step="1" min="1"  name="quantity">
+                <button class="quantity-btn quantity-btn-plus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Increase Quantity">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
 
-            <button class="quantity-btn quantity-btn-minus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Decrease Quantity">
-              <i class="bi bi-dash"></i>
-            </button>
-
-            <input type="number" class="quantity-input" id="${product.id}" value="${product.quantity}" step="1" min="1"  name="quantity">
-
-            <button class="quantity-btn quantity-btn-plus" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Increase Quantity">
-              <i class="bi bi-plus"></i>
-            </button>
-
-          </div>
-
-          <div class="product-price-wrapper d-flex align-items-center">          
-            <p href="#" class="product-price m-0">${product.data.price.toLocaleString()}₫</p>
+              <div class="product-price-wrapper d-flex align-items-center">          
+                <p href="#" class="product-price m-0">${product.data.price.toLocaleString()}₫</p>
+              </div>
+            </div>
           </div>
 
           <button type="button" class="btn btn-light remove-btn" id="${product.id}" data-toggle="tooltip" data-placement="right" title="Remove Item">
@@ -196,13 +196,13 @@ function getTotalItemsInCart() {
   let total = 0;
   cartList.forEach(product => {
     total += product.quantity;
-    console.log(total);
   });
   return total;
 }
 
 
 // UI functions
+
 function checkCartList() {
   if(cartList.length == 0) {
     cartAvailable.style = "display: none";
@@ -211,7 +211,7 @@ function checkCartList() {
   }
   else {
     cartEmpty.style = "display: none";
-    cartAvailable.style = "display: flex";
+    cartAvailable.style = "display: initial";
   }
 }
 
