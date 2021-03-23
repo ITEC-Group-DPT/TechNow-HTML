@@ -54,6 +54,9 @@ const loadProductSection = (item, section) => {
           </div>
           <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
         </div>
+        <div class = "add-cart">
+          <img src = "./assets/add-to-cart.png"></img>
+        </div>
       </div>
     </div>`
     let section_row = '.' + section + '-row';
@@ -145,22 +148,23 @@ function sortingSold(itemset) {
     let newData = `
       <div class="product">
         <div class="card product shadow-sm rounded w-100 h-100">
-        <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title rounded">${list[index].name}</h5>
-          <div class="bottom-price-star">
-          <div class="rating">
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star"></span>
-            <span>(${list[index].sold})</span>
-          </div>
-          <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title rounded">${list[index].name}</h5>
+              <div class="bottom-price-star">
+                <div class="rating">
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(${list[index].sold})</span>
+                </div>
+              </div>
+              <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
           </div>
         </div>
-        </div>`
+      </div>`
     $('.my-slider').append(newData);
   }
   loadSlider();

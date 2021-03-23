@@ -21,6 +21,12 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
+.upper-nav {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: white;
+}
 /* .icon-upper:hover {
     background-color: rgb(226, 226, 226) !important;
 } */
@@ -99,6 +105,7 @@ input::-webkit-input-placeholder {
     width: 40px;
 }
 
+
 @keyframes float {
     0% {
         transform: translatey(0px);
@@ -126,7 +133,7 @@ input::-webkit-input-placeholder {
     overflow: hidden;
     background-color: white;
     /* transform: translatey(0px); */
-    /* animation: float 4s ease-in-out infinite; */
+    animation: float 3s ease-in-out infinite;
 }
 
 .navbar-nav .nav-item {
@@ -285,7 +292,21 @@ img.card-img-top {
 .product {
     cursor: pointer;
 }
-.card-product-wrapper .product:hover {
+
+.add-cart {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+}
+.add-cart img {
+    width: 30px;
+    height: 30px;
+}
+
+.add-cart:hover {
+    animation: float 1s ease-in-out infinite;
+}
+.card-product-wrapper .product:hover{
     transform: scale(1.02);
     transition: all 350ms;
 }
@@ -433,10 +454,10 @@ div#carouselId {
 
 /* searchbar */
 #searchbarinp{
-    border-width: 2px !important;
+    border: 1.5px solid rgb(63, 62, 62);
     background: url(assets/loupe.png) no-repeat scroll 10px 8px;
     background-size: 18px 18px;
-    background-color: rgb(248, 248, 248);
+    background-color: white;
     padding-left: 35px;
 }
 #dropdownsearchbar{
