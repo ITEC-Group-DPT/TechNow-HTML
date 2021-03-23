@@ -21,9 +21,9 @@ input::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-.icon-upper:hover {
-    background-color: rgb(211, 210, 210) !important;
-}
+/* .icon-upper:hover {
+    background-color: rgb(226, 226, 226) !important;
+} */
 
 .navbar-nav .nav-item>* {
     color: white !important;
@@ -291,6 +291,16 @@ img.card-img-top {
 }
 
 .cart-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.user-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.user-btn:hover {
     text-decoration: none;
     color: black;
 }
