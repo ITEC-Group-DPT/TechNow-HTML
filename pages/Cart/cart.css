@@ -287,7 +287,7 @@ img.card-img-top {
     padding: 10px 20px 20px;
 }
 
-.cart {
+.cart-container {
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -399,7 +399,7 @@ ul.cart-list {
         margin-bottom: 15px;
     }
 
-    li.nav-item.main.dropdown.category.col-md-2 {
+    li.nav-item.main {
         padding-left: 0 !important;
     }
 
@@ -432,13 +432,27 @@ ul.cart-list {
         margin: 0 !important;
     }
 
-    .summary-wrapper.sticky-top.col-md-3 {
+    .cart-container {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .summary-wrapper {
         height: auto;
         z-index: 0 !important;
     }
 
     .product-img-wrapper {
-        width: 25%;
+        width: 30%;
+    }
+
+    .cart-title-wrapper.pr-4{
+        padding-right: 0 !important;
+    }
+
+    .remove-all {
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     .product-info {
@@ -446,7 +460,7 @@ ul.cart-list {
     }
 
     .product-name {
-        font-size: 0.7rem !important;
+        font-size: 0.8rem !important;
     }
 
     .product-price-wrapper {
@@ -463,19 +477,19 @@ ul.cart-list {
         padding: 0.3rem 0.3rem !important;
     }
 
-    ul.cart-list.col-md-9.pr-5 {
+    ul.cart-list {
         padding-right: 0.3rem !important;
         padding-left: 0.3rem !important;
     }
 
-    li.product-wrapper.container.card.shadow-sm {
-        /* min-height: 150px; */
+    li.product-wrapper {
+        min-height: 200px !important;
         margin-left: 0 !important;
         margin-top: 0.3rem !important;
         margin-bottom: 0.3rem !important;
     }
 
-    h3.cart-title.ml-3.mt-3.mb-0 {
+    h3.cart-title {
         margin-left: 0 !important;
     }
 
@@ -484,10 +498,18 @@ ul.cart-list {
     }
 
     .quantity-control {
-        width: 93px;
+        width: 83px;
         margin-top: 1.6rem;
         margin-left: auto;
         margin-right: auto;
-        padding: 0;
+        padding: 0 5px;
+    }
+
+    .quantity-btn {
+        padding: 0
+    }
+
+    .product-rating {
+        font-size: 0.6rem;
     }
 }
