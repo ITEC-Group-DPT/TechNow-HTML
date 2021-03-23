@@ -13,10 +13,31 @@ let decreaseBtns;
 let increaseBtns;
 let inputQties;
 let removeBtns;
-
+let removeAllBtn = document.querySelector(".remove-all-btn");
+let summaryWrapper = document.querySelector(".summary-wrapper");
 //document ready
 $(document).ready(() => {
   cartList = JSON.parse(localStorage.getItem("cartList"));
+
+  // $('#exampleModal').on('show.bs.modal', function (e) {
+  //   if ($(window).width() > 768) {
+  //     console.log("SHOW MODAL");
+  //     setTimeout(() => {
+  //       summaryWrapper.style = "padding-right: 0px !important";
+  //     }, 300);
+      
+  //   }
+  // });
+
+  // $('#exampleModal').on('hide.bs.modal', function (e) {
+  //   if ($(window).width() > 768) {
+  //     console.log("HIDE MODAL");
+  //     setTimeout(() => {
+  //       summaryWrapper.removeAttribute("style");
+  //     }, 300);
+      
+  //   }
+  // });
 
   console.log("CART ON PAGE LOAD");
   console.log(cartList);
@@ -24,7 +45,7 @@ $(document).ready(() => {
   updateNoItemInCart();
   outputCartList(cartList);
   updateTotalPrice();
-  addListeners(); 
+  addListeners();
 });
 
 
@@ -57,6 +78,8 @@ function addListeners() {
       inputQuantity(inputQty);
     });
   });
+
+  removeAllBtn.addEventListener("click", removeAll)
 }
 
 function getProductIndexByID(id) {
@@ -74,9 +97,9 @@ function storeLocalStorage(cartList) {
 function outputCartList(cartList) {
   $(".cart-list").empty();
   cartList.forEach(product => {
-    if(product.quantity == null) product.quantity = 1;
+    if (product.quantity == null) product.quantity = 1;
     let data = `
-      <li class="product-wrapper container card shadow-sm p-2 m-3">
+      <li class="product-wrapper container card shadow p-2 m-3 d-flex align-items-center justify-content-center">
         <div class="product d-flex h-100">
 
           <div class="product-img-wrapper">
@@ -87,7 +110,7 @@ function outputCartList(cartList) {
             <div class="product-info-wrapper">
           
               <div class="product-name-wrapper">           
-                <h5 class="product-name">${product.data.name}</h5>
+                <p class="product-name">${product.data.name}</p>
               </div>
 
               <div class="product-rating-wrapper">
@@ -145,7 +168,7 @@ function updateTotalPrice() {
 
 function decreaseQuantity(decreaseBtn) {
   let index = getProductIndexByID(decreaseBtn.id);
-  if(cartList[index].quantity > 1) {
+  if (cartList[index].quantity > 1) {
     decreaseBtn.nextElementSibling.value = --cartList[index].quantity;
   }
   console.log("AFTER DECREASE");
@@ -165,13 +188,12 @@ function increaseQuantity(increaseBtn) {
   updateNoItemInCart();
 }
 
-function inputQuantity (inputQty) {
+function inputQuantity(inputQty) {
   let index = getProductIndexByID(inputQty.id);
-  if(inputQty.value < 1 || inputQty.value == null) {
+  if (inputQty.value < 1 || inputQty.value == null) {
     cartList[index].quantity = 1;
     inputQty.value = 1;
-  }
-  else cartList[index].quantity = parseInt(inputQty.value);
+  } else cartList[index].quantity = parseInt(inputQty.value);
   console.log("AFTER INPUT");
   console.log(cartList);
   storeLocalStorage(cartList);
@@ -192,6 +214,16 @@ function removeProduct(removeBtn) {
   checkCartList();
 }
 
+function removeAll() {
+  cartList.splice(0, cartList.length);
+  console.log("CART AFTER REMOVE");
+  console.log(cartList);
+  storeLocalStorage(cartList);
+  updateNoItemInCart();
+  updateTotalPrice()
+  checkCartList();
+}
+
 function getTotalItemsInCart() {
   let total = 0;
   cartList.forEach(product => {
@@ -204,12 +236,11 @@ function getTotalItemsInCart() {
 // UI functions
 
 function checkCartList() {
-  if(cartList.length == 0) {
+  if (cartList.length == 0) {
     cartAvailable.style = "display: none";
     cartEmpty.style = "display: block";
-    
-  }
-  else {
+
+  } else {
     cartEmpty.style = "display: none";
     cartAvailable.style = "display: initial";
   }

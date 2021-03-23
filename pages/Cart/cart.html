@@ -292,7 +292,7 @@
 
   </nav>
 
-  <div class="cart container" style="min-height: 70vh;">
+  <div class="cart" style="min-height: 70vh;">
     <div class="cart-empty mt-5">
       <div class="empty-img-wrapper text-center">
         <img src="/img\emptycart.webp" alt="">
@@ -307,43 +307,71 @@
       </div>
     </div>
 
-    
+
 
     <div class="cart-available">
-      <div class="cart-title-wrapper">
-        <h3 class="cart-title ml-3 mt-3 mb-0" style="font-size: 1.5rem;">My cart</h3>
+      <div class="cart-title-wrapper container mt-5 mb-2">
+        <div class="row">
+          <div class="col-md-9 d-flex">
+            <h3 class="cart-title ml-3 mt-3 mb-0" style="font-size: 1.5rem;">My cart</h3>
+            <button type="button" class="btn btn-link remove-all" data-toggle="modal" data-target="#exampleModal">Remove all</button>
+          </div>
+
+        </div>
       </div>
       <div class="row">
-        <ul class="cart-list col-md-9 pr-5">
+        <ul class="cart-list col-md-8 pr-5">
 
         </ul>
 
-        <div class="summary-wrapper sticky-top col-md-3">
+        <div class="summary-wrapper col-md-3">
 
-          <div class="summary card shadow-sm mt-3 p-2" style="height: 200px;">
+          <div class="summary card shadow-sm mt-3" style="height: 200px;">
             <h5 class="text-center mt-2 summary-title ">Order Summary</h5>
 
             <div class="tax d-flex mt-4">
-              <h5 class="mr-auto">Tax</h5>
-              <p class="mb-0" style="font-size: 0.8rem;">0</p>
+              <h5 class="mr-auto" style="font-weight: 100;">Tax</h5>
+              <p class="mb-0" style="font-size: 0.8rem;">0₫</p>
             </div>
 
             <hr>
 
             <div class="total d-flex">
-              <h5 class="mr-auto">Total</h5>
-              <p class="text-danger mb-0 total-price"></p>
+              <h5 class="mr-auto" style="font-weight: 100;">Total</h5>
+              <p class="mb-0 total-price"></p>
             </div>
 
           </div>
 
-          <button type="button" class="btn btn-danger w-100 mt-2 check-out-btn">Checkout</button>
+          <button type="button" class="btn btn-danger w-100 mt-3 check-out-btn">Checkout</button>
 
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Remove all products from your cart?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" style="font-size: 0.8rem;"
+                data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-danger remove-all-btn" style="font-size: 0.8rem;"
+                data-dismiss="modal">Confirm</button>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
+
+
 
   <footer class="bg-primary mt-5">
     <div class="container py-3">

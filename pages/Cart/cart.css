@@ -126,6 +126,10 @@ input::-webkit-input-placeholder {
     width: 100%;
 }
 
+li.product-wrapper.container {
+    min-height: 250px;
+}
+
 .sm-banner-wrapper img {
     width: 100%;
     height: 100%;
@@ -194,13 +198,13 @@ h5.card-title.rounded {
 }
 
 .closeSlide {
-    margin-bottom:0;
-    height:0px;
-    padding-top:0;
-    padding-bottom:0;
+    margin-bottom: 0;
+    height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
     transition: 0.2s all ease-out;
     /*Just reverse any spacing styling you've applied to make it **magically** disappear*/
-  }
+}
 
 .remove-btn {
     position: absolute;
@@ -211,12 +215,18 @@ h5.card-title.rounded {
     transition: background 400ms !important;
 }
 
+.remove-all {
+    color: grey !important;
+    font-size: 0.7rem !important;
+    margin-left: auto;
+}
+
 .remove-btn:hover {
     background: rgb(240, 240, 240) !important;
 }
 
 .product-img-wrapper {
-    width: 18%;
+    width: 25%;
 }
 
 img.product-img {
@@ -253,7 +263,8 @@ img.card-img-top {
 }
 
 .product-rating {
-    font-size: 12px;
+    font-size: 0.7rem;
+    font-weight: 100;
 }
 
 .product-info {
@@ -269,7 +280,16 @@ img.card-img-top {
 }
 
 .product-price {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.summary {
+    padding: 10px 20px 20px;
+}
+
+.cart {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 ul.cart-list {
@@ -280,9 +300,13 @@ ul.cart-list {
     font-size: 1rem !important;
 }
 
+.total-price {
+    color: red;
+}
+
 .summary-wrapper.sticky-top.col-md-3 {
     top: 80px;
-    height: 0px; 
+    height: 0px;
 }
 
 .btn.check-out-btn {
@@ -316,6 +340,7 @@ ul.cart-list {
     width: 30px;
     border: none;
     font-size: 0.7rem;
+    font-weight: 100;
 }
 
 .quantity-input::-webkit-inner-spin-button,
@@ -354,6 +379,11 @@ ul.cart-list {
 
 .product-info.ml-2.d-flex.align-items-center {
     padding: 0.4rem;
+}
+
+.product-name {
+    font-size: 1rem !important;
+    font-weight: 300;
 }
 
 @media only screen and (max-width: 768px) {
@@ -414,6 +444,7 @@ ul.cart-list {
     .product-info {
         margin-top: 0.5rem;
     }
+
     .product-name {
         font-size: 0.7rem !important;
     }
