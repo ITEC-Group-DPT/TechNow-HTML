@@ -68,14 +68,12 @@ const loadProductSection = (item, section) => {
             </div>
             <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
           </div>
-          <div class="addtocart-btn">
-            <button type="button" class="btn btn-primary add-to-cart" id="${id}">Add</button>
-          </div>
+            <div class = "add-cart">
+              <i class="bi bi-cart2 fa-2x"></i>
+            </div>
           
         </div>
-        <div class = "add-cart">
-          <i class="bi bi-cart2 fa-lg"></i>
-        </div>
+
       </div>
     </div>`
     let section_row = '.' + section + '-row';
@@ -92,7 +90,7 @@ function getProductIndexByID(id) {
 }
 
 function addToCart() {
-  addToCartBtns = document.querySelectorAll(".add-to-cart");
+  addToCartBtns = document.querySelectorAll(".add-cart");
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
       addProductToCart(addBtn.id);
