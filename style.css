@@ -306,7 +306,7 @@ img.card-img-top {
 .catalog-name:hover {
     color: #545454;
     background: #d6d2d2;
-    transition: background-color 300ms;
+    transition: background-color 700ms;
     border: 2px solid #040404;
 }
 .catalog-name:hover span {display:none}
