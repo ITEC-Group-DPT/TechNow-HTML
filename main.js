@@ -53,8 +53,8 @@ const loadProductSection = (item, section) => {
     //console.log(id);
     //console.log(product);
     let newData =
-      `<div class="col-lg-3 col-6 card-product-wrapper mb-0 mt-3 mx-0 rounded">
-        <div class="card product shadow-sm rounded">
+      `<div class="col-lg-3 col-6 card-product-wrapper">
+        <div class="card product">
           <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
           <div class="card-body h-75">
             <h5 class="card-title rounded">${product.name}</h5>
@@ -68,12 +68,14 @@ const loadProductSection = (item, section) => {
             </div>
             <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
           </div>
-          <div class="addtocart-btn">
-            <button type="button" class="btn btn-primary add-to-cart" id="${id}">Add</button>
-          </div>
+            <div class = "add-cart" id="${id}">
+              <i class="bi bi-cart2"></i>
+            </div>
           
         </div>
-      </div>`
+
+      </div>
+    </div>`
     let section_row = '.' + section + '-row';
     $(section_row).append(newData);
   }
@@ -88,7 +90,7 @@ function getProductIndexByID(id) {
 }
 
 function addToCart() {
-  addToCartBtns = document.querySelectorAll(".add-to-cart");
+  addToCartBtns = document.querySelectorAll(".add-cart");
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
       addProductToCart(addBtn.id);
@@ -226,22 +228,23 @@ function sortingSold(itemset) {
     let newData = `
       <div class="product">
         <div class="card product shadow-sm rounded w-100 h-100">
-        <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title rounded">${list[index].name}</h5>
-          <div class="bottom-price-star">
-          <div class="rating">
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star"></span>
-            <span>(${list[index].sold})</span>
-          </div>
-          <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title rounded">${list[index].name}</h5>
+              <div class="bottom-price-star">
+                <div class="rating">
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star text-warning"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(${list[index].sold})</span>
+                </div>
+              </div>
+              <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
           </div>
         </div>
-        </div>`
+      </div>`
     $('.my-slider').append(newData);
   }
   loadSlider();
@@ -303,14 +306,6 @@ function searchbarfunc() {
               <div class="card-body">
                 <h5 class="card-title rounded">${list[index].name}</h5>
                 <div class="bottom-price-star">
-                <div class="rating">
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star"></span>
-                  <span>(${list[index].sold})</span>
-                </div>
               </div>
               <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
             </div>

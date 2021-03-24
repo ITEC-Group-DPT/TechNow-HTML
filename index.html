@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./style.css">
 
   <!--Website's icon (on browser's tab)-->
-  <link rel="icon" href="img\logo.png">
+  <link rel="icon" href="img/logo.png">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -33,18 +33,18 @@
 
 <body>
 
-  <div class="upper-nav mt-2">
+  <div class="upper-nav">
     <div class="container">
       <div class="row">
 
-        <div class="col-md-3 logo-wrapper text-center pt-1">
-          <img src="img\logo.png" style="width: 130px;" alt="">
-        </div>
+        <a class="col-md-3 logo-wrapper text-center pt-1" href="index.html">
+          <img src="img/logo_sub.webp" style="width: 165px; height: 34px;" alt="">
+        </a>
 
         <div class="col-md-6 d-flex justify-content-center align-items-center">
 
           <div class="dropdown input-group w-100 ">
-            <input type="text" class="form-control border border-info rounded dropdown-toggle" id="searchbarinp"
+            <input type="text" class="form-control rounded dropdown-toggle" id="searchbarinp"
               placeholder="What are you looking for today?" data-toggle="dropdown">
 
 
@@ -81,8 +81,7 @@
 
           <a class="cart-btn menu-upper d-flex align-items-center" href="./pages/Cart/cart.html">
             <div class="cart-icon-wrapper mr-2">
-              <button type="button" class="btn btn-secondary rounded-circle icon-upper p-0" style="background-color:  rgb(238, 238, 238);
-            border: transparent; height: 50px; width: 50px;">
+              <button type="button" class="btn rounded-circle icon-upper p-0">
                 <i class="bi bi-cart4 fa-lg" style="color: black;"></i>
               </button>
               <span class="badge badge-pill badge-danger number-item-cart">0</span>
@@ -90,22 +89,21 @@
             <p class="text-center m-0 name" style="font-size: 15px;">Cart</p>
           </a>
 
-          <div class="user-btn menu-upper ml-4 d-flex align-items-cente">
+          <a class="user-btn menu-upper ml-4 d-flex align-items-center" href="#">
             <div class="user-icon-wrapper mr-2">
-              <button type="button" class="btn btn-secondary rounded-circle icon-upper p-0" style="background-color: rgb(238, 238, 238);
-            border: transparent; height: 50px; width: 50px;">
+              <button type="button" class="btn rounded-circle icon-upper p-0">
                 <i class="bi bi-person fa-lg" style="color: black;"></i>
               </button>
             </div>
-            <p class="text-center m-0 name" style="font-size: 15px;">Login/<br>Sign up</p>
-          </div>
+            <p class="text-center m-0 name" style="font-size: 15px;">Login</p>
+          </a>
 
         </div>
       </div>
     </div>
   </div>
 
-  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-primary mt-2">
+  <nav class="navbar sticky-top navbar-expand-md navbar-light nav-footer-theme">
 
     <button class="custom-toggler navbar-toggler d-lg-none" type="button" data-toggle="collapse"
       data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -226,7 +224,7 @@
             </div>
           </li>
 
-          <div class="seperator"></div>
+
 
           <li class="nav-item main col-md-2 px-0">
             <a class="nav-link text-center" href="#">
@@ -235,7 +233,7 @@
             </a>
           </li>
 
-          <div class="seperator"></div>
+
 
           <li class="nav-item main col-md-2 px-0">
             <a class="nav-link text-center" href="#">
@@ -244,7 +242,7 @@
             </a>
           </li>
 
-          <div class="seperator"></div>
+
 
           <li class="nav-item main col-md-2 px-0">
             <a class="nav-link text-center" href="./pages/Contact/contact.html">
@@ -259,9 +257,8 @@
               <li class="nav-item">
                 <a class="cart-btn d-flex align-items-center" href="./pages/Cart/cart.html">
                   <div class="cart-icon-wrapper mr-2">
-                    <button type="button" class="btn btn-secondary rounded-circle p-0" style="background-color: white;
-                      border: transparent; height: 40px; width: 40px;">
-                      <i class="bi bi-cart4 fa-1x" style="color: black;"></i>
+                    <button type="button" class="btn rounded-circle p-0">
+                      <i class="bi bi-cart fa-1x" style="color: black;"></i>
                     </button>
                     <span class="badge badge-pill badge-danger number-item-cart">0</span>
                   </div>
@@ -269,17 +266,16 @@
                 </a>
               </li>
 
-              <div class="seperator"></div>
+
 
               <li class="nav-item">
                 <a class="user-btn d-flex align-items-center" href="#">
-                  <div class="user-icon-wrapper mr-2">
-                    <button type="button" class="btn btn-secondary rounded-circle p-0" style="background-color: white;
-                      border: transparent; height: 40px; width: 40px;">
+                  <div class="user-icon-wrapper">
+                    <button type="button" class="btn rounded-circle p-0">
                       <i class="bi bi-person fa-1x" style="color: black;"></i>
                     </button>
                   </div>
-                  <p class="text-center m-0 name" style="font-size: 15px;">Login/<br>Sign up</p>
+                  <p class="text-center m-0 name" style="font-size: 15px;">Login</p>
                 </a>
               </li>
             </ul>
@@ -294,12 +290,11 @@
   </nav>
 
   <div class="menu-banners">
-    <div class="container">
-      <div class="row">
+    <div class="row">
 
-        <div class="col-md-2 px-0 menu-list my-2 border border-2 rounded  shadow-sm bg-white">
-
-          <ul class="nav flex-column">
+      <div class="col-md-2 px-0 menu-list my-2 border border-2 rounded  shadow-sm bg-white">
+        <img src="./assets/left-banner.png" alt="">
+        <!-- <ul class="nav flex-column">
             <li class="nav-item dropright hoverable">
               <a class="nav-link menu-item d-flex py-1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" href="#">
@@ -544,55 +539,58 @@
               </a>
             </li>
 
-          </ul>
+          </ul> -->
 
-        </div>
+      </div>
 
-        <div class="col-md-7 my-2">
-          <div id="carouselId" class="carousel slide h-100" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselId" data-slide-to="1"></li>
-              <li data-target="#carouselId" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner h-100  rounded" role="listbox">
-              <div class="carousel-item active">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/technow-4b3ab.appspot.com/o/UI%2Fcarousel_image_0.jpg?alt=media&token=2c3a248a-4cbf-4a0a-a129-4fc6b3039b79"
-                  alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/technow-4b3ab.appspot.com/o/UI%2Fcarousel_image_1.jpg?alt=media&token=5796c932-9872-4c4a-9c2b-ec4cb5d845ca"
-                  alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/technow-4b3ab.appspot.com/o/UI%2Fcarousel_image_2.jpg?alt=media&token=3f944783-08b2-455d-86af-1b1286bc8b53"
-                  alt="Third slide">
-              </div>
+      <div class="col-md-7 my-2">
+        <div id="carouselId" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselId" data-slide-to="1"></li>
+            <li data-target="#carouselId" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner h-100 rounded" role="listbox">
+            <div class="carousel-item active">
+              <img src="./assets/slideshow_2.jpeg" alt="First slide">
             </div>
-            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-item">
+              <img src="./assets/slideshow_1.jpeg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/slideshow_4.jpeg" alt="Third slide">
+            </div>
           </div>
+          <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
 
-        <div class="col-md-3 my-2 rounded">
-          <div class="sm-banner-wrapper">
+        <!-- <div class="banner-bottom row">
+          <div class="wrapper col-md-6">
+            <img src="img\sm-banner4.webp" alt="">
+          </div>
+
+          <div class="wrapper col-md-6">
+            <img src="img\sm-banner5.webp" alt="">
+          </div>
+        </div> -->
+      </div>
+
+      <div class="col-md-3 banner-section">
+        <!-- <div class="sm-banner-wrapper">
             <img src="img\sm-banner1.webp" alt="">
-          </div>
-          <div class="sm-banner-wrapper mt-3">
-            <img src="img\sm-banner2.webp" alt="">
-          </div>
-          <div class="sm-banner-wrapper mt-3">
-            <img src="img\sm-banner3.webp" alt="">
-          </div>
+          </div> -->
+        <div class="sm-banner-wrapper">
+          <img src="img\sm-banner2.webp" alt="">
+        </div>
+        <div class="sm-banner-wrapper">
+          <img src="img\sm-banner3.webp" alt="">
         </div>
       </div>
 
@@ -602,7 +600,7 @@
   <div class="main-container">
 
     <div class="categories m-1">
-      <h3>Catogeries</h3>
+      <h3>Categories</h3>
       <div class="cata-data row mx-0">
         <div class="item col-md-2">
           <a href="#"><img src="./assets/laptop_icon.png" alt="ic_categories"></a>
@@ -649,11 +647,13 @@
     </div>
 
     <div class="top-rating mt-1">
-     
+
+
 
       <div class="d-flex flex-row btn btn-block btn-theme justify-content-between align-items-center">
         <h3 class="mb-0">Top seller</h3>
       </div>
+
 
       <div id="controls">
         <i class="slider-arrow leftcenter previous bi bi-arrow-left-short fa-2x" aria-hidden="true"></i>
@@ -667,64 +667,55 @@
       </div>
     </div>
 
-    <div class="d-flex flex-row btn btn-block btn-primary justify-content-between align-items-center mt-5">
-      <h3 class="mb-0 catalog-name">Laptop</h3>
-      <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
+    <div class="d-flex justify-content-between align-items-center mt-5">
+      <div class="mb-0 catalog-name"><span>Laptop</span></div>
     </div>
-    <div class="row Laptop-row w-100 mx-0">
+    <div class="row Laptop-row w-100 mx-0 rounded">
 
     </div>
 
-    <div class="d-flex flex-row btn btn-block btn-primary justify-content-between  align-items-center mt-5">
-      <h3 class="mb-0 catalog-name">CPU</h3>
-      <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
+    <div class="d-flex justify-content-between  align-items-center mt-5">
+      <div class="mb-0 catalog-name"><span>CPU</span></div>
     </div>
-    <div class="row CPU-row w-100 mx-0">
+    <div class="row CPU-row w-100 mx-0 rounded">
     </div>
 
-    <div class="d-flex flex-row btn btn-block btn-primary justify-content-between  align-items-center mt-5">
-      <h3 class="mb-0 catalog-name">Monitor</h3>
-      <a href="#" class="see-all">See All <i class="fa fa-chevron-right"></i></a>
+    <div class="d-flex justify-content-between  align-items-center mt-5">
+      <div class="mb-0 catalog-name"><span>Monitor</span></div>
     </div>
-    <div class="row Monitor-row w-100 mx-0">
+    <div class="row Monitor-row w-100 mx-0 rounded">
 
     </div>
 
   </div>
 
-  <footer class="bg-primary mt-5 ">
-    <div class="container py-3">
+  <footer class="nav-footer-theme mt-5 ">
+    <div class="container-footer py-4">
       <div class="row">
 
-        <div class="col-md-3 gg-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.630773294041!2d106.67997765063856!3d10.762912992293053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaG9hIGjhu41jIFThu7Egbmhpw6puIC0gxJDhuqFpIGjhu41jIFF14buRYyBHaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1615638627297!5m2!1svi!2s"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="w-100 h-100"></iframe>
-        </div>
-
-        <div class="col-md-3 address">
+        <div class="col-md-4 address">
           <div class="footer-title">
             <i class="bi bi-geo-alt mr-1"></i>
             <span>Address</span>
           </div>
 
           <div class="footer-content">
-            <p>
+            <p style="font-size: 0.8rem;">
               227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh, Việt Nam
             </p>
           </div>
         </div>
 
-        <div class="col-md-3 contact-us">
-          <div class="footer-title">
+        <div class="col-md-4 contact-us">
+          <div class="footer-title text-center">
             <i class="bi bi-telephone-inbound mr-1"></i>
             <span>Contact us</span>
           </div>
-          <div class="footer-content">
-            <p>
+          <div class="footer-content text-center">
+            <p style="font-size: 0.8rem;">
               Tel: 0123-456-789
             </p>
-            <div class="footer-social d-flex">
+            <div class="footer-social d-flex justify-content-center">
               <a class="footer-social-icons facebook mr-2" href="#">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMnB0IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00ODMuNzM4MjgxIDBoLTQ1NS41Yy0xNS41OTc2NTYuMDA3ODEyNS0yOC4yNDIxODcyNSAxMi42NjAxNTYtMjguMjM4MjgxIDI4LjI2MTcxOXY0NTUuNWMuMDA3ODEyNSAxNS41OTc2NTYgMTIuNjYwMTU2IDI4LjI0MjE4NyAyOC4yNjE3MTkgMjguMjM4MjgxaDQ1NS40NzY1NjJjMTUuNjA1NDY5LjAwMzkwNiAyOC4yNTc4MTMtMTIuNjQ0NTMxIDI4LjI2MTcxOS0yOC4yNSAwLS4wMDM5MDYgMC0uMDA3ODEyIDAtLjAxMTcxOXYtNDU1LjVjLS4wMDc4MTItMTUuNTk3NjU2LTEyLjY2MDE1Ni0yOC4yNDIxODcyNS0yOC4yNjE3MTktMjguMjM4Mjgxem0wIDAiIGZpbGw9IiM0MjY3YjIiLz48cGF0aCBkPSJtMzUzLjUgNTEydi0xOThoNjYuNzVsMTAtNzcuNWgtNzYuNzV2LTQ5LjM1OTM3NWMwLTIyLjM4NjcxOSA2LjIxNDg0NC0zNy42NDA2MjUgMzguMzE2NDA2LTM3LjY0MDYyNWg0MC42ODM1OTR2LTY5LjEyODkwNmMtNy4wNzgxMjUtLjk0MTQwNi0zMS4zNjMyODEtMy4wNDY4NzUtNTkuNjIxMDk0LTMuMDQ2ODc1LTU5IDAtOTkuMzc4OTA2IDM2LTk5LjM3ODkwNiAxMDIuMTQwNjI1djU3LjAzNTE1NmgtNjYuNXY3Ny41aDY2LjV2MTk4em0wIDAiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" />
@@ -748,7 +739,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 feedback">
+        <div class="col-md-4 feedback">
           <div class="footer-title">
             <i class="bi bi-chat-left-dots mr-1"></i>
             <span>Feedback</span>
@@ -770,7 +761,8 @@
       </div>
     </div>
 
-    <div class="container-fluid copyright pb-3">
+
+    <div class="container-fluid copyright pb-4 mt-4">
       <div class="row justify-content-center">
         <span style="font-size: 0.8rem;">Copyright © TechNow 2021. All Rights Reserved</span>
       </div>
@@ -787,7 +779,7 @@
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
