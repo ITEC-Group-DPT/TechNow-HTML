@@ -463,12 +463,19 @@ div#carouselId {
     padding: 10px;
 }
 
+.upper-container,.navbar-container{
+    margin-left: 10%;
+    width: 80%;
+}
 @media only screen and (max-width: 992px) {
     .card-product-wrapper {
         border-width: 0px !important;
     }
     .card-body {
         margin-top: 70px;
+    }
+    .banner-section {
+        display: none;
     }
 }
 
