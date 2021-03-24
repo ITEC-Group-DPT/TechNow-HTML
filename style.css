@@ -333,7 +333,9 @@ img.card-img-top {
     height: 30px;
 }
 
-
+.add-cart {
+    font-size: 32px;
+}
 .nav-footer-theme {
     background-color: #eeeeee!important;
 }
