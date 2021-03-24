@@ -291,11 +291,8 @@ img.card-img-top {
 .catalog-name {
     font-size: 1.3rem;
     font-weight: 300;
-    color: #6d6b6b;
     width: 130px;
     height: 51px;
-    text-align: center;
-    vertical-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -303,7 +300,17 @@ img.card-img-top {
     color: white;
     border-radius: 10px;
     text-shadow: 1px 1px 6px #d0d0d0;
+    cursor: pointer;
 }
+
+.catalog-name:hover {
+    color: #545454;
+    background: #d6d2d2;
+    transition: background-color 300ms;
+    border: 2px solid #040404;
+}
+.catalog-name:hover span {display:none}
+.catalog-name:hover:before {content:"See more"}
 
 .rating > * {
     font-size: 0.7rem;
@@ -464,6 +471,9 @@ div#carouselId {
 }
 
 @media only screen and (max-width: 768px) {
+    .card-body {
+        margin-top: 70px;
+    }
     .name {
         display: none;
     }
@@ -507,10 +517,6 @@ div#carouselId {
     .card-product-wrapper {
         padding: 0 !important;
         margin: 0 !important;
-    }
-
-    .card-body {
-        margin-top: 0px;
     }
 }
 
