@@ -215,7 +215,7 @@ h5{
 }
 
 h5.card-title.rounded{
-  height: 75px;
+  height: 55px;
   padding: 0;
   margin: 0;
 }
@@ -271,7 +271,7 @@ h5.card-title.rounded{
 }
 
 .card-body {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .img-card {
@@ -334,7 +334,7 @@ img.card-img-top {
 }
 
 .add-cart {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .nav-footer-theme {
     background-color: #eeeeee!important;
