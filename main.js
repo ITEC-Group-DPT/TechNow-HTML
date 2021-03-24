@@ -1,11 +1,20 @@
-var products;
+let products;
+let addToCartBtns;
+let numberItemCart;
+let cartList = [];
 
 $(document).ready(() => {
   getProducts(products);
-  //Add event listener
-})
+  cartList = JSON.parse(localStorage.getItem("cartList"));
+
+  console.log("CART ON PAGE LOAD");
+  console.log(cartList);
+
+  numberItemCart = document.querySelectorAll(".number-item-cart");
+  updateNoItemInCart();
+});
+
 const getProducts = (item) => {
-  console.log('hehe');
   let url = 'https://technow-4b3ab.firebaseio.com/.json';
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
@@ -28,6 +37,8 @@ const getProducts = (item) => {
       // loadProductSection(item, 'VGA');
       sortingSold(item);
 
+      products = item;
+      addToCart();
     }
   }
   xhr.send();
@@ -35,24 +46,32 @@ const getProducts = (item) => {
 
 const loadProductSection = (item, section) => {
   let sectionObj = item[section];
-  console.log(sectionObj);
+  //console.log(sectionObj);
   for (let i = 10; i <= 17; i++) {
     let product = sectionObj[section + i];
+    let id = section + '.' + section + i;
+    //console.log(id);
+    //console.log(product);
     let newData =
       `<div class="col-lg-3 col-6 card-product-wrapper">
         <div class="card product">
           <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
-        <div class="card-body h-75">
-          <h5 class="card-title rounded">${product.name}</h5>
-          <div class="rating">
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star text-warning"></span>
-            <span class="fa fa-star"></span>
-            <span>(${product.sold})</span>
+          <div class="card-body h-75">
+            <h5 class="card-title rounded">${product.name}</h5>
+            <div class="rating">
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star text-warning"></span>
+              <span class="fa fa-star"></span>
+              <span>(${product.sold})</span>
+            </div>
+            <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
           </div>
-          <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
+          <div class="addtocart-btn">
+            <button type="button" class="btn btn-primary add-to-cart" id="${id}">Add</button>
+          </div>
+          
         </div>
         <div class = "add-cart">
           <i class="bi bi-cart2 fa-lg"></i>
@@ -63,6 +82,73 @@ const loadProductSection = (item, section) => {
     $(section_row).append(newData);
   }
 }
+
+
+// add to cart 
+function getProductIndexByID(id) {
+  return cartList.findIndex(product => {
+    return product.id == id;
+  });
+}
+
+function addToCart() {
+  addToCartBtns = document.querySelectorAll(".add-to-cart");
+  addToCartBtns.forEach(addBtn => {
+    addBtn.addEventListener("click", () => {
+      addProductToCart(addBtn.id);
+    });
+  });
+}
+
+function addProductToCart(id) {
+  cartList = cartList || [];
+  let res = id.split(".");
+  console.log(getProductIndexByID(res[1]));
+  if (getProductIndexByID(res[1]) != -1) {
+    console.log("DUPLICATE ITEM");
+    let index = getProductIndexByID(res[1]);
+    cartList[index].quantity++;
+  }
+  else {
+    console.log("NEW ITEM");
+    let product = {
+      id: res[1],
+      data: products[res[0]][res[1]],
+      quantity: 1
+    }
+    cartList.push(product);
+  }
+  console.log("CART AFTER ADD");
+  console.log(cartList);
+  storeLocalStorage(cartList);
+  updateNoItemInCart();
+}
+
+function storeLocalStorage(cartList) {
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+}
+
+function getTotalItemsInCart() {
+  let total = 0;
+  cartList.forEach(product => {
+    total += product.quantity;
+  });
+  return total;
+}
+
+function updateNoItemInCart() {
+  numberItemCart.forEach(number => {
+    number.innerText = getTotalItemsInCart();
+  });
+}
+
+let cartBtns = document.querySelectorAll(".cart-btn");
+
+cartBtns.forEach(cartBtn => {
+  cartBtn.addEventListener("click", () => {
+    location.href = "pages/Cart/cart.html";
+  });
+});
 
 // UI
 let popUpNavItems = document.querySelector(".pop-up-items")
@@ -98,8 +184,7 @@ function allowHover(boolVal) {
 }
 
 function fadeIn(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 0
-  console.log("fade IN");
+  document.querySelector('#dropdownsearchbar').style.opacity = 0;
   el.style = "display: flex";
   setTimeout(function () {
     el.style = "opacity: 1";
@@ -107,8 +192,7 @@ function fadeIn(el) {
 }
 
 function fadeOut(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 1
-  console.log("fade OUT");
+  document.querySelector('#dropdownsearchbar').style.opacity = 1;
   el.style = "opacity: 0";
   setTimeout(function () {
     el.style = "display: none";
@@ -117,8 +201,8 @@ function fadeOut(el) {
 
 //top rating 
 let list = [];
+
 function sortingSold(itemset) {
-  console.log("hello");
   for (const catalog in itemset) {
     for (const item in itemset[catalog]) {
       if (Number.isInteger(itemset[catalog][item].sold)) {
@@ -137,12 +221,10 @@ function sortingSold(itemset) {
       // }
     }
   }
-  console.log(list);
   searchbarfunc();
   list.sort(function (a, b) {
     return b.sold - a.sold;
   })
-  console.log(list);
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
     let newData = `
@@ -171,7 +253,6 @@ function sortingSold(itemset) {
 }
 
 function loadSlider() {
-  console.log('slider');
   let slider = tns({
     container: '.my-slider',
     items: 1,
@@ -207,8 +288,7 @@ function searchbarfunc() {
   searchval.addEventListener('click', function (e) {
     if (searchval.value.trim() == '') {
       searchdropdown.style.opacity = 0;
-    }
-    else {
+    } else {
       searchdropdown.style.opacity = 1;
     }
   })
@@ -241,8 +321,7 @@ function searchbarfunc() {
     if (limit == 10 || searchstr.trim() == '') {
       //không tim duoc product match search
       searchdropdown.style.opacity = 0;
-    }
-    else {
+    } else {
       searchdropdown.style.opacity = 1;
     }
     console.log(limit);
