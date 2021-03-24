@@ -271,7 +271,7 @@ h5.card-title.rounded{
 }
 
 .card-body {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .img-card {
@@ -306,7 +306,7 @@ img.card-img-top {
 .catalog-name:hover {
     color: #545454;
     background: #d6d2d2;
-    transition: background-color 700ms;
+    transition: background-color 500ms;
     border: 2px solid #040404;
 }
 .catalog-name:hover span {display:none}
@@ -334,7 +334,7 @@ img.card-img-top {
 }
 
 .add-cart {
-    font-size: 32px;
+    font-size: 2rem;
 }
 .nav-footer-theme {
     background-color: #eeeeee!important;
@@ -468,35 +468,10 @@ div#carouselId {
         border-width: 0px !important;
     }
     .card-body {
-        margin-top: 60px;
+        margin-top: 70px;
     }
 }
 
-.product:hover {
-    transform: scale(1.02);
-    transition: all 350ms;
-}
-
-.product:hover .addtocart-btn {
-    opacity: 1;
-    margin-bottom: 110px;
-}
-.addtocart-btn {
-    color: white;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -50px;
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    
-    opacity: 0;
-    -webkit-transition: all .3s linear;
-    -moz-transition: all .3s linear;
-    -o-transition: all .3s linear;
-    transition: all .3s linear;
-  }
 
 @media only screen and (max-width: 768px) {
     .card-body {
