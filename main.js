@@ -91,7 +91,6 @@ function getProductIndexByID(id) {
 
 function addToCart() {
   addToCartBtns = document.querySelectorAll(".add-cart");
-  console.log(addToCartBtns);
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
       addProductToCart(addBtn.id);
@@ -121,6 +120,7 @@ function addProductToCart(id) {
   console.log(cartList);
   storeLocalStorage(cartList);
   updateNoItemInCart();
+  popOver();
 }
 
 function storeLocalStorage(cartList) {
@@ -162,6 +162,7 @@ $(document).scroll(function () {
     fade = true;
   } else if (y <= 100 && fade == true) {
     fadeOut(popUpNavItems);
+    $('#cart-icon').popover('hide');
     fade = false;
   }
 
@@ -198,6 +199,13 @@ function fadeOut(el) {
   }, 300);
 }
 
+function popOver() {
+  $('#cart-icon').popover('show');
+  setTimeout(() => {
+    $('#cart-icon').popover('hide');
+  }, 4000);
+}
+
 //top rating 
 let list = [];
 
@@ -229,7 +237,6 @@ function sortingSold(itemset) {
   list.sort(function (a, b) {
     return b.sold - a.sold;
   })
-  console.log(list);
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
 
