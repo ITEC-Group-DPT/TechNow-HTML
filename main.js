@@ -234,8 +234,8 @@ function sortingSold(itemset) {
   for (let index = 0; index < 20; index++) {
 
     let newData = 
-    ` <div class="product">
-        <div class="card product shadow-sm rounded w-100 h-100">
+    ` <div class="product card-product-wrapper-ts">
+        <div class="card product rounded w-100 h-100">
           <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title rounded">${list[index].name}</h5>
@@ -266,21 +266,25 @@ function loadSlider() {
     container: '.my-slider',
     items: 1,
     gutter: 20,
-    slideBy: 2,
+    slideBy: 1,
     autoplay: true,
     controlsContainer: '#controls',
     edgePadding: 20,
     prevButton: '.previous',
     nextButton: '.next',
     autoplayButton: '.auto',
+    mouseDrag: true,
     autoplayHoverPause: true,
     nav: false,
     responsive: {
-      640: {
+      600: {
         items: 2
       },
-      1200: {
+      640: {
         items: 3
+      },
+      1200: {
+        items: 4
       },
       1400: {
         items: 4
