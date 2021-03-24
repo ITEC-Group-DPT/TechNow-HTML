@@ -392,6 +392,10 @@ footer > * {
     color: black;
 }
 
+div#controls {
+    outline: none !important;
+}
+
 .cart-btn:hover {
     text-decoration: none;
     color: black;

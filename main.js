@@ -91,6 +91,7 @@ function getProductIndexByID(id) {
 
 function addToCart() {
   addToCartBtns = document.querySelectorAll(".add-cart");
+  console.log(addToCartBtns);
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
       addProductToCart(addBtn.id);
@@ -203,8 +204,12 @@ let list = [];
 function sortingSold(itemset) {
   for (const catalog in itemset) {
     for (const item in itemset[catalog]) {
+      //console.log(item);
       if (Number.isInteger(itemset[catalog][item].sold)) {
-        list.push(itemset[catalog][item])
+        let product = itemset[catalog][item];
+        product.id = catalog + '.' + item;
+        //console.log(itemset[catalog][item]);
+        list.push(product)
       }
       // sort theo từng catalog top rating 2 cái / catalog
       // if (productlist.length == 0 || productlist.length == 1){
@@ -219,29 +224,35 @@ function sortingSold(itemset) {
       // }
     }
   }
+
   searchbarfunc();
   list.sort(function (a, b) {
     return b.sold - a.sold;
   })
+  console.log(list);
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
-    let newData = `
-      <div class="product">
+
+    let newData = 
+    ` <div class="product">
         <div class="card product shadow-sm rounded w-100 h-100">
-            <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title rounded">${list[index].name}</h5>
-              <div class="bottom-price-star">
-                <div class="rating">
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star"></span>
-                  <span>(${list[index].sold})</span>
-                </div>
+          <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title rounded">${list[index].name}</h5>
+            <div class="bottom-price-star">
+              <div class="rating">
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star"></span>
+                <span>(${list[index].sold})</span>
               </div>
-              <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            </div>
+            <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+          </div>
+          <div class = "add-cart" id="${list[index].id}">
+            <i class="bi bi-cart2"></i>
           </div>
         </div>
       </div>`
