@@ -271,7 +271,7 @@ h5.card-title.rounded{
 }
 
 .card-body {
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
 .img-card {
@@ -468,7 +468,7 @@ div#carouselId {
         border-width: 0px !important;
     }
     .card-body {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 }
 
