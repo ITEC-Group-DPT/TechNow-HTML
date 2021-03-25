@@ -285,7 +285,7 @@ img.card-img-top {
     padding-top: 10px;
     max-height: 200px;
     width: 60%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .catalog-name {
@@ -347,18 +347,18 @@ footer > * {
 .add-cart:hover {
     animation: float 1s ease-in-out infinite;
 }
-.card-product-wrapper .product:hover{
+.card-product-wrapper .product:hover, .card-product-wrapper-ts .product:hover{
     transform: scale(1.03);
     box-shadow: 1px 1px 9px rgb(0 0 0 / 25%);
     transition: all 350ms;
     /* border-width: 0px !important; */
 }
 
-.card-product-wrapper .product {
+.card-product-wrapper .product, .card-product-wrapper-ts .product {
     border-width: 0 !important;
 }
-.card-product-wrapper{
 
+.card-product-wrapper{
     padding: 5px 5px !important;
     border:0.5px solid rgb(0,0,0,0.25);
 }
@@ -387,9 +387,23 @@ footer > * {
     border-right: 0px !important;
 }
 
+.card-product-wrapper-ts {
+    padding: 5px 5px !important;
+    border:0.5px solid rgb(0,0,0,0.25);
+    border-left: none !important;
+}
+
+.slider-arrow:hover {
+    cursor: pointer;
+}
 .cart-btn {
     text-decoration: none;
     color: black;
+}
+
+div#controls {
+    outline: none !important;  
+    
 }
 
 .cart-btn:hover {

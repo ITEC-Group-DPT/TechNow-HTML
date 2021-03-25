@@ -68,7 +68,7 @@ const loadProductSection = (item, section) => {
             </div>
             <p href="#" class="text-danger mb-0 price">${product.price.toLocaleString()}₫</p>
           </div>
-            <div class = "add-cart">
+            <div class = "add-cart" id="${id}">
               <i class="bi bi-cart2"></i>
             </div>
           
@@ -120,6 +120,7 @@ function addProductToCart(id) {
   console.log(cartList);
   storeLocalStorage(cartList);
   updateNoItemInCart();
+  popOver();
 }
 
 function storeLocalStorage(cartList) {
@@ -161,6 +162,7 @@ $(document).scroll(function () {
     fade = true;
   } else if (y <= 100 && fade == true) {
     fadeOut(popUpNavItems);
+    $('#cart-icon').popover('hide');
     fade = false;
   }
 
@@ -197,14 +199,25 @@ function fadeOut(el) {
   }, 300);
 }
 
+function popOver() {
+  $('#cart-icon').popover('show');
+  setTimeout(() => {
+    $('#cart-icon').popover('hide');
+  }, 4000);
+}
+
 //top rating 
 let list = [];
 
 function sortingSold(itemset) {
   for (const catalog in itemset) {
     for (const item in itemset[catalog]) {
+      //console.log(item);
       if (Number.isInteger(itemset[catalog][item].sold)) {
-        list.push(itemset[catalog][item])
+        let product = itemset[catalog][item];
+        product.id = catalog + '.' + item;
+        //console.log(itemset[catalog][item]);
+        list.push(product)
       }
       // sort theo từng catalog top rating 2 cái / catalog
       // if (productlist.length == 0 || productlist.length == 1){
@@ -219,29 +232,34 @@ function sortingSold(itemset) {
       // }
     }
   }
+
   searchbarfunc();
   list.sort(function (a, b) {
     return b.sold - a.sold;
   })
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
-    let newData = `
-      <div class="product">
-        <div class="card product shadow-sm rounded w-100 h-100">
-            <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title rounded">${list[index].name}</h5>
-              <div class="bottom-price-star">
-                <div class="rating">
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star text-warning"></span>
-                  <span class="fa fa-star"></span>
-                  <span>(${list[index].sold})</span>
-                </div>
+
+    let newData = 
+    ` <div class="product card-product-wrapper-ts">
+        <div class="card product rounded w-100 h-100">
+          <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title rounded">${list[index].name}</h5>
+            <div class="bottom-price-star">
+              <div class="rating">
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star"></span>
+                <span>(${list[index].sold})</span>
               </div>
-              <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            </div>
+            <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+          </div>
+          <div class = "add-cart" id="${list[index].id}">
+            <i class="bi bi-cart2"></i>
           </div>
         </div>
       </div>`
@@ -255,21 +273,25 @@ function loadSlider() {
     container: '.my-slider',
     items: 1,
     gutter: 20,
-    slideBy: 2,
+    slideBy: 1,
     autoplay: true,
     controlsContainer: '#controls',
     edgePadding: 20,
     prevButton: '.previous',
     nextButton: '.next',
     autoplayButton: '.auto',
+    mouseDrag: true,
     autoplayHoverPause: true,
     nav: false,
     responsive: {
-      640: {
+      600: {
         items: 2
       },
-      1200: {
+      640: {
         items: 3
+      },
+      1200: {
+        items: 4
       },
       1400: {
         items: 4
