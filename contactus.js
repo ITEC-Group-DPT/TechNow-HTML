@@ -1,7 +1,7 @@
 
 $('#smartwizard').smartWizard({
     selected: 0, // Initial selected step, 0 = first step
-    theme: 'progress', // theme for the wizard, related css need to include for other than default theme
+    theme: 'arrows', // theme for the wizard, related css need to include for other than default theme
     justified: true, // Nav menu justification. true/false
     darkMode: false, // Enable/disable Dark Mode if the theme supports. true/false
     autoAdjustHeight: true, // Automatically adjust content height
@@ -48,8 +48,10 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
         toolbarbtn.classList.add('finish')
         toolbarbtn.innerHTML = 'Back to Homepage'
         setTimeout(() => {
-            document.querySelector(".alert").classList.remove('d-none')
-            toolbarbtn.classList.remove('disabled')
+            if ($('#smartwizard').smartWizard("getStepIndex") == 3) {
+                document.querySelector(".alert").classList.remove('d-none')
+                toolbarbtn.classList.remove('disabled')
+            }
         }, 2000);
 
 
