@@ -561,6 +561,12 @@ div#carouselId {
         margin-top: 70px;
     }
    
+    .navbar-nav .nav-item a {
+        padding-left: 20px !important;
+    }
+    div#carouselId {
+        height: 30vh;
+    }
 
     input::-webkit-input-placeholder {
         font-size: 15px;
@@ -575,9 +581,6 @@ div#carouselId {
     }
     .card-product-wrapper .product:hover{
         transform: scale(1.00);
-    }
-    .navbar-nav .nav-item .nav-link.category-btn {
-        padding-left: 0 !important;
     }
     
     .main-container {
