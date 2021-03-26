@@ -487,8 +487,8 @@ div#carouselId {
 }
 
 .upper-container,.navbar-container{
-    margin-left: 10%;
-    width: 80%;
+    margin: 0 5%;
+    width: 100%;
 }
 
 .sponsor-container {
@@ -516,6 +516,9 @@ div#carouselId {
 }
 
 @media only screen and (max-width: 992px) {
+    .nav-item.main {
+        margin: 0 !important;
+    }
     .card-body {
         margin-top: 70px;
     }
@@ -569,7 +572,9 @@ div#carouselId {
     li.nav-item.main.dropdown.category.col-md-2 {
         padding-left: 0 !important;
     }
-    
+    .card-product-wrapper .product:hover{
+        transform: scale(1.00);
+    }
     .navbar-nav .nav-item .nav-link.category-btn {
         padding-left: 0 !important;
     }
