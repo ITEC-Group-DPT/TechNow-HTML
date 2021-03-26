@@ -123,3 +123,23 @@ p, a,li,span {
 .nav-footer-theme {
     background-color: #333333!important;
 }
+@media only screen and (max-width: 992px) {
+  .nav-item.main {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  li.nav-item.main.dropdown.category.col-md-2 {
+    padding-left: 0 !important;
+  }
+  .navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 0 !important;
+  }
+  .pop-up-items {
+    display: none !important;
+  }
+  .nav-item.main .nav-link {
+    text-align: start !important;
+  }
+}
