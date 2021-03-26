@@ -126,7 +126,9 @@ input::-webkit-input-placeholder {
 }
 
 .custom-toggler.navbar-toggler {
-    background-color: rgb(255, 255, 255) !important;
+    background-color: transparent !important;
+    border: none !important;
+    background-image: url("data:image/svg+xml;..");
 }
 
 .logo-wrapper {
@@ -291,7 +293,7 @@ img.card-img-top {
     object-fit: contain;
 }
 .top-seller-name {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -558,9 +560,7 @@ div#carouselId {
     .card-body {
         margin-top: 70px;
     }
-    .name {
-        display: none;
-    }
+   
 
     input::-webkit-input-placeholder {
         font-size: 15px;
@@ -611,6 +611,46 @@ div#carouselId {
     .sponsor-container .row {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    li.nav-item.popup.ml-auto {
+        margin-left: 0 !important;
+    }
+
+    button#cart-icon, button#user-icon {
+        width: fit-content;
+    }
+
+    .pop-up-items .nav-item {
+        margin: 0;
+    }
+
+    .number-item-cart {
+        position: absolute;
+        right: -18px;
+        top: -3px;
+        font-size: 0.6rem !important;
+    }
+
+    .upper-nav {
+        height: 200px;
+        align-items: flex-start;
+    }
+
+    .logo-wrapper {
+        margin-top: 20px;
+    }
+
+    .search-wrapper {
+        margin-top: 15px;
+    }
+
+    .cart-user-wrapper {
+        margin-top: 10px;
+    }
+
+    .sponsor {
+        margin: 10px;
     }
 }
 
