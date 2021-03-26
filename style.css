@@ -1,5 +1,9 @@
-* {
-    font-family: 'Roboto', sans-serif;
+h1,h2,h3,h4,h5 {
+    font-family: 'Roboto Slab', serif;
+}
+
+p, a,li,span {
+    font-family: 'IBM Plex Serif', serif;
 }
 
 /* body {
@@ -38,13 +42,12 @@ input::-webkit-input-placeholder {
     color: black !important;
     font-family: 'Roboto', sans-serif;
     transition: 400ms;
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 16px;
 }
 
 .nav-item.main>*:hover {
-    background: white;
-    color: black !important;
+    background: #737373;
 }
 
 .dropdown.hoverable:hover>.dropdown-menu {
@@ -225,9 +228,9 @@ h5.card-title.rounded{
 }
 
 .price{
-  color: #ed0000;
+  color: #ff0000 !important;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800 !important;
 }
 
 .card-body {
@@ -290,35 +293,24 @@ img.card-img-top {
 .top-seller-name {
     font-size: 2rem;
     font-weight: 400;
-    width: 130px;
-    height: 51px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .catalog-name {
-    font-size: 1.3rem;
-    font-weight: 300;
-    width: 130px;
-    height: 51px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #545454;
-    color: white;
-    border-radius: 10px;
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #484545; 
+    box-shadow: 1px 1px 1px #afa9a9;
     text-shadow: 1px 1px 6px #d0d0d0;
-    cursor: pointer;
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+}
+.catalog-name span {
+    background:#fff; 
+    padding:0 20px;
 }
 
-.catalog-name:hover {
-    color: #545454;
-    background: #d6d2d2;
-    transition: background-color 500ms;
-    border: 2px solid #040404;
-}
-.catalog-name:hover span {display:none}
-.catalog-name:hover:before {content:"See more"}
 
 .rating > * {
     font-size: 0.7rem;
@@ -345,7 +337,13 @@ img.card-img-top {
     font-size: 1.8rem;
 }
 .nav-footer-theme {
-    background-color: #eeeeee!important;
+    background-color: #333333!important;
+}
+.navbar-nav .nav-item>* {
+    color: white !important;
+}
+.sticky-top{
+    top: -2px !important;
 }
 
 footer > * {
@@ -512,6 +510,9 @@ div#carouselId {
     width: 100%;
     height: 100%;
     
+}
+.bg-dark {
+    background-color: #333333!important;
 }
 
 @media only screen and (max-width: 992px) {
