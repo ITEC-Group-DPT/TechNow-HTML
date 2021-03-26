@@ -152,8 +152,6 @@ cartBtns.forEach(cartBtn => {
 // UI
 let popUpNavItems = document.querySelector(".pop-up-items")
 let fade = false;
-let dropdownMenu = document.querySelector(".dropdown");
-let dropdownIcon = document.querySelector(".dropdown .nav-link")
 
 $(document).scroll(function () {
   let y = $(this).scrollTop();
@@ -166,22 +164,7 @@ $(document).scroll(function () {
     fade = false;
   }
 
-  if (y > 600) allowHover(true);
-  else allowHover(false);
 });
-
-
-function allowHover(boolVal) {
-  if (boolVal == true) {
-    dropdownMenu.classList.add("hoverable");
-    dropdownIcon.classList.add("dropdown-toggle");
-    dropdownIcon.classList.remove("disabled");
-  } else {
-    dropdownMenu.classList.remove("hoverable");
-    dropdownIcon.classList.remove("dropdown-toggle");
-    dropdownIcon.classList.add("disabled");
-  }
-}
 
 function fadeIn(el) {
   document.querySelector('#dropdownsearchbar').style.opacity = 0;
