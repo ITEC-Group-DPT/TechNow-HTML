@@ -5,7 +5,7 @@ $(document).ready(function () {
         $('.alert').removeClass('d-none');
         console.log("123132");
         setTimeout(() => {
-            window.location.href = 'index.html'
+            window.location.href = '../../index.html'
         }, 2000);
     });
 });
