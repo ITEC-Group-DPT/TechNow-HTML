@@ -3,6 +3,7 @@ let addToCartBtns;
 let numberItemCart;
 let cartList = [];
 
+
 $(document).ready(() => {
   getProducts(products);
   cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -13,6 +14,8 @@ $(document).ready(() => {
   numberItemCart = document.querySelectorAll(".number-item-cart");
   updateNoItemInCart();
 });
+
+
 
 const getProducts = (item) => {
   let url = 'https://technow-4b3ab.firebaseio.com/.json';
@@ -101,13 +104,11 @@ function addToCart() {
 function addProductToCart(id) {
   cartList = cartList || [];
   let res = id.split(".");
-  console.log(getProductIndexByID(res[1]));
   if (getProductIndexByID(res[1]) != -1) {
     console.log("DUPLICATE ITEM");
     let index = getProductIndexByID(res[1]);
     cartList[index].quantity++;
-  }
-  else {
+  } else {
     console.log("NEW ITEM");
     let product = {
       id: res[1],
@@ -150,36 +151,43 @@ cartBtns.forEach(cartBtn => {
 });
 
 // UI
-let popUpNavItems = document.querySelector(".pop-up-items")
+let popUpNavItems = document.querySelectorAll(".pop-up-items")
 let fade = false;
 
 $(document).scroll(function () {
   let y = $(this).scrollTop();
   if (y > 100 && fade == false) {
+
     fadeIn(popUpNavItems);
     fade = true;
   } else if (y <= 100 && fade == true) {
     fadeOut(popUpNavItems);
+
     $('#cart-icon').popover('hide');
     fade = false;
   }
 
 });
 
-function fadeIn(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 0;
-  el.style = "display: flex";
-  setTimeout(function () {
-    el.style = "opacity: 1";
-  }, 300);
+function fadeIn(elList) {
+  elList.forEach(el => {
+    document.querySelector('#dropdownsearchbar').style.opacity = 0;
+    el.style = "display: flex";
+    setTimeout(function () {
+      el.style = "opacity: 1";
+    }, 300);
+  });
 }
 
-function fadeOut(el) {
-  document.querySelector('#dropdownsearchbar').style.opacity = 1;
-  el.style = "opacity: 0";
-  setTimeout(function () {
-    el.style = "display: none";
-  }, 300);
+function fadeOut(elList) {
+  elList.forEach(el => {
+    document.querySelector('#dropdownsearchbar').style.opacity = 1;
+    el.style = "opacity: 0";
+    setTimeout(function () {
+      el.style = "display: none !important";
+    }, 300);
+  });
+
 }
 
 function popOver() {
@@ -223,8 +231,8 @@ function sortingSold(itemset) {
   let slider = document.querySelector(".my-slider")
   for (let index = 0; index < 20; index++) {
 
-    let newData = 
-    ` <div class="product card-product-wrapper-ts">
+    let newData =
+      ` <div class="product card-product-wrapper-ts">
         <div class="card product rounded w-100 h-100">
           <img class="card-img-top" src="${list[index].avatarURL}" alt="Card image cap">
           <div class="card-body">
