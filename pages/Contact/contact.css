@@ -1,5 +1,9 @@
-*{
-    font-family: 'Roboto', sans-serif;
+h1,h2,h3,h4,h5 {
+    font-family: 'Roboto Slab', serif;
+}
+
+p, a,li,span {
+    font-family: 'IBM Plex Serif', serif;
 }
 #floatingTextarea1{
   min-height: 10em !important;
