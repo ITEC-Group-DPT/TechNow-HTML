@@ -663,8 +663,17 @@ div#carouselId {
     .navbar-nav .nav-item .nav-link,  
     .cart-btn, .user-btn{
         padding-left: 12px !important;
+        margin-left: 20px;
         padding-right: 12px !important;
         width: 52%;
+    }
+
+    .menu-upper {
+        margin-left: 0 !important;
+    }
+
+    a.user-btn.menu-upper.ml-4 {
+        margin-left: 0 !important;
     }
 
     li#pop-up-desktop {
