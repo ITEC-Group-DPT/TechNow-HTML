@@ -496,6 +496,7 @@ div#carouselId {
     height: min-content;
 }
 
+
 .sponsor img:hover {
     transform: scale(1.05);
     transition: all 500ms;
@@ -602,6 +603,14 @@ div#carouselId {
     .card-product-wrapper {
         padding: 0 !important;
         margin: 0 !important;
+    }
+    .sponsor {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .sponsor-container .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
 
