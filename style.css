@@ -659,9 +659,7 @@ div#carouselId {
     .navbar-container {
         margin-left: 0 !important;
     }
-    .navbar-nav {
-        margin: 10px 0 !important;
-    }
+    
     .navbar-nav .nav-item .nav-link,  
     .cart-btn, .user-btn{
         padding-left: 12px !important;

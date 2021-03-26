@@ -163,7 +163,8 @@ $(document).scroll(function () {
   } else if (y <= 100 && fade == true) {
     fadeOut(popUpNavItems);
 
-    $('#cart-icon').popover('hide');
+    $('#cart-icon-desktop').popover('hide');
+    $('#cart-icon-mobile').popover('hide');
     fade = false;
   }
 
@@ -191,10 +192,19 @@ function fadeOut(elList) {
 }
 
 function popOver() {
-  $('#cart-icon').popover('show');
-  setTimeout(() => {
-    $('#cart-icon').popover('hide');
-  }, 4000);
+  if (screen.width <= 768) {
+    $('#cart-icon-mobile').popover('show');
+    setTimeout(() => {
+      $('#cart-icon-mobile').popover('hide');
+    }, 4000);
+  }
+
+  else {
+    $('#cart-icon-desktop').popover('show');
+    setTimeout(() => {
+      $('#cart-icon-desktop').popover('hide');
+    }, 4000);
+  }
 }
 
 //top rating 
