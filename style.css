@@ -633,14 +633,6 @@ div#carouselId {
         margin: 0;
     }
 
-    .number-item-cart {
-        position: absolute;
-        right: -18px;
-        top: -3px;
-        font-size: 0.6rem !important;
-    }
-
-
     .logo-wrapper {
         margin-top: 20px;
     }
@@ -665,7 +657,6 @@ div#carouselId {
         padding-left: 12px !important;
         margin-left: 20px;
         padding-right: 12px !important;
-        width: 52%;
     }
 
     .menu-upper {
@@ -684,6 +675,10 @@ div#carouselId {
     }
     #pop-up-mobile {
         display: block !important;
+    }
+
+    .cart-mobile, .user-mobile {
+        padding: 0 !important;
     }
 }
 
