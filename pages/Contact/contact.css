@@ -13,6 +13,109 @@
   background-color: #00abc5 !important;
   border-color: #00abc5 !important;
 }
-body{
-  padding: 10px;
+.upper-nav {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: white;
+}
+.upper-container,.navbar-container{
+    margin-left: 10%;
+    width: 80%;
+}
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-wrapper img {
+    overflow: hidden;
+    background-color: white;
+    /* transform: translatey(0px); */
+    animation: float 3s ease-in-out infinite;
+}
+.dropdown.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.dropright.hoverable:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropright.hoverable>.dropdown-toggle:active {
+    pointer-events: none;
+}
+#searchbarinp{
+    border: 1.5px solid rgb(63, 62, 62);
+    background: url(assets/loupe.png) no-repeat scroll 10px 8px;
+    background-size: 18px 18px;
+    background-color: white;
+    padding-left: 35px;
+}
+#dropdownsearchbar{
+    z-index: 2000;
+}
+#dropdownsearchbar img{
+    width: 5rem;
+    height: 5rem;
+}
+#dropdownsearchbar .card{
+    height: 5.5rem !important;
+}
+
+#dropdownsearchbar .product:hover {
+    transform: none
+}
+.cart-btn {
+    text-decoration: none;
+    color: black;
+}
+.cart-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+.cart-icon-wrapper {
+    position: relative;
+}
+.cart-icon-wrapper button,.user-icon-wrapper button {
+    border: transparent;
+    height: 40px;
+    width: 40px;
+}
+.number-item-cart {
+    position: absolute;
+    right: -10px;
+    top: -3px;
+    font-size: 0.6rem !important;
+}
+
+.user-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.user-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+.custom-toggler.navbar-toggler {
+    background-color: rgb(255, 255, 255) !important;
+}
+.navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 1rem;
+    text-align: start !important;
+}
+.nav-item.main>*:hover {
+    background: #737373;
+}
+.pop-up-items {
+    transition: opacity 500ms;
+    opacity: 0;
+}
+.nav-footer-theme {
+    background-color: #333333!important;
 }
