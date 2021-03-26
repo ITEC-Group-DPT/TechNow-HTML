@@ -239,7 +239,7 @@ function sortingSold(itemset) {
                 <span>(${list[index].sold})</span>
               </div>
             </div>
-            <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}đ</p>
           </div>
           <div class = "add-cart" id="${list[index].id}">
             <i class="bi bi-cart2"></i>
