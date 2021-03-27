@@ -22,6 +22,20 @@ span {
   border-radius: 1em !important;
 }
 
+button.send {
+  background-color: #333333;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+
+button.send:hover {
+  background-color: #494949;
+  color: white;
+}
+iframe {
+  max-width: 100% !important;
+}
 .btn-submit {
   border-radius: 1em !important;
   background-color: #00abc5 !important;
@@ -56,6 +70,7 @@ button:focus {
 
 .navbar.sticky-top {
   padding-left: 5%;
+  top: -2px !important;
 }
 
 .cart-btn {
@@ -188,6 +203,9 @@ footer>* {
 
 @media only screen and (max-width: 768px) {
 
+  .container {
+    width: 85% !important;
+  }
   .mobile-cart-user {
     display: block;
   }

@@ -345,9 +345,6 @@ function searchbarfunc() {
               <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
             </div>
 
-            <div class = "add-cart-search" id="${list[index].id}">
-              <i class="bi bi-cart2"></i>
-            </div>
           </div>
         </li>`
         $("#dropdownsearchbar").append(data)
