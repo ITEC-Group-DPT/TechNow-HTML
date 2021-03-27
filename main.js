@@ -356,7 +356,7 @@ console.log(list[index].id);
       }
       if (limit == 0) break;
     }
-    if (limit == 10 || searchstr.trim() == '') {
+    if (limit == 5 || searchstr.trim() == '') {
       //không tim duoc product match search
       searchdropdown.style.opacity = 0;
     } else {
