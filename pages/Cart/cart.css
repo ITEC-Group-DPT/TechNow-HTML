@@ -14,6 +14,10 @@ p, a, li, span {
     position: relative;
 }
 
+.container {
+    min-width: 100% !important;
+}
+
 .number-item-cart {
     position: absolute;
     right: -10px;
@@ -374,6 +378,13 @@ footer>* {
     display: none !important;
 }
 
+@media only screen and (max-width: 1300px) {
+    .cart-container {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     input::-webkit-input-placeholder {
         font-size: 15px;
@@ -554,5 +565,21 @@ footer>* {
 @media only screen and (max-width: 992px) {
     .nav-item.main {
         margin: 0 !important;
+    }
+
+    .quantity-price {
+        display: block;
+    }
+
+    .quantity-control {
+        width: fit-content;
+    }
+
+    .summary {
+        height: 300px;
+    }
+
+    .total-price {
+        font-size: 0.8rem;
     }
 }
