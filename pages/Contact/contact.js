@@ -2,7 +2,6 @@ let numberItemCart = document.querySelectorAll(".number-item-cart");
 let cartList = [];
 let cart = document.querySelector(".cart-list");
 
-
 $(document).ready(function () {
     cartList = JSON.parse(localStorage.getItem("cartList"));
     console.log("CART ON PAGE LOAD");

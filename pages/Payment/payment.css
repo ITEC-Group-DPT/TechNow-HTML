@@ -1,9 +1,9 @@
-
-#smartwizard{
-    background-color: white;    
+#smartwizard {
+    background-color: white;
     border-radius: 10px;
     min-height: 60vh;
 }
+
 .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -19,15 +19,23 @@
 .mt-200 {
     margin-top: 200px
 }
-.alert{
+
+.alert {
     transition: 000ms ease-in-out;
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Roboto Slab', serif;
 }
 
-p, a,li,span {
+p,
+a,
+li,
+span {
     font-family: 'IBM Plex Serif', serif;
 }
 
@@ -39,28 +47,38 @@ button:focus {
     padding-left: 5%;
 }
 
+input::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item .nav-link.category-btn {
+    padding-left: 1rem;
+}
+
 .cart-btn {
     text-decoration: none;
     padding-right: 10px;
     color: black;
 }
+
 .user-btn {
     padding-right: 10px;
     text-decoration: none;
 }
+
 .user-btn:hover {
     text-decoration: none;
 }
 
 .bg-dark {
-    background-color: #333333!important;
+    background-color: #333333 !important;
 }
 
 .nav-footer-theme {
-    background-color: #333333!important;
+    background-color: #333333 !important;
 }
 
-.navbar-container{
+.navbar-container {
     margin: 0 6%;
     width: 100%;
 }
@@ -68,16 +86,20 @@ button:focus {
 .navbar-nav .nav-item>* {
     color: black !important;
     font-family: 'Roboto', sans-serif;
-    transition: 400ms;
+    transition: all 400ms;
     border-radius: 15px;
     font-size: 16px;
 }
 
-.nav-item.main>*:hover, 
-.pop-up-items .cart-btn:hover, 
+.navbar-nav .nav-item {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.nav-item.main>*:hover,
+.pop-up-items .cart-btn:hover,
 .pop-up-items .user-btn:hover,
-.current-site 
- {
+.current-site {
     background: #737373;
 }
 
@@ -86,18 +108,34 @@ button:focus {
     border: none !important;
 }
 
-.cart-icon-wrapper button, .user-icon-wrapper button {
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.number-item-cart {
+    position: absolute;
+    right: -10px;
+    top: -3px;
+    font-size: 0.6rem !important;
+}
+
+.cart-icon-wrapper button,
+.user-icon-wrapper button {
     border: transparent;
     height: 40px;
     width: 40px;
 }
 
-footer > * {
+#pop-up-mobile {
+    display: none !important;
+}
+
+footer>* {
     color: black !important;
 }
 
 .footer-title {
- margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-content {
@@ -125,34 +163,46 @@ footer > * {
 
 @media only screen and (max-width: 768px) {
 
-.mobile-cart-user {
+    .mobile-cart-user {
         display: block;
     }
 
-    .navbar-nav .nav-item .nav-link, .cart-btn, .user-btn {
+    .nav-item.main .nav-link {
+        text-align: start !important;
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .cart-btn,
+    .user-btn {
         padding-left: 12px !important;
         margin-left: 20px;
         padding-right: 12px !important;
     }
 
-li.nav-item.main {
+    li#pop-up-desktop {
+        display: none !important;
+    }
+
+    li.nav-item.main {
         margin-top: 10px !important;
     }
 
-li.nav-item.popup.ml-auto {
+    li.nav-item.popup.ml-auto {
         margin-left: 0 !important;
     }
 
-    button#cart-icon, button#user-icon {
+    button#cart-icon,
+    button#user-icon {
         width: fit-content;
     }
 
-.pop-up-items .nav-item {
-    margin: 0;
-}
+    .pop-up-items .nav-item {
+        margin: 0;
+    }
 
-.navbar-nav .nav-item .nav-link,  
-    .cart-btn, .user-btn{
+    .navbar-nav .nav-item .nav-link,
+    .cart-btn,
+    .user-btn {
         padding-left: 12px !important;
         margin-left: 20px;
         padding-right: 12px !important;
@@ -162,21 +212,19 @@ li.nav-item.popup.ml-auto {
         margin-left: 0 !important;
     }
 
-  .navbar-container {
+    .navbar-container {
         margin-left: 0 !important;
     }
 
-    li#pop-up-desktop {
-        display: none !important;
-    }
     .nav-wrapper-mobile {
         width: 100%;
     }
+
     #pop-up-mobile {
         display: block !important;
     }
 
-      .cart-mobile {
+    .cart-mobile {
         padding-left: 0 !important;
     }
 }

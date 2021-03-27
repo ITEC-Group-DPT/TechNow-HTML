@@ -1,3 +1,27 @@
+let numberItemCart = document.querySelectorAll(".number-item-cart");
+let cartList = [];
+let cart = document.querySelector(".cart-list");
+
+$(document).ready(function () {
+    cartList = JSON.parse(localStorage.getItem("cartList"));
+    console.log("CART ON PAGE LOAD");
+    console.log(cartList);
+    updateNoItemInCart();
+});
+
+function getTotalItemsInCart() {
+    let total = 0;
+    cartList.forEach(product => {
+      total += product.quantity;
+    });
+    return total;
+  }
+  
+function updateNoItemInCart() {
+    numberItemCart.forEach(number => {
+        number.innerText = getTotalItemsInCart();
+    });
+}
 
 $('#smartwizard').smartWizard({
     selected: 0, // Initial selected step, 0 = first step

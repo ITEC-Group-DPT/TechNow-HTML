@@ -29,8 +29,8 @@ span {
 }
 
 .navbar-container {
-  margin-left: 10%;
-  width: 80%;
+  margin: 0 6%;
+  width: 100%;
 }
 
 .navbar-nav .nav-item>* {
@@ -128,11 +128,6 @@ input::-webkit-input-placeholder {
   background-color: #333333 !important;
 }
 
-.navbar-container {
-  margin: 0 6%;
-  width: 100%;
-}
-
 .navbar-nav .nav-item>* {
   color: black !important;
   font-family: 'Roboto', sans-serif;
@@ -197,6 +192,10 @@ footer>* {
     display: block;
   }
 
+  .nav-item.main .nav-link {
+    text-align: start !important;
+  }
+
   .navbar-nav .nav-item .nav-link,
   .cart-btn,
   .user-btn {
@@ -253,5 +252,4 @@ footer>* {
   .cart-mobile {
     padding-left: 0 !important;
   }
-  
 }
