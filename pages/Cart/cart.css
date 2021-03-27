@@ -29,65 +29,7 @@ input::-webkit-input-placeholder {
     background-color: rgb(211, 210, 210) !important;
 }
 
-.nav-item.main>*:hover {
-    background: white;
-    color: black !important;
-}
 
-.dropdown.hoverable:hover>.dropdown-menu {
-    display: block;
-}
-
-.dropdown.hoverable>.dropdown-toggle:active {
-    pointer-events: none;
-}
-
-.dropright.hoverable:hover>.dropdown-menu {
-    display: block;
-}
-
-.dropright.hoverable>.dropdown-toggle:active {
-    pointer-events: none;
-}
-
-.menu-list {
-    background: white;
-}
-
-.menu-item>* {
-    font-size: 0.7rem;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: light;
-}
-
-.menu-item:hover {
-    background: rgb(231, 231, 231) !important;
-}
-
-.menu-icon img {
-    width: 19px;
-    height: 19px;
-}
-
-.padding-container-fluid {
-    padding-left: 10rem !important;
-    padding-right: 10rem !important;
-}
-
-@keyframes float {
-    0% {
-        transform: translatey(0px);
-    }
-
-    50% {
-        transform: translatey(-10px);
-    }
-
-    100% {
-        transform: translatey(0px);
-    }
-}
 
 .custom-toggler.navbar-toggler {
     background-color: rgb(255, 255, 255) !important;
@@ -309,7 +251,9 @@ ul.cart-list {
     top: 80px;
     height: 0px;
 }
-
+.navbar.sticky-top {
+    padding-left: 5%;
+}
 .btn.check-out-btn {
     font-size: 0.9rem;
 }
