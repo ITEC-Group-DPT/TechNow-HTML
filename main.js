@@ -98,6 +98,7 @@ function addToCart() {
   addToCartBtns = document.querySelectorAll(".add-cart");
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
+      console.log('click');
       addProductToCart(addBtn.id);
     });
   });
@@ -290,7 +291,7 @@ function loadSlider() {
       600: {
         items: 2
       },
-      640: {
+      900: {
         items: 3
       },
       1200: {
@@ -317,9 +318,10 @@ function searchbarfunc() {
   })
 
   searchval.addEventListener('keyup', function (e) {
-    let limit = 3
-    let dropdown = document.querySelector("#dropdownsearchbar")
+    let limit = 5;
+    let dropdown = document.querySelector("#dropdownsearchbar");
     dropdown.innerHTML = '';
+    console.log(list);
     let searchstr = removeVietnameseTones(searchval.value).toLowerCase()
     for (let index = 0; index < list.length; index++) {
       if (removeVietnameseTones(list[index].name).toLowerCase().includes(searchstr)) {
@@ -333,6 +335,10 @@ function searchbarfunc() {
                 <div class="bottom-price-star">
               </div>
               <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
+            </div>
+
+            <div class = "add-cart" id="${list[index].id}">
+              <i class="bi bi-cart2"></i>
             </div>
           </div>
         </li>`
@@ -379,9 +385,3 @@ function removeVietnameseTones(str) {
   str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g, " ");
   return str;
 }
-
-// $("#searchbarinp").on('click', function (e) {
-//   if ($("#searchbarinp").val().length == 0) {
-//     $("#searchbarinp").css = 0;
-//   }
-// })

@@ -236,6 +236,10 @@ h5.card-title.rounded{
   justify-content: space-between;
 }
 
+#dropdownsearchbar .card-body {
+    margin-top: 0px !important;
+}
+
 .item img {
   height: 50px;
   margin-bottom: 10px;
@@ -542,6 +546,7 @@ div#carouselId {
       background: url(assets/loupe.png) no-repeat scroll 10px 8px;
       background-size: 18px 18px;
       background-color: white;
+      background-position-y: center;
       padding-left: 35px;
   }
   #dropdownsearchbar{
@@ -565,6 +570,10 @@ div#carouselId {
     }
     .card-body {
         margin-top: 70px;
+    }
+
+    #dropdownsearchbar .card-body {
+        padding-top: 5px !important;
     }
     .banner-section {
         display: none;
@@ -623,6 +632,10 @@ div#carouselId {
    
     input::-webkit-input-placeholder {
         font-size: 15px;
+    }
+
+    #dropdownsearchbar .card-body > * {
+        font-size: 0.8rem !important;
     }
 
     .search-bar {
