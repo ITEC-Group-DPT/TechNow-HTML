@@ -322,8 +322,10 @@ function searchbarfunc() {
     dropdown.innerHTML = '';
     console.log(list);
     let searchstr = removeVietnameseTones(searchval.value).toLowerCase()
+    console.log(searchstr);
     for (let index = 0; index < list.length; index++) {
       if (removeVietnameseTones(list[index].name).toLowerCase().includes(searchstr)) {
+        console.log(removeVietnameseTones(list[index].name).toLowerCase());
         let data = `
         <li>
           <div class="product p-1">
@@ -342,6 +344,7 @@ function searchbarfunc() {
           </div>
         </li>`
         $("#dropdownsearchbar").append(data)
+
         limit--;
       }
       if (limit == 0) break;
@@ -353,7 +356,10 @@ function searchbarfunc() {
       searchdropdown.style.opacity = 1;
     }
     console.log(limit);
+    $("#dropdownsearchbar").addClass("show")
+
   })
+
 }
 
 function removeVietnameseTones(str) {
@@ -384,3 +390,7 @@ function removeVietnameseTones(str) {
   str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g, " ");
   return str;
 }
+
+$("#dropdownsearchbar").click(function (e) {
+  e.stopPropagation()
+});
