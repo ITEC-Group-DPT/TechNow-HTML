@@ -609,6 +609,14 @@ div#carouselId {
         right: 5px;
     }
 
+    div#carouselId {
+        height: 40vh;
+    }
+
+    .sponsor-container {
+        padding: 0;
+    }
+
     i.bi.bi-cart2 {
         font-size: 1.5rem;
     }

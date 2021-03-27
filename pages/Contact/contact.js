@@ -19,6 +19,14 @@ $(document).ready(function () {
     });
 });
 
+function getTotalItemsInCart() {
+    let total = 0;
+    cartList.forEach(product => {
+      total += product.quantity;
+    });
+    return total;
+  }
+  
 function updateNoItemInCart() {
     numberItemCart.forEach(number => {
         number.innerText = getTotalItemsInCart();
