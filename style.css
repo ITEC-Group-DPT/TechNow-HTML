@@ -401,6 +401,7 @@ footer > * {
 .cart-btn {
     text-decoration: none;
     color: black;
+    padding-right: 10px;
 }
 
 div#controls {
@@ -415,6 +416,7 @@ div#controls {
 .user-btn {
     text-decoration: none;
     color: black;
+    padding-right: 10px;
 }
 
 .user-btn:hover {
@@ -671,8 +673,8 @@ div#carouselId {
         display: block !important;
     }
 
-    .cart-mobile, .user-mobile {
-        padding: 0 !important;
+    .cart-mobile {
+        padding-left: 0 !important;
     }
 }
 

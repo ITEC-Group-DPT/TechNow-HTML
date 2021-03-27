@@ -247,7 +247,15 @@ img.card-img-top {
 
 .cart-btn {
     text-decoration: none;
+    padding-right: 10px;
     color: black;
+}
+.user-btn {
+    padding-right: 10px;
+    text-decoration: none;
+}
+.user-btn:hover {
+    text-decoration: none;
 }
 
 .cart-btn:hover {
@@ -594,9 +602,8 @@ footer>* {
         display: block !important;
     }
 
-    .cart-mobile,
-    .user-mobile {
-        padding: 0 !important;
+    .cart-mobile {
+        padding-left: 0 !important;
     }
 }
 
