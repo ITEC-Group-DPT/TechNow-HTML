@@ -14,6 +14,10 @@ button:focus {
     border-width: 2px !important;
 }
 
+.navbar.sticky-top {
+    padding-left: 5%;
+}
+
 .cart-icon-wrapper {
     position: relative;
 }
@@ -169,7 +173,6 @@ input::-webkit-input-placeholder {
 
 .navbar-nav .nav-item .nav-link.category-btn {
     padding-left: 1rem;
-    text-align: start !important;
 }
 
 .footer-title {
@@ -507,6 +510,55 @@ div#carouselId {
     background-color: #333333!important;
 }
 
+.top-rating {
+    position: relative;
+  }
+  .slider-arrow {
+    background: none;
+    opacity: 0.5;
+    position: absolute;
+    overflow: visible;
+  }
+  .my-slider{
+     padding-right: 15px;
+  }
+  .rightcenter {
+    right: 0rem;
+    top: 50%;
+    bottom: auto;
+  }
+  .leftcenter {
+    left: 0rem;
+    top: 50%;
+    bottom: auto;
+  }
+  .auto {
+    display: none;
+  }
+  
+  /* searchbar */
+  #searchbarinp{
+      border: 1.5px solid rgb(63, 62, 62);
+      background: url(assets/loupe.png) no-repeat scroll 10px 8px;
+      background-size: 18px 18px;
+      background-color: white;
+      padding-left: 35px;
+  }
+  #dropdownsearchbar{
+      z-index: 2000;
+  }
+  #dropdownsearchbar img{
+      width: 5rem;
+      height: 5rem;
+  }
+  #dropdownsearchbar .card{
+      height: 5.5rem !important;
+  }
+  
+  #dropdownsearchbar .product:hover {
+      transform: none
+  }
+
 @media only screen and (max-width: 992px) {
     .nav-item.main {
         margin: 0 !important;
@@ -578,6 +630,11 @@ div#carouselId {
     
     .main-container {
         margin: 0;
+    }
+
+    .menu-banners {
+        padding: 10px 4% 10px 4%;
+        height: 100%;
     }
 
     .menu-list {
@@ -676,53 +733,4 @@ div#carouselId {
     .cart-mobile {
         padding-left: 0 !important;
     }
-}
-
-.top-rating {
-  position: relative;
-}
-.slider-arrow {
-  background: none;
-  opacity: 0.5;
-  position: absolute;
-  overflow: visible;
-}
-.my-slider{
-   padding-right: 15px;
-}
-.rightcenter {
-  right: 0rem;
-  top: 50%;
-  bottom: auto;
-}
-.leftcenter {
-  left: 0rem;
-  top: 50%;
-  bottom: auto;
-}
-.auto {
-  display: none;
-}
-
-/* searchbar */
-#searchbarinp{
-    border: 1.5px solid rgb(63, 62, 62);
-    background: url(assets/loupe.png) no-repeat scroll 10px 8px;
-    background-size: 18px 18px;
-    background-color: white;
-    padding-left: 35px;
-}
-#dropdownsearchbar{
-    z-index: 2000;
-}
-#dropdownsearchbar img{
-    width: 5rem;
-    height: 5rem;
-}
-#dropdownsearchbar .card{
-    height: 5.5rem !important;
-}
-
-#dropdownsearchbar .product:hover {
-    transform: none
 }
