@@ -87,6 +87,14 @@ input::-webkit-input-placeholder {
     background: rgb(231, 231, 231) !important;
 }
 
+.fa-star {
+    margin-right: 3px;
+}
+
+.fa-star:nth-child(5) {
+    margin-right: 0 !important;
+}
+
 .menu-icon img {
     width: 19px;
     height: 19px;
