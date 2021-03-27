@@ -1,5 +1,6 @@
 let products;
 let addToCartBtns;
+let addToCartSearchBtns;
 let numberItemCart;
 let cartList = [];
 
@@ -97,8 +98,16 @@ function addToCart() {
   addToCartBtns = document.querySelectorAll(".add-cart");
   addToCartBtns.forEach(addBtn => {
     addBtn.addEventListener("click", () => {
-      console.log('click');
       addProductToCart(addBtn.id);
+    });
+  });
+}
+
+function addToCartSearch() {
+  addToCartSearchBtns = document.querySelectorAll(".add-cart-search");
+  addToCartSearchBtns.forEach(addSearchBtn => {
+    addSearchBtn.addEventListener("click", () => {
+      addProductToCart(addSearchBtn.id);
     });
   });
 }
@@ -320,12 +329,10 @@ function searchbarfunc() {
     let limit = 5;
     let dropdown = document.querySelector("#dropdownsearchbar");
     dropdown.innerHTML = '';
-    console.log(list);
     let searchstr = removeVietnameseTones(searchval.value).toLowerCase()
-    console.log(searchstr);
     for (let index = 0; index < list.length; index++) {
       if (removeVietnameseTones(list[index].name).toLowerCase().includes(searchstr)) {
-        console.log(removeVietnameseTones(list[index].name).toLowerCase());
+        //console.log(removeVietnameseTones(list[index].name).toLowerCase());
         let data = `
         <li>
           <div class="product p-1">
@@ -338,13 +345,13 @@ function searchbarfunc() {
               <p href="#" class="text-danger mb-0 price">${list[index].price.toLocaleString()}₫</p>
             </div>
 
-            <div class = "add-cart" id="${list[index].id}">
+            <div class = "add-cart-search" id="${list[index].id}">
               <i class="bi bi-cart2"></i>
             </div>
           </div>
         </li>`
         $("#dropdownsearchbar").append(data)
-
+console.log(list[index].id);
         limit--;
       }
       if (limit == 0) break;
@@ -355,9 +362,8 @@ function searchbarfunc() {
     } else {
       searchdropdown.style.opacity = 1;
     }
-    console.log(limit);
     $("#dropdownsearchbar").addClass("show")
-
+    addToCartSearch();
   })
 
 }

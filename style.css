@@ -331,17 +331,17 @@ img.card-img-top {
     border-left: 0px !important; */
 }
 
-.add-cart {
+.add-cart, .add-cart-search {
     position: absolute;
     bottom: 20px;
     right: 15px;
 }
-.add-cart img {
+.add-cart img, .add-cart-search img {
     width: 30px;
     height: 30px;
 }
 
-.add-cart {
+.add-cart, .add-cart-search {
     font-size: 1.8rem;
 }
 .nav-footer-theme {
