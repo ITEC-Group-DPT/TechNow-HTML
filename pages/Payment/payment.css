@@ -23,8 +23,12 @@ a.active {
     border-left-color: #333333 !important;
 }
 .sw-theme-arrows .toolbar>.btn {
-    background-color: #495057 !important;
-    border-color:  #495057 !important;
+    background-color: #495057 ;
+    border-color:  #495057 ;
+}
+.sw-btn-prev {
+    background-color: #797c80 !important;
+    border-color:  #797c80 !important;
 }
 .form-control:focus {
     color: #495057;
