@@ -56,10 +56,10 @@ const loadProductSection = (item, section) => {
     //console.log(product);
     let productRating = parseInt(product.rating);
     let starRating = "";
-    for(let j = 0; j < productRating; j++){
+    for (let j = 0; j < productRating; j++) {
       starRating += '<span class="fa fa-star text-warning"></span>';
     }
-    for(let j = 0; j < 5 - productRating; j++){
+    for (let j = 0; j < 5 - productRating; j++) {
       starRating += '<span class="fa fa-star"></span>';
     }
     let newData =
@@ -184,7 +184,9 @@ $(document).scroll(function () {
 function fadeIn(elList) {
   elList.forEach(el => {
     document.querySelector('#dropdownsearchbar').style.opacity = 0;
-    el.style = "display: flex";
+    el.classList.remove("d-none")
+
+    el.classList.add("d-flex")
     setTimeout(function () {
       el.style = "opacity: 1";
     }, 300);
@@ -196,7 +198,8 @@ function fadeOut(elList) {
     document.querySelector('#dropdownsearchbar').style.opacity = 1;
     el.style = "opacity: 0";
     setTimeout(function () {
-      el.style = "display: none !important";
+      el.classList.add("d-none")
+      el.classList.remove("d-flex")
     }, 300);
   });
 
@@ -348,7 +351,7 @@ function searchbarfunc() {
           </div>
         </li>`
         $("#dropdownsearchbar").append(data)
-console.log(list[index].id);
+        console.log(list[index].id);
         limit--;
       }
       if (limit == 0) break;

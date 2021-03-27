@@ -100,6 +100,10 @@ li.product-wrapper.container {
     padding-left: 1rem;
 }
 
+p.product-price.m-0 {
+    font-weight: bold;
+}
+
 .footer-title {
     margin-bottom: 20px;
 }
@@ -264,6 +268,7 @@ ul.cart-list {
 
 .total-price {
     color: red;
+    font-weight: bold;
 }
 
 .container {
