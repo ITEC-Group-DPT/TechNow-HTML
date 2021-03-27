@@ -71,10 +71,17 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
         let toolbarbtn = document.querySelector(".sw-btn-next")
         toolbarbtn.classList.add('finish')
         toolbarbtn.innerHTML = 'Back to Homepage'
+        $(".finish").click(function (e) {
+            console.log('helo');
+            window.location.href = '../../../index.html'
+        });
         setTimeout(() => {
             if ($('#smartwizard').smartWizard("getStepIndex") == 3) {
                 document.querySelector(".alert").classList.remove('d-none')
                 toolbarbtn.classList.remove('disabled')
+                setTimeout(() => {
+                    $(".finish").click()
+                }, 3000);
             }
         }, 2000);
 
@@ -89,7 +96,4 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
 
     }
 
-});
-$(".finish").click(function (e) {
-    e.preventDefault();
 });
