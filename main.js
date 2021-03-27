@@ -55,21 +55,23 @@ const loadProductSection = (item, section) => {
     let id = section + '.' + section + i;
     //console.log(id);
     //console.log(product);
+    let productRating = parseInt(product.rating);
+    let starRating = "";
+    for(let j = 0; j < productRating; j++){
+      starRating += '<span class="fa fa-star text-warning"></span>';
+    }
+    for(let j = 0; j < 5 - productRating; j++){
+      starRating += '<span class="fa fa-star"></span>';
+    }
     let newData =
       `<div class="col-lg-3 col-6 card-product-wrapper">
         <div class="card product">
           <a href="#" class="img-card"><img class="card-img-top" src="${product.avatarURL}" alt="Card image cap"></a>
-          <div class="card-body h-75">
-            <h5 class="card-title rounded">${product.name}</h5>
-            <div class="rating">
-              <span class="fa fa-star text-warning"></span>
-              <span class="fa fa-star text-warning"></span>
-              <span class="fa fa-star text-warning"></span>
-              <span class="fa fa-star text-warning"></span>
-              <span class="fa fa-star"></span>
-              <span>(${product.sold})</span>
-            </div>
-            <p href="#" class="mb-0 price">${product.price.toLocaleString()} đ</p>
+        <div class="card-body h-75">
+          <h5 class="card-title rounded">${product.name}</h5>
+          <div class="rating">
+            ${starRating}
+            <span>(${product.sold})</span>
           </div>
             <div class = "add-cart" id="${id}">
               <i class="bi bi-cart2"></i>
@@ -207,7 +209,7 @@ function popOver() {
   }
 }
 
-//top rating 
+//top rating
 let list = [];
 
 function sortingSold(itemset) {
