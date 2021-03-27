@@ -216,7 +216,6 @@ function getTotalItemsInCart() {
 
 
 // UI functions
-
 function checkCartList() {
   if (cartList.length == 0) {
     cartAvailable.style = "display: none";
@@ -238,8 +237,6 @@ function updateNoItemInCart() {
   });
 }
 
-allowHover(true);
-
 // $(document).scroll(function () {
 //   let y = $(this).scrollTop();
 //   if (y > 100 && fade == false) {
@@ -250,19 +247,6 @@ allowHover(true);
 //     fade = false;
 //   }
 // });
-
-
-function allowHover(boolVal) {
-  if (boolVal == true) {
-    dropdownMenu.classList.add("hoverable");
-    dropdownIcon.classList.add("dropdown-toggle");
-    dropdownIcon.classList.remove("disabled");
-  } else {
-    dropdownMenu.classList.remove("hoverable");
-    dropdownIcon.classList.remove("dropdown-toggle");
-    dropdownIcon.classList.add("disabled");
-  }
-}
 
 function fadeIn(el) {
   document.querySelector('#dropdownsearchbar').style.opacity = 0
