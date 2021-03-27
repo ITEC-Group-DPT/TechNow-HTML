@@ -9,9 +9,7 @@ p, a,li,span {
 button:focus {
     outline: none !important;
 }
-/* body {
-    background: #ffffff !important
-} */
+
 .border.border-primary.custom-border-width {
     border-width: 2px !important;
 }
@@ -37,9 +35,6 @@ input::-webkit-input-placeholder {
     height: 80px;
     background-color: white;
 }
-/* .icon-upper:hover {
-    background-color: rgb(226, 226, 226) !important;
-} */
 
 .navbar-nav .nav-item>* {
     color: black !important;
@@ -77,8 +72,6 @@ input::-webkit-input-placeholder {
     background: rgb(248, 248, 248);
 }
 
-
-
 .menu-item>* {
     font-size: 0.7rem;
     color: black;
@@ -108,7 +101,6 @@ input::-webkit-input-placeholder {
 .carousel-item img {
     height: 90%;
     width: 100%;
-    /* object-fit: fill; */
 }
 
 .cart-icon-wrapper button,.user-icon-wrapper button {
@@ -116,7 +108,6 @@ input::-webkit-input-placeholder {
     height: 40px; 
     width: 40px;
 }
-
 
 @keyframes float {
     0% {
@@ -135,7 +126,6 @@ input::-webkit-input-placeholder {
 .custom-toggler.navbar-toggler {
     background-color: transparent !important;
     border: none !important;
-    background-image: url("data:image/svg+xml;..");
 }
 
 .logo-wrapper {
@@ -146,7 +136,6 @@ input::-webkit-input-placeholder {
 .logo-wrapper img {
     overflow: hidden;
     background-color: white;
-    /* transform: translatey(0px); */
     animation: float 3s ease-in-out infinite;
 }
 
@@ -181,10 +170,6 @@ input::-webkit-input-placeholder {
 .navbar-nav .nav-item .nav-link.category-btn {
     padding-left: 1rem;
     text-align: start !important;
-}
-
-footer > * {
-    color: white;
 }
 
 .footer-title {
@@ -320,7 +305,6 @@ img.card-img-top {
     padding:0 20px;
 }
 
-
 .rating > * {
     font-size: 0.7rem;
 }
@@ -421,7 +405,6 @@ footer > * {
 
 div#controls {
     outline: none !important;  
-    
 }
 
 .cart-btn:hover {
@@ -440,9 +423,7 @@ div#controls {
 }
 
 div#carouselId {
-    /* padding-top: 5%; */
     height: 50vh;
-    /* padding-bottom: 5%; */
     border: 5px solid rgb(216, 216, 216);
     border-radius: 10px;
     background-color: #000;
@@ -504,7 +485,6 @@ div#carouselId {
     padding: 50px 0;
     height: min-content;
 }
-
 
 .sponsor img:hover {
     transform: scale(1.05);
@@ -568,7 +548,6 @@ div#carouselId {
         margin-top: 70px;
     }
    
-
     input::-webkit-input-placeholder {
         font-size: 15px;
     }
@@ -619,6 +598,10 @@ div#carouselId {
     .sponsor-container .row {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    li.nav-item.main {
+        margin-top: 10px !important;
     }
 
     li.nav-item.popup.ml-auto {

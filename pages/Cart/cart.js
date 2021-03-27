@@ -15,29 +15,11 @@ let inputQties;
 let removeBtns;
 let removeAllBtn = document.querySelector(".remove-all-btn");
 let summaryWrapper = document.querySelector(".summary-wrapper");
+
+
 //document ready
 $(document).ready(() => {
   cartList = JSON.parse(localStorage.getItem("cartList"));
-
-  // $('#exampleModal').on('show.bs.modal', function (e) {
-  //   if ($(window).width() > 768) {
-  //     console.log("SHOW MODAL");
-  //     setTimeout(() => {
-  //       summaryWrapper.style = "padding-right: 0px !important";
-  //     }, 300);
-      
-  //   }
-  // });
-
-  // $('#exampleModal').on('hide.bs.modal', function (e) {
-  //   if ($(window).width() > 768) {
-  //     console.log("HIDE MODAL");
-  //     setTimeout(() => {
-  //       summaryWrapper.removeAttribute("style");
-  //     }, 300);
-      
-  //   }
-  // });
 
   console.log("CART ON PAGE LOAD");
   console.log(cartList);
@@ -258,17 +240,16 @@ function updateNoItemInCart() {
 
 allowHover(true);
 
-$(document).scroll(function () {
-  let y = $(this).scrollTop();
-  if (y > 100 && fade == false) {
-    fadeIn(popUpNavItems);
-    fade = true;
-  } else if (y <= 100 && fade == true) {
-    fadeOut(popUpNavItems);
-    fade = false;
-  }
-
-});
+// $(document).scroll(function () {
+//   let y = $(this).scrollTop();
+//   if (y > 100 && fade == false) {
+//     fadeIn(popUpNavItems);
+//     fade = true;
+//   } else if (y <= 100 && fade == true) {
+//     fadeOut(popUpNavItems);
+//     fade = false;
+//   }
+// });
 
 
 function allowHover(boolVal) {
