@@ -15,8 +15,6 @@ $(document).ready(() => {
   updateNoItemInCart();
 });
 
-
-
 const getProducts = (item) => {
   let url = 'https://technow-4b3ab.firebaseio.com/.json';
   let xhr = new XMLHttpRequest();
