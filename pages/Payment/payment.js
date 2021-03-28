@@ -96,9 +96,9 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
                 setTimeout(() => {
                     $(".finish").click()
                     removeAll();
-                }, 3000);
+                }, 4000);
             }
-        }, 2000);
+        }, 3000);
 
 
     } else {
