@@ -62,7 +62,7 @@
 
           <li class="nav-item">
             <a class="user-btn user-mobile d-flex align-items-center h-100" href="#" data-toggle="modal"
-            data-target="#user-login">
+              data-target="#user-login">
               <div class="user-icon-wrapper mr-2">
                 <button type="button" class="btn rounded-circle p-0" id="user-icon">
                   <i class="bi bi-person fa-1x text-white" style="color: black;"></i>
@@ -127,7 +127,7 @@
 
               <li class="nav-item">
                 <a class="user-btn d-flex align-items-center h-100" href="#" data-toggle="modal"
-                data-target="#user-login">
+                  data-target="#user-login">
                   <div class="user-icon-wrapper">
                     <button type="button" class="btn rounded-circle p-0" id="user-icon">
                       <i class="bi bi-person fa-1x text-white" style="color: black;"></i>
@@ -202,6 +202,23 @@
         </div>
         <div class="modal-body">
           <p>There is currently no discount available. Sign up for our newsletter for future upcoming hot deals!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="newsletterModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newsletterModalLabel">Newsletter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Thanks for subscribing. You will now receive various future event details and hot deals from us!</p>
         </div>
       </div>
     </div>
@@ -331,7 +348,7 @@
 
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4">
+              <button type="button" class="btn btn-outline-light mb-4" data-toggle="modal" data-target="#newsletter">
                 Subscribe
               </button>
             </div>
