@@ -3,7 +3,8 @@ let cartList = [];
 let cart = document.querySelector(".cart-list");
 
 $(document).ready(function () {
-    cartList = JSON.parse(localStorage.getItem("cartList"));
+    let temp = JSON.parse(localStorage.getItem("cartList"));
+    if (temp != null) cartList = temp;
     console.log("CART ON PAGE LOAD");
     console.log(cartList);
     updateNoItemInCart();

@@ -7,7 +7,8 @@ let cartList = [];
 
 $(document).ready(() => {
   getProducts(products);
-  cartList = JSON.parse(localStorage.getItem("cartList"));
+  let temp = JSON.parse(localStorage.getItem("cartList"));
+  if (temp != null) cartList = temp;
 
   console.log("CART ON PAGE LOAD");
   console.log(cartList);
