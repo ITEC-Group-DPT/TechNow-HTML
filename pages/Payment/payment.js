@@ -12,15 +12,27 @@ $(document).ready(function () {
 function getTotalItemsInCart() {
     let total = 0;
     cartList.forEach(product => {
-      total += product.quantity;
+        total += product.quantity;
     });
     return total;
-  }
-  
+}
+
 function updateNoItemInCart() {
     numberItemCart.forEach(number => {
         number.innerText = getTotalItemsInCart();
     });
+}
+
+function storeLocalStorage(cartList) {
+    localStorage.setItem("cartList", JSON.stringify(cartList));
+}
+
+function removeAll() {
+    cartList.splice(0, cartList.length);
+    console.log("CART AFTER REMOVE");
+    console.log(cartList);
+    storeLocalStorage(cartList);
+    updateNoItemInCart();
 }
 
 $('#smartwizard').smartWizard({
@@ -74,20 +86,22 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
         $(".finish").click(function (e) {
             console.log('helo');
             window.location.href = '../../../index.html'
+            removeAll();
         });
+        
         setTimeout(() => {
             if ($('#smartwizard').smartWizard("getStepIndex") == 3) {
                 document.querySelector(".alert").classList.remove('d-none')
                 toolbarbtn.classList.remove('disabled')
                 setTimeout(() => {
                     $(".finish").click()
+                    removeAll();
                 }, 3000);
             }
         }, 2000);
 
 
-    }
-    else {
+    } else {
         let toolbarbtn = document.querySelector(".sw-btn-next")
         toolbarbtn.classList.remove('finish')
         toolbarbtn.classList.remove('disabled')
