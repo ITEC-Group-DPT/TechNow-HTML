@@ -19,8 +19,8 @@ let summaryWrapper = document.querySelector(".summary-wrapper");
 
 //document ready
 $(document).ready(() => {
-  cartList = JSON.parse(localStorage.getItem("cartList"));
-
+  let temp = JSON.parse(localStorage.getItem("cartList"));
+  if (temp != null) cartList = temp;
   console.log("CART ON PAGE LOAD");
   console.log(cartList);
   checkCartList();
@@ -217,7 +217,7 @@ function getTotalItemsInCart() {
 
 // UI functions
 function checkCartList() {
-  if (cartList.length == 0 || cartList == null) {
+  if (cartList == null || cartList.length == 0) {
     cartAvailable.style = "display: none";
     cartEmpty.style = "display: block";
 
