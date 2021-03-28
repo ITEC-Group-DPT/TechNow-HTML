@@ -86,7 +86,7 @@ $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirec
         toolbarbtn.innerHTML = 'Back to Homepage'
         $(".finish").click(function (e) {
             console.log('helo');
-            window.location.href = '../../../index.html'
+            window.location.href = '../../index.html'
             removeAll();
         });
         
