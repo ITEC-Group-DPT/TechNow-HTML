@@ -26,7 +26,7 @@
 
   <!--Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <!-- Slider -->
@@ -71,7 +71,8 @@
             <p class="text-center m-0 name" style="font-size: 15px;">Cart</p>
           </a>
 
-          <a class="user-btn menu-upper ml-4 d-flex align-items-center justify-content-center" href="#">
+          <a class="user-btn menu-upper ml-4 d-flex align-items-center justify-content-center" data-toggle="modal"
+            data-target="#user-login">
             <div class="user-icon-wrapper mr-1">
               <button type="button" class="btn rounded-circle icon-upper p-0">
                 <i class="bi bi-person fa-lg" style="color: black;"></i>
@@ -113,7 +114,8 @@
           </li>
 
           <li class="nav-item">
-            <a class="user-btn user-mobile d-flex align-items-center h-100" href="#">
+            <a class="user-btn user-mobile d-flex align-items-center h-100" data-toggle="modal"
+              data-target="#user-login">
               <div class="user-icon-wrapper mr-2">
                 <button type="button" class="btn rounded-circle p-0" id="user-icon">
                   <i class="bi bi-person fa-1x text-white" style="color: black;"></i>
@@ -134,28 +136,28 @@
           <li class="nav-item main col-md-2 px-0">
             <a class="nav-link category-btn text-center" href="./index.html">
               <i class="bi bi-house-door mr-2 text-white"></i>
-              <span class = "text-white">Home</span>
+              <span class="text-white">Home</span>
             </a>
           </li>
 
           <li class="nav-item main col-md-2 px-0">
-            <a class="nav-link text-center" href="#">
+            <a class="nav-link text-center" href="#" data-toggle="modal" data-target="#hot-deals">
               <i class="bi bi-gift mr-2 text-white"></i>
-              <span class = "text-white">Hot Discount</span>
+              <span class="text-white">Hot Discount</span>
             </a>
           </li>
 
           <li class="nav-item main col-md-2 px-0">
-            <a class="nav-link text-center" href="#">
+            <a class="nav-link text-center" href="#" data-toggle="modal" data-target="#shipping-policy">
               <i class="bi bi-truck mr-2 text-white"></i>
-              <span class = "text-white">Shipping policy</span>
+              <span class="text-white">Shipping policy</span>
             </a>
           </li>
 
           <li class="nav-item main col-md-2 px-0">
             <a class="nav-link text-center" href="./pages/Contact/contact.html">
               <i class="bi bi-telephone-inbound mr-2 text-white"></i>
-              <span class = "text-white">Contact us</span>
+              <span class="text-white">Contact us</span>
             </a>
           </li>
 
@@ -177,7 +179,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="user-btn d-flex align-items-center h-100" href="#">
+                <a class="user-btn d-flex align-items-center h-100" data-toggle="modal" data-target="#user-login">
                   <div class="user-icon-wrapper">
                     <button type="button" class="btn rounded-circle p-0" id="user-icon">
                       <i class="bi bi-person fa-1x text-white" style="color: black;"></i>
@@ -196,6 +198,66 @@
     </div>
 
   </nav>
+
+  <div class="modal fade" id="shipping-policy" tabindex="-1" role="dialog" aria-labelledby="shippingPolicyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shippingPolicyModalLabel">Shipping policy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>
+              <p> <b>TP. Hồ Chí Minh:</b> Quận 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, Thủ Đức, Tân Phú, Tân Bình, Phú
+                Nhuận, Gò Vấp, Bình Thạnh, Bình Tân.</p>
+            </li>
+            <li>
+              <p> <b>Hà Nội:</b> Quận Ba Đình, Hoàn Kiếm, Tây Hồ, Long Biên, Cầu Giấy, Đống Đa, Hai Bà Trưng, Hoàng Mai,
+                Thanh Xuân, Nam Từ Liêm, Bắc Từ Liêm, Hà Đông.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="user-login" tabindex="-1" role="dialog" aria-labelledby="userLoginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userLoginModalLabel">Feature is currently under maintenance</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>You can still order products without an user account!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hot-deals" tabindex="-1" role="dialog" aria-labelledby="hotDealsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="hotDealsModalLabel">Hot Discount</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>There is currently no discount available. Sign up for our newsletter for future upcoming hot deals!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="menu-banners">
     <div class="row">
@@ -278,7 +340,7 @@
 
       <div class="d-flex align-items-center">
         <i class="bi bi-award fa-2x red-text"></i>
-        <div class="mb-0 top-seller-name"><span>  Top Seller</span></div>
+        <div class="mb-0 top-seller-name"><span> Top Seller</span></div>
       </div>
 
       <div id="controls" class="rounded">
@@ -314,7 +376,7 @@
     </div>
 
   </div>
-  
+
   <footer class="nav-footer-theme text-center text-white mt-5">
 
     <div class="container p-4">
@@ -348,14 +410,14 @@
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong class = "text-white">Sign up for our newsletter</strong>
+                <strong class="text-white">Sign up for our newsletter</strong>
               </p>
             </div>
 
             <div class="col-md-5 col-12">
               <!-- Email input -->
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" placeholder="Email address"/>
+                <input type="email" id="form5Example2" class="form-control" placeholder="Email address" />
               </div>
             </div>
 
@@ -372,7 +434,7 @@
       </section>
 
       <section class="mb-4">
-        <p class = "text-white">
+        <p class="text-white">
           227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh, Việt Nam
         </p>
       </section>
@@ -388,13 +450,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>

@@ -331,6 +331,10 @@ img.card-img-top {
     border-left: 0px !important; */
 }
 
+.user-btn:hover {
+    cursor: pointer;
+}
+
 .add-cart, .add-cart-search {
     position: absolute;
     bottom: 20px;
