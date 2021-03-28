@@ -218,6 +218,7 @@ function getTotalItemsInCart() {
 // UI functions
 function checkCartList() {
   if (cartList.length == 0) {
+    console.log('run in here mom');
     cartAvailable.style = "display: none";
     cartEmpty.style = "display: block";
 
