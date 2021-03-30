@@ -1,4 +1,4 @@
 # TechNow-HTML
 A final project in HCMUS - ITEC - AUT
 
-https://tezukashuko.github.io/TechNow-HTML/
+Our website: https://tezukashuko.github.io/TechNow-HTML/
